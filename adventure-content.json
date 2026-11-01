@@ -1,0 +1,1274 @@
+{
+  "titles": [
+    "神祕森林的呼喚",
+    "山洞裡的龍蛋",
+    "小星誕生了！",
+    "不會飛的小龍",
+    "黑暗龍王的傳說",
+    "第一次真正的飛翔",
+    "決戰岩石魔王格隆",
+    "通往冰雪世界的門",
+    "會說話的雪狐狸",
+    "消失的冰雪公主",
+    "被冰封的龍族村莊",
+    "小星學會冰晶魔法",
+    "冰雪城堡的大陷阱",
+    "決戰冰霜魔王寒牙",
+    "天空中的雷電島",
+    "失控的飛行魔法",
+    "弟弟的神祕能力",
+    "雷龍族的古老預言",
+    "消失的閃電寶石",
+    "穿越雷霆迷宮",
+    "決戰雷電魔王紫霆",
+    "火山裡的地下城市",
+    "會噴火的小恐龍",
+    "爸爸被困住了！",
+    "媽媽的治癒魔法",
+    "傳說中的火焰之心",
+    "小星的第二次進化",
+    "決戰烈焰魔王炎獄",
+    "會移動的魔法森林",
+    "精靈女王的請求",
+    "被偷走的生命種子",
+    "姐姐的魔法覺醒",
+    "弟弟與小龍軍團",
+    "千年神樹的祕密",
+    "決戰森林魔王藤皇",
+    "天空變成了黑色",
+    "黑暗龍族的入侵",
+    "小星被抓走了！",
+    "全家人的救援計畫",
+    "黑龍城堡的地下監獄",
+    "小星覺醒星空龍王",
+    "決戰暗影魔王闇影",
+    "七顆龍晶的祕密",
+    "星空神殿的大門",
+    "消失的七位守護龍",
+    "最後的龍族大軍",
+    "終焉降臨",
+    "星空龍王的終極型態",
+    "決戰滅星魔王終焉",
+    "邪惡女皇・邀普邀"
+  ],
+  "units": [
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K1",
+      "title": "交通工具",
+      "emoji": "🚗",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k1:1",
+          "en": "car",
+          "zh": "汽車",
+          "emoji": "🚗",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k1:2",
+          "en": "bus",
+          "zh": "公車",
+          "emoji": "🚌",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k1:3",
+          "en": "train",
+          "zh": "火車",
+          "emoji": "🚆",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k1:4",
+          "en": "bike",
+          "zh": "腳踏車",
+          "emoji": "🚲",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k1:5",
+          "en": "boat",
+          "zh": "船",
+          "emoji": "⛵",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K2",
+      "title": "動物",
+      "emoji": "🐶",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k2:1",
+          "en": "dog",
+          "zh": "狗",
+          "emoji": "🐶",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k2:2",
+          "en": "cat",
+          "zh": "貓",
+          "emoji": "🐱",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k2:3",
+          "en": "rabbit",
+          "zh": "兔子",
+          "emoji": "🐰",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k2:4",
+          "en": "elephant",
+          "zh": "大象",
+          "emoji": "🐘",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K3",
+      "title": "昆蟲",
+      "emoji": "🦋",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k3:1",
+          "en": "butterfly",
+          "zh": "蝴蝶",
+          "emoji": "🦋",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k3:2",
+          "en": "bee",
+          "zh": "蜜蜂",
+          "emoji": "🐝",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k3:3",
+          "en": "ant",
+          "zh": "螞蟻",
+          "emoji": "🐜",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k3:4",
+          "en": "ladybug",
+          "zh": "瓢蟲",
+          "emoji": "🐞",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K4",
+      "title": "鳥類",
+      "emoji": "🐦",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k4:1",
+          "en": "bird",
+          "zh": "鳥",
+          "emoji": "🐦",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k4:2",
+          "en": "duck",
+          "zh": "鴨子",
+          "emoji": "🦆",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k4:3",
+          "en": "chicken",
+          "zh": "雞",
+          "emoji": "🐔",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k4:4",
+          "en": "penguin",
+          "zh": "企鵝",
+          "emoji": "🐧",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K5",
+      "title": "河流與海洋動物",
+      "emoji": "🐟",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k5:1",
+          "en": "fish",
+          "zh": "魚",
+          "emoji": "🐟",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k5:2",
+          "en": "whale",
+          "zh": "鯨魚",
+          "emoji": "🐳",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k5:3",
+          "en": "dolphin",
+          "zh": "海豚",
+          "emoji": "🐬",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k5:4",
+          "en": "crab",
+          "zh": "螃蟹",
+          "emoji": "🦀",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K6",
+      "title": "水果",
+      "emoji": "🍎",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k6:1",
+          "en": "apple",
+          "zh": "蘋果",
+          "emoji": "🍎",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k6:2",
+          "en": "banana",
+          "zh": "香蕉",
+          "emoji": "🍌",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k6:3",
+          "en": "orange",
+          "zh": "橘子",
+          "emoji": "🍊",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k6:4",
+          "en": "grape",
+          "zh": "葡萄",
+          "emoji": "🍇",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K7",
+      "title": "點心和飲料",
+      "emoji": "🥛",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k7:1",
+          "en": "milk",
+          "zh": "牛奶",
+          "emoji": "🥛",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k7:2",
+          "en": "water",
+          "zh": "水",
+          "emoji": "💧",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k7:3",
+          "en": "cookie",
+          "zh": "餅乾",
+          "emoji": "🍪",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k7:4",
+          "en": "juice",
+          "zh": "果汁",
+          "emoji": "🧃",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K8",
+      "title": "食物",
+      "emoji": "🍚",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k8:1",
+          "en": "rice",
+          "zh": "飯",
+          "emoji": "🍚",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k8:2",
+          "en": "egg",
+          "zh": "蛋",
+          "emoji": "🥚",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k8:3",
+          "en": "bread",
+          "zh": "麵包",
+          "emoji": "🍞",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k8:4",
+          "en": "pizza",
+          "zh": "披薩",
+          "emoji": "🍕",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K9",
+      "title": "蔬菜",
+      "emoji": "🥕",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k9:1",
+          "en": "carrot",
+          "zh": "胡蘿蔔",
+          "emoji": "🥕",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k9:2",
+          "en": "corn",
+          "zh": "玉米",
+          "emoji": "🌽",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k9:3",
+          "en": "potato",
+          "zh": "馬鈴薯",
+          "emoji": "🥔",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k9:4",
+          "en": "tomato",
+          "zh": "番茄",
+          "emoji": "🍅",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K10",
+      "title": "日常用品",
+      "emoji": "🪥",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k10:1",
+          "en": "toothbrush",
+          "zh": "牙刷",
+          "emoji": "🪥",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k10:2",
+          "en": "soap",
+          "zh": "肥皂",
+          "emoji": "🧼",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k10:3",
+          "en": "towel",
+          "zh": "毛巾",
+          "emoji": "🧺",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k10:4",
+          "en": "cup",
+          "zh": "杯子",
+          "emoji": "☕",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K11",
+      "title": "衣服與配件",
+      "emoji": "👕",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k11:1",
+          "en": "shirt",
+          "zh": "襯衫",
+          "emoji": "👕",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k11:2",
+          "en": "hat",
+          "zh": "帽子",
+          "emoji": "🧢",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k11:3",
+          "en": "shoes",
+          "zh": "鞋子",
+          "emoji": "👟",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k11:4",
+          "en": "dress",
+          "zh": "洋裝",
+          "emoji": "👗",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K12",
+      "title": "玩具與運動用品",
+      "emoji": "🧸",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k12:1",
+          "en": "ball",
+          "zh": "球",
+          "emoji": "⚽",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k12:2",
+          "en": "kite",
+          "zh": "風箏",
+          "emoji": "🪁",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k12:3",
+          "en": "doll",
+          "zh": "娃娃",
+          "emoji": "🪆",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k12:4",
+          "en": "teddy bear",
+          "zh": "泰迪熊",
+          "emoji": "🧸",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K13",
+      "title": "樂器",
+      "emoji": "🎹",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k13:1",
+          "en": "piano",
+          "zh": "鋼琴",
+          "emoji": "🎹",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k13:2",
+          "en": "guitar",
+          "zh": "吉他",
+          "emoji": "🎸",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k13:3",
+          "en": "drum",
+          "zh": "鼓",
+          "emoji": "🥁",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k13:4",
+          "en": "violin",
+          "zh": "小提琴",
+          "emoji": "🎻",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K14",
+      "title": "植物",
+      "emoji": "🌳",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k14:1",
+          "en": "tree",
+          "zh": "樹",
+          "emoji": "🌳",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k14:2",
+          "en": "flower",
+          "zh": "花",
+          "emoji": "🌸",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k14:3",
+          "en": "leaf",
+          "zh": "葉子",
+          "emoji": "🍃",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k14:4",
+          "en": "grass",
+          "zh": "草",
+          "emoji": "🌱",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K15",
+      "title": "數字",
+      "emoji": "🔢",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k15:1",
+          "en": "one",
+          "zh": "一",
+          "emoji": "1️⃣",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k15:2",
+          "en": "two",
+          "zh": "二",
+          "emoji": "2️⃣",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k15:3",
+          "en": "three",
+          "zh": "三",
+          "emoji": "3️⃣",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k15:4",
+          "en": "four",
+          "zh": "四",
+          "emoji": "4️⃣",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k15:5",
+          "en": "five",
+          "zh": "五",
+          "emoji": "5️⃣",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K16",
+      "title": "顏色",
+      "emoji": "🎨",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k16:1",
+          "en": "red",
+          "zh": "紅色",
+          "emoji": "🔴",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k16:2",
+          "en": "blue",
+          "zh": "藍色",
+          "emoji": "🔵",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k16:3",
+          "en": "yellow",
+          "zh": "黃色",
+          "emoji": "🟡",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k16:4",
+          "en": "green",
+          "zh": "綠色",
+          "emoji": "🟢",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K17",
+      "title": "身體",
+      "emoji": "✋",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k17:1",
+          "en": "hand",
+          "zh": "手",
+          "emoji": "✋",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k17:2",
+          "en": "eye",
+          "zh": "眼睛",
+          "emoji": "👁️",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k17:3",
+          "en": "ear",
+          "zh": "耳朵",
+          "emoji": "👂",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k17:4",
+          "en": "nose",
+          "zh": "鼻子",
+          "emoji": "👃",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K18",
+      "title": "家庭",
+      "emoji": "👪",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k18:1",
+          "en": "mother",
+          "zh": "媽媽",
+          "emoji": "👩",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k18:2",
+          "en": "father",
+          "zh": "爸爸",
+          "emoji": "👨",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k18:3",
+          "en": "sister",
+          "zh": "姊妹",
+          "emoji": "👧",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k18:4",
+          "en": "brother",
+          "zh": "兄弟",
+          "emoji": "👦",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K19",
+      "title": "節慶",
+      "emoji": "🎄",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k19:1",
+          "en": "Christmas",
+          "zh": "聖誕節",
+          "emoji": "🎄",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k19:2",
+          "en": "birthday",
+          "zh": "生日",
+          "emoji": "🎂",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k19:3",
+          "en": "Halloween",
+          "zh": "萬聖節",
+          "emoji": "🎃",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k19:4",
+          "en": "New Year",
+          "zh": "新年",
+          "emoji": "🎆",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K20",
+      "title": "相反詞",
+      "emoji": "↔️",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k20:1",
+          "en": "big",
+          "zh": "大的",
+          "emoji": "🐘",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k20:2",
+          "en": "small",
+          "zh": "小的",
+          "emoji": "🐜",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k20:3",
+          "en": "hot",
+          "zh": "熱的",
+          "emoji": "🔥",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k20:4",
+          "en": "cold",
+          "zh": "冷的",
+          "emoji": "🧊",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K21",
+      "title": "問候語",
+      "emoji": "👋",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k21:1",
+          "en": "hello",
+          "zh": "你好",
+          "emoji": "👋",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k21:2",
+          "en": "goodbye",
+          "zh": "再見",
+          "emoji": "🙋",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k21:3",
+          "en": "good morning",
+          "zh": "早安",
+          "emoji": "🌅",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k21:4",
+          "en": "good night",
+          "zh": "晚安",
+          "emoji": "🌙",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K22",
+      "title": "動作",
+      "emoji": "🏃",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k22:1",
+          "en": "run",
+          "zh": "跑",
+          "emoji": "🏃",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k22:2",
+          "en": "jump",
+          "zh": "跳",
+          "emoji": "🦘",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k22:3",
+          "en": "read",
+          "zh": "閱讀",
+          "emoji": "📖",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k22:4",
+          "en": "sleep",
+          "zh": "睡覺",
+          "emoji": "😴",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K23",
+      "title": "房子",
+      "emoji": "🏠",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k23:1",
+          "en": "door",
+          "zh": "門",
+          "emoji": "🚪",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k23:2",
+          "en": "window",
+          "zh": "窗戶",
+          "emoji": "🪟",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k23:3",
+          "en": "bed",
+          "zh": "床",
+          "emoji": "🛏️",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k23:4",
+          "en": "chair",
+          "zh": "椅子",
+          "emoji": "🪑",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K24",
+      "title": "城市",
+      "emoji": "🏙️",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k24:1",
+          "en": "school",
+          "zh": "學校",
+          "emoji": "🏫",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k24:2",
+          "en": "hospital",
+          "zh": "醫院",
+          "emoji": "🏥",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k24:3",
+          "en": "park",
+          "zh": "公園",
+          "emoji": "🏞️",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k24:4",
+          "en": "store",
+          "zh": "商店",
+          "emoji": "🏪",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K25",
+      "title": "大自然",
+      "emoji": "☀️",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k25:1",
+          "en": "sun",
+          "zh": "太陽",
+          "emoji": "☀️",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k25:2",
+          "en": "moon",
+          "zh": "月亮",
+          "emoji": "🌙",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k25:3",
+          "en": "rain",
+          "zh": "雨",
+          "emoji": "🌧️",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k25:4",
+          "en": "star",
+          "zh": "星星",
+          "emoji": "⭐",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    }
+  ]
+}

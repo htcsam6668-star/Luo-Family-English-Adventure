@@ -1,0 +1,1480 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="羅家英文"><meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="#7356d8"><link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icon-192.png"><link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<title>羅家英文冒險島｜教材測試 V1.4</title>
+<style>
+:root{font-family:system-ui,"Noto Sans TC",sans-serif;color:#29304c;background:#f2f0ff}*{box-sizing:border-box}body{margin:0}header{background:linear-gradient(110deg,#7151d9,#26b7c5);color:white;padding:16px}header>div{max-width:1050px;margin:auto;display:flex;gap:18px;align-items:center}header img{width:110px;border-radius:24px}main{max-width:1050px;margin:auto;padding:12px}.panel{background:#fff;border-radius:20px;padding:20px;margin:12px 0;box-shadow:0 5px 20px #493c8a12}h1{margin:0}button,select,input,textarea{font:inherit;border-radius:11px;padding:10px;border:1px solid #d6d5e4;max-width:100%}button{background:#6c55d9;color:white;border:0;cursor:pointer;margin:3px}button:disabled{opacity:.5;cursor:default}.secondary{background:#eef0ff;color:#493b9c}.tabs{display:flex;flex-wrap:wrap;gap:5px}.tabs button.active{background:#ffb94b;color:#3d2a00}.hidden{display:none!important}.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.card{padding:15px;border:1px solid #e8e5f4;border-radius:15px}.muted{color:#65708a}.center{text-align:center}.big{font-size:78px}.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.options button{min-height:70px}.good{color:#07805a}.bad{color:#bd314a}.stat{background:#f1eeff;border-radius:10px;padding:9px;display:inline-block;margin:3px}.notice{background:#fff2d4;border-radius:10px;padding:12px}label{display:inline-flex;flex-direction:column;gap:4px;margin:5px}input[type=file]{max-width:280px}footer{text-align:center;padding:20px;color:#667}.small{font-size:13px}pre{white-space:pre-wrap;word-break:break-word}@media(max-width:500px){header img{width:78px}.panel{padding:13px}.big{font-size:64px}.options{grid-template-columns:1fr}}
+</style></head><body><header><div><img src="./family-adventure.png" alt="姊姊弟弟與小龍"><div><h1>🏝️ 羅家英文冒險島</h1><p>家庭英文學習｜和小星一起去冒險</p></div></div></header><main>
+<section class="panel notice">選擇孩子開始冒險，答題集點，再到獎勵小舖挑選獎勵。</section>
+<section class="panel"><div class="row"><label>學習角色<select id="child"></select></label><label>年級<select id="grade"></select></label><label>學期<select id="semester"><option value="1">上學期</option><option value="2">下學期</option></select></label><label>課程類型<select id="track"><option value="textbook">學期課程／啟蒙</option><option value="supplement">生活主題補充練習</option></select></label><label>單元<select id="unit"></select></label></div><p id="source" class="muted small"></p><div id="tabs" class="tabs"><button data-tab="learn" class="active">📚 單字學習</button><button data-tab="quiz">🎯 測驗</button><button data-tab="review">🔁 錯題</button><button data-tab="records">📊 紀錄</button><button data-tab="curriculum">📖 教材</button><button data-tab="parent">👪 家長工具</button></div></section>
+<section id="learn" class="panel"><div id="learnCard" class="center"></div><div class="center"><button id="speak">🔊 發音</button><button id="prev" class="secondary">上一個</button><button id="next">下一個</button></div></section>
+<section id="quiz" class="panel hidden"><div class="row"><label>題型<select id="quizType"><option value="choice">中文選英文</option><option value="listen">聽英文選中文</option><option value="spell">中文拼英文</option></select></label><button id="start">開始測驗</button></div><div id="question">請選擇題型並開始。</div></section>
+<section id="review" class="panel hidden"><div id="reviewContent"></div><button id="reviewStart">開始錯題複習</button></section>
+<section id="records" class="panel hidden"><div id="recordContent"></div></section>
+<section id="curriculum" class="panel hidden"><h2>教材目錄</h2><div id="curriculumContent"></div></section>
+<section id="parent" class="panel hidden"><h2>家長工具（本機測試）</h2><p class="notice">此區尚無伺服器權限驗證，不是正式家長管理專區。</p><button id="export">匯出完整 JSON 備份</button><label>匯入教材 JSON（預覽後合併）<input type="file" id="import" accept=".json,application/json"></label><div id="importPreview"></div><h3>孩子紀錄</h3><div id="parentContent"></div></section>
+</main><footer>羅家英文冒險島 V1.4｜一起學英文，一起去冒險</footer>
+<script>
+const LEGACY_DATA=[
+['幼兒',[['apple','蘋果','🍎'],['dog','狗','🐶'],['cat','貓','🐱'],['sun','太陽','☀️'],['water','水','💧'],['banana','香蕉','🍌'],['red','紅色','🔴'],['blue','藍色','🔵'],['bird','鳥','🐦'],['fish','魚','🐟'],['milk','牛奶','🥛'],['book','書','📖'],['ball','球','⚽'],['car','汽車','🚗'],['tree','樹','🌳'],['star','星星','⭐'],['moon','月亮','🌙'],['hand','手','✋'],['eye','眼睛','👁️'],['egg','蛋','🥚']]],
+['低年級',[['school','學校','🏫'],['teacher','老師','👩‍🏫'],['pencil','鉛筆','✏️'],['chair','椅子','🪑'],['table','桌子','🪵'],['family','家庭','👨‍👩‍👧'],['mother','媽媽','👩'],['father','爸爸','👨'],['friend','朋友','🤝'],['happy','開心的','😊'],['sad','難過的','😢'],['run','跑','🏃'],['jump','跳','🦘'],['read','閱讀','📚'],['write','寫字','✍️'],['morning','早晨','🌅'],['night','夜晚','🌃'],['green','綠色','🟢'],['yellow','黃色','🟡'],['orange','橘子','🍊']]],
+['中年級',[['cloudy','多雲的','☁️'],['windy','有風的','🌬️'],['sunny','晴朗的','☀️'],['rainy','下雨的','🌧️'],['weather','天氣','🌤️'],['hungry','肚子餓的','🍽️'],['thirsty','口渴的','🥤'],['tired','疲倦的','😴'],['angry','生氣的','😠'],['warm','溫暖的','🌡️'],['cool','涼爽的','🍃'],['cold','寒冷的','🥶'],['hot','炎熱的','🔥'],['breakfast','早餐','🥪'],['lunch','午餐','🍱'],['dinner','晚餐','🍛'],['library','圖書館','📚'],['hospital','醫院','🏥'],['weekend','週末','🎈'],['birthday','生日','🎂']]],
+['高年級',[['environment','環境','🌍'],['recycle','回收','♻️'],['exercise','運動','🏃'],['healthy','健康的','💪'],['dangerous','危險的','⚠️'],['important','重要的','❗'],['different','不同的','🔀'],['because','因為','💬'],['before','在……之前','⏮️'],['after','在……之後','⏭️'],['usually','通常','🔁'],['sometimes','有時候','🕒'],['always','總是','♾️'],['never','從不','🚫'],['travel','旅行','🧳'],['country','國家','🗺️'],['future','未來','🚀'],['science','科學','🔬'],['history','歷史','🏛️'],['question','問題','❓']]]];
+const DEFAULT_WORDS=LEGACY_DATA.map(([level,words])=>({level,words:words.map(([en,zh,emoji])=>({en,zh,emoji,sourceType:"original",verified:false}))}));
+const GRADE_MAP={1:["原創啟蒙上","原創啟蒙下"],2:["原創基礎上","原創基礎下"],3:["Here We Go 1","Here We Go 2"],4:["Here We Go 3","Here We Go 4"],5:["Here We Go 5","Here We Go 6"],6:["Here We Go 7","Here We Go 8"]};
+const THEMES=["ABC字母","數字","顏色","形狀","家庭","身體","五官","水果","蔬菜","食物","飲料","動物","昆蟲","交通工具","玩具","衣服","天氣","季節","日常用品","學校","家裡","職業","動作","情緒","自然"];
+const SEED=[
+{grade:4,semester:1,unit:"U1",title:"天氣練習（原創示範）",words:["cloudy","windy","sunny","rainy","weather","warm","cool","cold","hot"]},
+{grade:4,semester:1,unit:"U2",title:"感受練習（原創示範）",words:["hungry","thirsty","tired","angry"]},
+{grade:0,semester:1,unit:"幼兒示範",title:"生活單字（原創示範）",words:["apple","dog","cat","sun","water","banana","red","blue","bird","fish","milk","book","ball","car","tree","star","moon","hand","eye","egg"]}
+];
+const DICT=new Map(DEFAULT_WORDS.flatMap(x=>x.words).map(w=>[w.en,w]));
+const seeded=SEED.map(s=>({...s,sourceType:"original",verified:false,words:s.words.map(en=>({...DICT.get(en),id:"original:"+en}))}));
+const SUPPLEMENT_UNITS=[{"grade":3,"semester":0,"unit":"T1","title":"數字 Numbers 1–15","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者提供的分年級補充清單；非翰林官方逐課教材","words":[{"id":"supplement:g3:t1:one","en":"one","zh":"一","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t1:two","en":"two","zh":"二","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t1:three","en":"three","zh":"三","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t1:four","en":"four","zh":"四","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t1:five","en":"five","zh":"五","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t1:six","en":"six","zh":"六","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t1:seven","en":"seven","zh":"七","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t1:eight","en":"eight","zh":"八","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t1:nine","en":"nine","zh":"九","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t1:ten","en":"ten","zh":"十","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t1:eleven","en":"eleven","zh":"十一","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t1:twelve","en":"twelve","zh":"十二","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t1:thirteen","en":"thirteen","zh":"十三","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t1:fourteen","en":"fourteen","zh":"十四","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t1:fifteen","en":"fifteen","zh":"十五","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false}]},{"grade":3,"semester":0,"unit":"T2","title":"文具 Classroom Objects","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者提供的分年級補充清單；非翰林官方逐課教材","words":[{"id":"supplement:g3:t2:book","en":"book","zh":"書","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t2:pen","en":"pen","zh":"原子筆","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t2:pencil","en":"pencil","zh":"鉛筆","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t2:eraser","en":"eraser","zh":"橡皮擦","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t2:ruler","en":"ruler","zh":"尺","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t2:marker","en":"marker","zh":"麥克筆","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false}]},{"grade":3,"semester":0,"unit":"T3","title":"顏色 Colors","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者提供的分年級補充清單；非翰林官方逐課教材","words":[{"id":"supplement:g3:t3:red","en":"red","zh":"紅色","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t3:yellow","en":"yellow","zh":"黃色","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t3:blue","en":"blue","zh":"藍色","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t3:green","en":"green","zh":"綠色","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t3:white","en":"white","zh":"白色","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t3:black","en":"black","zh":"黑色","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false}]},{"grade":3,"semester":0,"unit":"T4","title":"動物 Animals","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者提供的分年級補充清單；非翰林官方逐課教材","words":[{"id":"supplement:g3:t4:dog","en":"dog","zh":"狗","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t4:cat","en":"cat","zh":"貓","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t4:bird","en":"bird","zh":"鳥","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t4:fish","en":"fish","zh":"魚","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t4:rabbit","en":"rabbit","zh":"兔子","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t4:monkey","en":"monkey","zh":"猴子","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false}]},{"grade":3,"semester":0,"unit":"T5","title":"動作 Actions","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者提供的分年級補充清單；非翰林官方逐課教材","words":[{"id":"supplement:g3:t5:dance","en":"dance","zh":"跳舞","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t5:draw","en":"draw","zh":"畫畫","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t5:jump","en":"jump","zh":"跳","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t5:read","en":"read","zh":"閱讀","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g3:t5:sing","en":"sing","zh":"唱歌","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false}]},{"grade":4,"semester":0,"unit":"T1","title":"天氣 Weather","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者提供的分年級補充清單；非翰林官方逐課教材","words":[{"id":"supplement:g4:t1:sunny","en":"sunny","zh":"晴朗的","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t1:rainy","en":"rainy","zh":"下雨的","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t1:cloudy","en":"cloudy","zh":"多雲的","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t1:windy","en":"windy","zh":"有風的","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t1:snowy","en":"snowy","zh":"下雪的","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false}]},{"grade":4,"semester":0,"unit":"T2","title":"食物飲品 Food & Drinks","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者提供的分年級補充清單；非翰林官方逐課教材","words":[{"id":"supplement:g4:t2:apple","en":"apple","zh":"蘋果","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t2:banana","en":"banana","zh":"香蕉","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t2:milk","en":"milk","zh":"牛奶","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t2:tea","en":"tea","zh":"茶","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t2:juice","en":"juice","zh":"果汁","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t2:water","en":"water","zh":"水","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t2:ice-cream","en":"ice cream","zh":"冰淇淋","emoji":"📘","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t2:cake","en":"cake","zh":"蛋糕","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false}]},{"grade":4,"semester":0,"unit":"T3","title":"情緒感覺 Feelings","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者提供的分年級補充清單；非翰林官方逐課教材","words":[{"id":"supplement:g4:t3:happy","en":"happy","zh":"開心的","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t3:sad","en":"sad","zh":"難過的","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t3:angry","en":"angry","zh":"生氣的","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t3:tired","en":"tired","zh":"疲倦的","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t3:hungry","en":"hungry","zh":"肚子餓的","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t3:thirsty","en":"thirsty","zh":"口渴的","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false}]},{"grade":4,"semester":0,"unit":"T4","title":"場所 Places","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者提供的分年級補充清單；非翰林官方逐課教材","words":[{"id":"supplement:g4:t4:school","en":"school","zh":"學校","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t4:park","en":"park","zh":"公園","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t4:home","en":"home","zh":"家","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t4:zoo","en":"zoo","zh":"動物園","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false}]},{"grade":4,"semester":0,"unit":"T5","title":"形容詞 Adjectives","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者提供的分年級補充清單；非翰林官方逐課教材","words":[{"id":"supplement:g4:t5:big","en":"big","zh":"大的","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t5:small","en":"small","zh":"小的","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t5:tall","en":"tall","zh":"高的","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g4:t5:short","en":"short","zh":"矮的／短的","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false}]},{"grade":5,"semester":0,"unit":"T1","title":"星期 Days of the Week","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者提供的分年級補充清單；非翰林官方逐課教材","words":[{"id":"supplement:g5:t1:monday","en":"Monday","zh":"星期一","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t1:tuesday","en":"Tuesday","zh":"星期二","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t1:wednesday","en":"Wednesday","zh":"星期三","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t1:thursday","en":"Thursday","zh":"星期四","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t1:friday","en":"Friday","zh":"星期五","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t1:saturday","en":"Saturday","zh":"星期六","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t1:sunday","en":"Sunday","zh":"星期日","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false}]},{"grade":5,"semester":0,"unit":"T2","title":"作息 Routine","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者提供的分年級補充清單；非翰林官方逐課教材","words":[{"id":"supplement:g5:t2:o'clock","en":"o'clock","zh":"整點","emoji":"📘","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t2:get-up","en":"get up","zh":"起床","emoji":"📘","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t2:go-to-school","en":"go to school","zh":"去學校","emoji":"📘","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t2:go-to-bed","en":"go to bed","zh":"上床睡覺","emoji":"📘","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t2:do-homework","en":"do homework","zh":"寫功課","emoji":"📘","kind":"phrase","sourceType":"user_provided","verified":false}]},{"grade":5,"semester":0,"unit":"T3","title":"身體 Body Parts","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者提供的分年級補充清單；非翰林官方逐課教材","words":[{"id":"supplement:g5:t3:head","en":"head","zh":"頭","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t3:hair","en":"hair","zh":"頭髮","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t3:eyes","en":"eyes","zh":"眼睛（複數）","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t3:ears","en":"ears","zh":"耳朵（複數）","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t3:nose","en":"nose","zh":"鼻子","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t3:mouth","en":"mouth","zh":"嘴巴","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t3:hands","en":"hands","zh":"手（複數）","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t3:arms","en":"arms","zh":"手臂（複數）","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t3:legs","en":"legs","zh":"腿（複數）","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t3:feet","en":"feet","zh":"腳（複數）","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false}]},{"grade":5,"semester":0,"unit":"T4","title":"運動休閒 Sports & Hobbies","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者提供的分年級補充清單；非翰林官方逐課教材","words":[{"id":"supplement:g5:t4:play-basketball","en":"play basketball","zh":"打籃球","emoji":"📘","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t4:play-soccer","en":"play soccer","zh":"踢足球","emoji":"📘","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t4:swim","en":"swim","zh":"游泳","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t4:ride-a-bike","en":"ride a bike","zh":"騎腳踏車","emoji":"📘","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t4:watch-tv","en":"watch TV","zh":"看電視","emoji":"📘","kind":"phrase","sourceType":"user_provided","verified":false}]},{"grade":5,"semester":0,"unit":"T5","title":"交通 Transportation","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者提供的分年級補充清單；非翰林官方逐課教材","words":[{"id":"supplement:g5:t5:bus","en":"bus","zh":"公車","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t5:train","en":"train","zh":"火車","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t5:car","en":"car","zh":"汽車","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t5:taxi","en":"taxi","zh":"計程車","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g5:t5:mrt","en":"MRT","zh":"捷運","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false}]},{"grade":6,"semester":0,"unit":"T1","title":"職業 Occupations","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者提供的分年級補充清單；非翰林官方逐課教材","words":[{"id":"supplement:g6:t1:doctor","en":"doctor","zh":"醫師","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g6:t1:nurse","en":"nurse","zh":"護理師","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g6:t1:teacher","en":"teacher","zh":"老師","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g6:t1:student","en":"student","zh":"學生","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g6:t1:cook","en":"cook","zh":"廚師","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g6:t1:singer","en":"singer","zh":"歌手","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false}]},{"grade":6,"semester":0,"unit":"T2","title":"商店場所 Stores","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者提供的分年級補充清單；非翰林官方逐課教材","words":[{"id":"supplement:g6:t2:supermarket","en":"supermarket","zh":"超級市場","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g6:t2:bookstore","en":"bookstore","zh":"書店","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g6:t2:bakery","en":"bakery","zh":"麵包店","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g6:t2:toy-store","en":"toy store","zh":"玩具店","emoji":"📘","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:t2:hospital","en":"hospital","zh":"醫院","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false}]},{"grade":6,"semester":0,"unit":"T3","title":"家事 Household Chores","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者提供的分年級補充清單；非翰林官方逐課教材","words":[{"id":"supplement:g6:t3:clean-the-room","en":"clean the room","zh":"打掃房間","emoji":"📘","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:t3:wash-the-dishes","en":"wash the dishes","zh":"洗碗","emoji":"📘","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:t3:cook-dinner","en":"cook dinner","zh":"煮晚餐","emoji":"📘","kind":"phrase","sourceType":"user_provided","verified":false}]},{"grade":6,"semester":0,"unit":"T4","title":"季節 Seasons","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者提供的分年級補充清單；非翰林官方逐課教材","words":[{"id":"supplement:g6:t4:spring","en":"spring","zh":"春天","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g6:t4:summer","en":"summer","zh":"夏天","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g6:t4:autumn/fall","en":"autumn/fall","zh":"秋天","emoji":"📘","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:t4:winter","en":"winter","zh":"冬天","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false}]},{"grade":6,"semester":0,"unit":"T5","title":"日常詢問用語 Everyday Expressions","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者提供的分年級補充清單；非翰林官方逐課教材","words":[{"id":"supplement:g6:t5:hurt","en":"hurt","zh":"受傷／痛","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g6:t5:wrong","en":"wrong","zh":"不對／有問題","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false},{"id":"supplement:g6:t5:careful","en":"careful","zh":"小心的","emoji":"📘","kind":"word","sourceType":"user_provided","verified":false}]}];
+const STORE="luoEnglishCurriculumV14";
+const LEGACY="englishAdventureV1";const PREVIOUS="luoEnglishCurriculumV13";
+const $=id=>document.getElementById(id);
+const uid=()=>typeof crypto!=="undefined"&&crypto.randomUUID?crypto.randomUUID():"op-"+Date.now()+"-"+Math.random().toString(36).slice(2);
+function read(k){try{return JSON.parse(localStorage.getItem(k))}catch{return null}}
+function makeState(){let old=read(LEGACY);return {version:13,children:[{id:"luo-sister",name:"姊姊｜小四",grade:4,semester:1},{id:"luo-brother",name:"弟弟｜幼兒園小班",grade:0,semester:1}],active:"luo-sister",records:[],curriculum:seeded,legacyBackup:old,legacyImported:false}}
+let state=read(STORE);if(!state||!Array.isArray(state.children)||!Array.isArray(state.curriculum)) {let prev=read(PREVIOUS);state=(prev&&Array.isArray(prev.children)&&Array.isArray(prev.curriculum))?JSON.parse(JSON.stringify(prev)):makeState();}
+// Append-only seed. Never replace user-modified curriculum units or learning records.
+for(const unit of SUPPLEMENT_UNITS){if(!state.curriculum.some(c=>c.grade===unit.grade&&c.semester===0&&c.unit===unit.unit&&c.track==="supplement"))state.curriculum.push(unit)}
+function save(){try{localStorage.setItem(STORE,JSON.stringify(state))}catch{alert("本機儲存失敗，請先匯出備份")}}
+const kid=()=>state.children.find(c=>c.id===state.active)||state.children[0];
+const selected=()=>state.curriculum.find(c=>c.grade===Number($("grade").value)&&c.semester===(($("track").value==="supplement")?0:Number($("semester").value))&&c.unit===$("unit").value&&(c.track||"textbook")===$("track").value);
+let idx=0,quiz=null,tab="learn";
+function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function speak(en){if(!("speechSynthesis" in window)){alert("裝置不支援語音");return}speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(en);u.lang="en-US";u.rate=.8;speechSynthesis.speak(u)}
+function initSelectors(){let k=kid();$("child").innerHTML=state.children.map(c=>`<option value="${esc(c.id)}">${esc(c.name)}</option>`).join("");$("child").value=k.id;$("grade").innerHTML=[0,1,2,3,4,5,6].map(g=>`<option value="${g}">${g===0?"幼兒":`國小${g}年級`}</option>`).join("");$("grade").value=k.grade;$("semester").value=k.semester;renderUnits()}
+function renderUnits(){let g=Number($("grade").value),s=$("track").value==="supplement"?0:Number($("semester").value),units=state.curriculum.filter(c=>c.grade===g&&c.semester===s&&(c.track||"textbook")===$("track").value);$("semester").disabled=$("track").value==="supplement";$("unit").innerHTML=units.length?units.map(c=>`<option value="${esc(c.unit)}">${esc(c.unit)}｜${esc(c.title)}</option>`).join(""):`<option value="">尚未匯入單元</option>`;idx=0;renderLearn()}
+function words(){return selected()?.words||[]}
+function renderLearn(){let c=selected(),w=words()[idx%Math.max(1,words().length)];$("source").textContent=c?`${c.grade===0?"幼兒":`國小${c.grade}年級`}｜${c.track==="supplement"?"生活主題補充教材":(GRADE_MAP[c.grade]?.[c.semester-1]||"原創教材")}｜${c.unit}｜${c.sourceType==="user_provided"?"使用者提供／非官方逐課內容":(c.sourceType==="original"?"原創示範":"家長提供／待核對")}｜${c.verified?"已核對":"未核對"}`:"目前無教材；請至家長工具匯入。";$("learnCard").innerHTML=w?`<p class="muted">第 ${idx+1} / ${words().length} 個</p><div class="big">${esc(w.emoji||"📖")}</div><p class="muted">${w.kind==="phrase"?"片語練習":"單字練習"}</p><h1>${esc(w.en)}</h1><h2>${esc(w.zh)}</h2>`:"<p>目前單元尚無單字。</p>"}
+function switchTab(t){tab=t;document.querySelectorAll("main>section[id]").forEach(x=>x.classList.toggle("hidden",x.id!==t));document.querySelectorAll("[data-tab]").forEach(b=>b.classList.toggle("active",b.dataset.tab===t));if(t==="review")renderReview();if(t==="records")renderRecords();if(t==="curriculum")renderCurriculum();if(t==="parent")renderParent()}
+function shuffle(arr){let a=[...arr];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function startQuiz(review=false){let pool=words();if(review){let wrong=new Set(state.records.filter(r=>r.childId===kid().id&&r.unitId===unitId()).filter(r=>!r.firstCorrect).map(r=>r.wordId));pool=pool.filter(w=>wrong.has(w.id||w.en))}if(!pool.length){$("question").textContent="沒有可測驗的單字。";switchTab("quiz");return}let type=$("quizType").value;if(kid().grade===0&&type==="spell"){type="choice";$("quizType").value="choice"}quiz={items:shuffle(pool).slice(0,10),pos:0,score:0,type,locked:false,attempts:0};switchTab("quiz");renderQuestion()}
+function unitId(){let c=selected();return c?`${c.track||"textbook"}:${c.grade}-${c.semester}-${c.unit}`:""}
+function renderQuestion(){if(!quiz)return;if(quiz.pos>=quiz.items.length){$("question").innerHTML=`<h2>🎉 完成！首次答對 ${quiz.score} / ${quiz.items.length}</h2><button id="again">再玩一次</button>`;$("again").onclick=()=>startQuiz();return}let w=quiz.items[quiz.pos],type=quiz.type;let out=`<p>第 ${quiz.pos+1}/${quiz.items.length} 題</p>`;if(type==="spell")out+=`<h2>${esc(w.zh)} 的英文？</h2><input id="spellInput" autocomplete="off" autocapitalize="off" spellcheck="false"><button id="spellSubmit">確定</button>`;else{let options=shuffle([w,...shuffle(words().filter(x=>x!==w)).slice(0,3)]);out+=`<h2>${type==="listen"?"🔊 聽英文選中文":esc(w.zh)+" 的英文？"}</h2>${type==="listen"?'<button id="play">🔊 播放題目</button>':""}<div class="options">${options.map(o=>`<button class="answer" data-id="${esc(o.id||o.en)}">${esc(type==="listen"?o.zh:o.en)}</button>`).join("")}</div>`}out+='<div id="feedback" aria-live="polite"></div>';$("question").innerHTML=out;document.querySelectorAll(".answer").forEach(b=>b.onclick=()=>answer(b.dataset.id===(w.id||w.en)));if(type==="listen")$("play").onclick=()=>speak(w.en);if(type==="spell"){$("spellSubmit").onclick=()=>answer($("spellInput").value.trim().toLowerCase()===w.en.toLowerCase());$("spellInput").onkeydown=e=>{if(e.key==="Enter")$("spellSubmit").click()}}}
+function answer(ok){if(!quiz||quiz.locked)return;quiz.locked=true;let w=quiz.items[quiz.pos];if(ok)quiz.score++;let r={operationId:uid(),childId:kid().id,unitId:unitId(),wordId:w.id||w.en,firstCorrect:ok,totalAttempts:1,errorCount:ok?0:1,answeredAt:new Date().toISOString(),type:quiz.type};state.records.push(r);save();document.querySelectorAll(".answer,#spellInput,#spellSubmit").forEach(x=>x.disabled=true);$("feedback").innerHTML=`<p class="${ok?"good":"bad"}">${ok?"答對了！":"再試試！"} 答案：${esc(w.en)}（${esc(w.zh)}）</p><button id="advance">下一題 ➜</button>`;let go=()=>{if(!quiz||!quiz.locked)return;quiz.pos++;quiz.locked=false;renderQuestion()};$("advance").onclick=go;if(kid().grade===0)setTimeout(go,ok?1100:1800)}
+function renderReview(){let wrong=new Set(state.records.filter(r=>r.childId===kid().id&&r.unitId===unitId()&&!r.firstCorrect).map(r=>r.wordId));$("reviewContent").innerHTML=`<p>本單元曾經答錯的單字：${wrong.size} 個</p>${words().filter(w=>wrong.has(w.id||w.en)).map(w=>`<span class="stat">${esc(w.en)}｜${esc(w.zh)}</span>`).join("")}`}
+function renderRecords(){let rs=state.records.filter(r=>r.childId===kid().id),ok=rs.filter(r=>r.firstCorrect).length;$("recordContent").innerHTML=`<span class="stat">首次作答：${rs.length}</span><span class="stat">首次答對：${ok}</span><span class="stat">首次正確率：${rs.length?Math.round(ok/rs.length*100):0}%</span><h3>最近 20 筆</h3><ul>${rs.slice(-20).reverse().map(r=>`<li>${esc(r.unitId)}｜${esc(r.wordId)}｜${r.firstCorrect?"✅":"❌"}｜${esc(r.answeredAt)}</li>`).join("")}</ul>`}
+function renderCurriculum(){let all=[];for(let g=1;g<=6;g++)for(let s=1;s<=2;s++){let cs=state.curriculum.filter(c=>c.grade===g&&c.semester===s);all.push(`<div class="card"><strong>國小${g}年級 ${s===1?"上":"下"}｜${GRADE_MAP[g][s-1]}</strong><p>${cs.length?cs.map(c=>`${esc(c.unit)}：${esc(c.title)}（${c.words.length} 字，${c.verified?"已核對":"未核對"}）`).join("<br>"):"尚無經核對單元資料"}</p></div>`)}$("curriculumContent").innerHTML=`<p class="muted">一二年級原創，三至六年級僅建立冊次映射；沒有來源的單元不冒充官方教材。</p><div class="grid">${all.join("")}</div><h3>三至六年級生活主題補充練習</h3><div class="grid">${[3,4,5,6].map(g=>`<div class="card"><b>國小${g}年級</b><p>${state.curriculum.filter(c=>c.grade===g&&c.track==="supplement").map(c=>`${esc(c.title)}（${c.words.length}）`).join("<br>")}</p></div>`).join("")}</div><h3>弟弟的 25 類主題規劃</h3><p>${THEMES.map(esc).join("、")}</p><p class="muted">25 類目前是分類規劃，不代表每類已填入單字。</p>`}
+function renderParent(){$("parentContent").innerHTML=state.children.map(c=>`<div class="stat">${esc(c.name)}｜${state.records.filter(r=>r.childId===c.id).length} 筆作答</div>`).join("")}
+function download(data,name){let u=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:"application/json"})),a=document.createElement("a");a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}
+$("child").onchange=e=>{state.active=e.target.value;save();initSelectors();quiz=null};$("grade").onchange=e=>{kid().grade=Number(e.target.value);save();renderUnits()};$("semester").onchange=e=>{kid().semester=Number(e.target.value);save();renderUnits()};$("unit").onchange=()=>{idx=0;renderLearn()};$("track").onchange=()=>{renderUnits();quiz=null};$("tabs").onclick=e=>{let b=e.target.closest("[data-tab]");if(b)switchTab(b.dataset.tab)};$("prev").onclick=()=>{if(words().length){idx=(idx-1+words().length)%words().length;renderLearn()}};$("next").onclick=()=>{if(words().length){idx=(idx+1)%words().length;renderLearn()}};$("speak").onclick=()=>{let w=words()[idx];if(w)speak(w.en)};$("start").onclick=()=>startQuiz();$("reviewStart").onclick=()=>startQuiz(true);$("export").onclick=()=>download(state,"luo-english-local-backup.json");
+$("import").onchange=async e=>{let f=e.target.files?.[0];if(!f)return;let box=$("importPreview");try{let v=JSON.parse(await f.text());if(!Array.isArray(v.units)||v.units.length>200)throw Error("需包含 units 陣列，最多 200 單元");let seen=new Set();for(let u of v.units){if(!Number.isInteger(u.grade)||u.grade<0||u.grade>6||![1,2].includes(u.semester)||typeof u.unit!=="string"||u.unit.length>40||typeof u.title!=="string"||u.title.length>120||!Array.isArray(u.words)||u.words.length>300)throw Error("單元欄位錯誤");let id=`${u.grade}-${u.semester}-${u.unit}`;if(seen.has(id))throw Error("檔案內單元重複："+id);seen.add(id);for(let w of u.words){if(typeof w.en!=="string"||!w.en.trim()||w.en.length>120||typeof w.zh!=="string"||!w.zh.trim()||w.zh.length>120)throw Error("單字欄位錯誤")}}let matches=v.units.filter(u=>state.curriculum.some(c=>c.grade===u.grade&&c.semester===u.semester&&c.unit===u.unit)).length;box.innerHTML=`<p class="notice">預覽：${v.units.length} 個單元、${v.units.reduce((n,u)=>n+u.words.length,0)} 筆詞彙；${matches} 個既有單元將合併。既有學習紀錄不刪除。</p><button id="confirmImport">確認匯入</button><button id="cancelImport" class="secondary">取消</button>`;$("cancelImport").onclick=()=>box.innerHTML="";$("confirmImport").onclick=()=>{let snapshot=JSON.stringify(state);try{for(let u of v.units){let old=state.curriculum.find(c=>c.grade===u.grade&&c.semester===u.semester&&c.unit===u.unit);let incoming={grade:u.grade,semester:u.semester,unit:u.unit,title:u.title,track:"textbook",sourceType:"parent",verified:false,sourceUrl:typeof u.sourceUrl==="string"?u.sourceUrl:"",words:u.words.map(w=>({id:`parent:${u.grade}-${u.semester}-${u.unit}:${w.en.toLowerCase()}`,en:w.en.trim(),zh:w.zh.trim(),emoji:typeof w.emoji==="string"?w.emoji:"📘"}))};if(old){let merged=new Map(old.words.map(w=>[w.en.toLowerCase(),w]));incoming.words.forEach(w=>merged.set(w.en.toLowerCase(),w));old.words=[...merged.values()];old.title=incoming.title;old.verified=false;old.sourceType="parent"}else state.curriculum.push(incoming)}save();initSelectors();box.textContent="匯入完成；原學習紀錄保留。"}catch(err){state=JSON.parse(snapshot);box.textContent="匯入失敗，已還原本機狀態："+err.message}}}catch(err){box.textContent="檔案驗證失敗："+err.message}e.target.value=""};
+// V1.4 local curriculum hardening. No cloud APIs are invoked.
+state.version=14;
+function normalizeAnswer(v){return String(v).normalize('NFKC').trim().replace(/\s+/g,' ').toLowerCase()}
+function cancelQuiz(){quiz=null;$('question').textContent='選擇已變更，請重新開始測驗。'}
+save=function(){localStorage.setItem(STORE,JSON.stringify(state))};
+function commit(next){localStorage.setItem(STORE,JSON.stringify(next));state=next}
+const originalStartQuiz=startQuiz;
+startQuiz=function(review=false){originalStartQuiz(review);if(quiz){quiz.childId=kid().id;quiz.unitKey=unitId();quiz.runId=uid();quiz.started=Date.now()}};
+const originalRenderQuestion=renderQuestion;
+renderQuestion=function(){originalRenderQuestion();if(!quiz)return;if($('spellSubmit')){$('spellSubmit').onclick=()=>answer(normalizeAnswer($('spellInput').value)===normalizeAnswer(quiz.items[quiz.pos].en))}};
+answer=function(ok){if(!quiz||quiz.locked||quiz.childId!==kid().id||quiz.unitKey!==unitId())return;let q=quiz,w=q.items[q.pos],r={operationId:uid(),questionId:q.runId+':'+q.pos,childId:q.childId,unitId:q.unitKey,wordId:w.id||w.en,firstCorrect:ok,totalAttempts:1,errorCount:ok?0:1,answeredAt:new Date().toISOString(),durationMs:Date.now()-q.started,rewardEligible:true,type:q.type,track:selected()?.track||'textbook',grade:Number($('grade').value)};try{commit({...state,records:[...state.records,r]})}catch(err){$('feedback').textContent='儲存失敗，尚未計入紀錄，請匯出備份後重試。';return}q.locked=true;if(ok)q.score++;document.querySelectorAll('.answer,#spellInput,#spellSubmit').forEach(x=>x.disabled=true);$('feedback').innerHTML=`<p class="${ok?'good':'bad'}">${ok?'答對了！':'一起記住這個答案！'} ${esc(w.en)}（${esc(w.zh)}）</p><button id="advance">下一題 ➜</button>`;let expectedPos=q.pos;let go=()=>{if(quiz!==q||!q.locked||q.pos!==expectedPos)return;q.pos++;q.locked=false;q.started=Date.now();renderQuestion()};$('advance').onclick=go;if(kid().grade===0){if(!ok)speak(w.en);setTimeout(go,ok?1100:1800)}};
+$('child').onchange=e=>{cancelQuiz();state.active=e.target.value;save();initSelectors();switchTab(tab)};
+for(let id of ['grade','semester','track'])$(id).onchange=()=>{cancelQuiz();renderUnits();switchTab(tab)};
+$('unit').onchange=()=>{cancelQuiz();idx=0;renderLearn();switchTab(tab)};
+const oldSwitchTab=switchTab;switchTab=function(t){oldSwitchTab(t);if(t!=='quiz')cancelQuiz()};
+function localStamp(){let p=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'2-digit',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());let a=Object.fromEntries(p.map(x=>[x.type,x.value]));return a.year+a.month+a.day+a.hour+a.minute}
+$('export').onclick=()=>download(state,'luo-english-local-backup_'+localStamp()+'.json');
+function validateUnits(units){if(!Array.isArray(units)||units.length>200)throw Error('最多 200 單元');let seen=new Set();return units.map(u=>{let track=u.track||'textbook';if(!['textbook','supplement'].includes(track)||!Number.isInteger(u.grade)||u.grade<0||u.grade>6||!(track==='supplement'?[0]:[1,2]).includes(u.semester)||typeof u.unit!=='string'||!u.unit.trim()||u.unit.length>40||typeof u.title!=='string'||u.title.length>120||!Array.isArray(u.words)||!u.words.length||u.words.length>300)throw Error('單元欄位錯誤');let key=`${track}:${u.grade}-${u.semester}-${u.unit}`;if(seen.has(key))throw Error('重複單元');seen.add(key);let enSeen=new Set();let words=u.words.map(w=>{if(typeof w.en!=='string'||!w.en.trim()||w.en.length>120||typeof w.zh!=='string'||!w.zh.trim()||w.zh.length>120)throw Error('單字欄位錯誤');let en=normalizeAnswer(w.en);if(enSeen.has(en))throw Error('單元內英文重複');enSeen.add(en);return {id:`parent:${key}:${en}`,en:w.en.trim(),zh:w.zh.trim(),emoji:typeof w.emoji==='string'?w.emoji.slice(0,30):'📘',kind:en.includes(' ')?'phrase':'word',sourceType:'parent',verified:false}});let url='';if(u.sourceUrl){let v=new URL(u.sourceUrl);if(!['https:','http:'].includes(v.protocol))throw Error('來源網址須為 HTTP(S)');url=v.href}return {grade:u.grade,semester:u.semester,unit:u.unit,title:u.title,track,sourceType:'parent',verified:false,sourceUrl:url,words}})}
+function mergeUnits(units){let next=JSON.parse(JSON.stringify(state));for(let incoming of units){let old=next.curriculum.find(c=>(c.track||'textbook')===incoming.track&&c.grade===incoming.grade&&c.semester===incoming.semester&&c.unit===incoming.unit);if(old){let existing=new Set(old.words.map(w=>normalizeAnswer(w.en)));for(let w of incoming.words)if(!existing.has(normalizeAnswer(w.en))){old.words.push(w);existing.add(normalizeAnswer(w.en))}}else next.curriculum.push(incoming)}return next}
+$('import').onchange=async e=>{let box=$('importPreview'),f=e.target.files?.[0];if(!f)return;try{if(f.size>2*1024*1024)throw Error('檔案超過 2 MB');let units=validateUnits(JSON.parse(await f.text()).units);let before=JSON.stringify(state);box.innerHTML=`<p>預覽：${units.length} 單元。既有翻譯、ID、紀錄保留。同名詞彙保留原值。</p><button id="confirmImport">確認匯入</button><button id="cancelImport">取消</button>`;$('cancelImport').onclick=()=>box.textContent='已取消';$('confirmImport').onclick=()=>{try{if(JSON.stringify(state)!==before)throw Error('預覽後資料已變更，請重新選檔');commit(mergeUnits(units));cancelQuiz();initSelectors();box.textContent='匯入完成'}catch(err){box.textContent='未匯入：'+err.message}}}catch(err){box.textContent='檔案驗證失敗：'+err.message}e.target.value=''};
+// Separate restoration path: original backup is never silently replaced by a teaching import.
+let label=document.createElement('label');label.innerHTML='還原 V1.3／V1.4 完整備份（預覽後取代本機測試資料）<input id="restore" type="file" accept=".json">';$('parent').append(label);let preview=document.createElement('div');preview.id='restorePreview';$('parent').append(preview);
+function validateBackup(v){if(!v||![13,14].includes(v.version)||!Array.isArray(v.children)||!v.children.length||v.children.length>10||!Array.isArray(v.records)||v.records.length>100000)throw Error('備份結構錯誤');let ids=new Set();for(let c of v.children){if(typeof c.id!=='string'||ids.has(c.id)||typeof c.name!=='string'||!Number.isInteger(c.grade)||c.grade<0||c.grade>6||![1,2].includes(c.semester))throw Error('角色資料錯誤');ids.add(c.id)}if(!ids.has(v.active))throw Error('作用中角色不存在');validateUnits(v.curriculum);for(let r of v.records)if(!r||!ids.has(r.childId)||typeof r.operationId!=='string'||typeof r.unitId!=='string'||typeof r.wordId!=='string'||typeof r.firstCorrect!=='boolean'||r.totalAttempts!==1||r.errorCount!==(r.firstCorrect?0:1)||!Number.isFinite(Date.parse(r.answeredAt)))throw Error('學習紀錄錯誤');let next=JSON.parse(JSON.stringify(v));next.version=14;return next}
+$('restore').onchange=async e=>{try{let f=e.target.files?.[0];if(!f)return;if(f.size>20*1024*1024)throw Error('備份超過 20 MB');let next=validateBackup(JSON.parse(await f.text()));preview.innerHTML=`<p>${next.children.length} 位孩子、${next.records.length} 筆紀錄。將取代此測試版資料，請先匯出目前備份。</p><button id="confirmRestore">確認還原</button><button id="cancelRestore">取消</button>`;$('cancelRestore').onclick=()=>preview.textContent='已取消';$('confirmRestore').onclick=()=>{try{commit(next);cancelQuiz();initSelectors();preview.textContent='還原完成'}catch(err){preview.textContent='還原失敗：'+err.message}}}catch(err){preview.textContent='未還原：'+err.message}e.target.value=''};
+let legacyLink=document.createElement('p');legacyLink.innerHTML='<a href="./legacy-v11.html">開啟原 V1.1（原本操作、孩子管理與歷史紀錄）</a>；資料獨立保留，不會轉寫雲端帳本。';$('parent').append(legacyLink);
+try{save()}catch(err){$('source').textContent='本機儲存不可用，請匯出備份。'}
+
+
+const PRACTICE_EXPANSION=[{"grade":3,"semester":0,"unit":"P1","title":"教室與生活核心片語","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g3:p1:1","en":"stand up","zh":"站起來","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g3:p1:2","en":"sit down","zh":"坐下","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g3:p1:3","en":"turn on","zh":"打開電器或燈","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g3:p1:4","en":"turn off","zh":"關掉電器或燈","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g3:p1:5","en":"open your book","zh":"打開書","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g3:p1:6","en":"close your book","zh":"闔上書","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g3:p1:7","en":"listen to the teacher","zh":"聽老師說話","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g3:p1:8","en":"look at the board","zh":"看著黑板","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g3:p1:9","en":"come in","zh":"進來","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g3:p1:10","en":"go to school","zh":"上學","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g3:p1:11","en":"go home","zh":"回家","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g3:p1:12","en":"wake up","zh":"醒來","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false}]},{"grade":3,"semester":0,"unit":"S1","title":"生活句型：自我、心情與天氣","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g3:s1:1","en":"What's your name?","zh":"你叫什麼名字？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s1:2","en":"My name is Kevin.","zh":"我的名字是 Kevin。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s1:3","en":"How old are you?","zh":"你幾歲？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s1:4","en":"I'm ten years old.","zh":"我十歲。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s1:5","en":"What do you look like?","zh":"你長什麼樣子？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s1:6","en":"I have big eyes and short hair.","zh":"我有大眼睛和短頭髮。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s1:7","en":"How do you feel?","zh":"你感覺如何？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s1:8","en":"Are you tired?","zh":"你累了嗎？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s1:9","en":"I'm hungry.","zh":"我餓了。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s1:10","en":"Yes, I am.","zh":"是的，我是。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s1:11","en":"No, I'm not.","zh":"不，我不是。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s1:12","en":"How's the weather?","zh":"天氣如何？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s1:13","en":"What's the weather like?","zh":"天氣怎麼樣？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s1:14","en":"It's sunny and warm.","zh":"天氣晴朗又溫暖。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false}]},{"grade":3,"semester":0,"unit":"S2","title":"生活句型：時間、喜好與位置","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g3:s2:1","en":"What time is it?","zh":"現在幾點？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s2:2","en":"It's ten o'clock.","zh":"現在十點。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s2:3","en":"What time do you get up?","zh":"你幾點起床？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s2:4","en":"I get up at six thirty.","zh":"我六點半起床。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s2:5","en":"Can you swim?","zh":"你會游泳嗎？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s2:6","en":"Yes, I can.","zh":"是的，我會。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s2:7","en":"No, I can't.","zh":"不，我不會。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s2:8","en":"Do you like monkeys?","zh":"你喜歡猴子嗎？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s2:9","en":"Yes, I do.","zh":"是的，我喜歡。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s2:10","en":"No, I don't.","zh":"不，我不喜歡。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s2:11","en":"What do you want?","zh":"你想要什麼？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s2:12","en":"I want some milk and cake.","zh":"我想要一些牛奶和蛋糕。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s2:13","en":"Where is the ball?","zh":"球在哪裡？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s2:14","en":"It's under the desk.","zh":"它在書桌下面。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s2:15","en":"Where are the books?","zh":"書在哪裡？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g3:s2:16","en":"They are on the chair.","zh":"它們在椅子上。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false}]},{"grade":4,"semester":0,"unit":"P1","title":"教室與生活核心片語","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g4:p1:1","en":"stand up","zh":"站起來","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g4:p1:2","en":"sit down","zh":"坐下","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g4:p1:3","en":"turn on","zh":"打開電器或燈","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g4:p1:4","en":"turn off","zh":"關掉電器或燈","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g4:p1:5","en":"open your book","zh":"打開書","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g4:p1:6","en":"close your book","zh":"闔上書","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g4:p1:7","en":"listen to the teacher","zh":"聽老師說話","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g4:p1:8","en":"look at the board","zh":"看著黑板","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g4:p1:9","en":"come in","zh":"進來","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g4:p1:10","en":"go to school","zh":"上學","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g4:p1:11","en":"go home","zh":"回家","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g4:p1:12","en":"wake up","zh":"醒來","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false}]},{"grade":4,"semester":0,"unit":"S1","title":"生活句型：自我、心情與天氣","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g4:s1:1","en":"What's your name?","zh":"你叫什麼名字？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s1:2","en":"My name is Kevin.","zh":"我的名字是 Kevin。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s1:3","en":"How old are you?","zh":"你幾歲？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s1:4","en":"I'm ten years old.","zh":"我十歲。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s1:5","en":"What do you look like?","zh":"你長什麼樣子？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s1:6","en":"I have big eyes and short hair.","zh":"我有大眼睛和短頭髮。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s1:7","en":"How do you feel?","zh":"你感覺如何？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s1:8","en":"Are you tired?","zh":"你累了嗎？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s1:9","en":"I'm hungry.","zh":"我餓了。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s1:10","en":"Yes, I am.","zh":"是的，我是。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s1:11","en":"No, I'm not.","zh":"不，我不是。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s1:12","en":"How's the weather?","zh":"天氣如何？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s1:13","en":"What's the weather like?","zh":"天氣怎麼樣？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s1:14","en":"It's sunny and warm.","zh":"天氣晴朗又溫暖。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false}]},{"grade":4,"semester":0,"unit":"S2","title":"生活句型：時間、喜好與位置","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g4:s2:1","en":"What time is it?","zh":"現在幾點？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s2:2","en":"It's ten o'clock.","zh":"現在十點。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s2:3","en":"What time do you get up?","zh":"你幾點起床？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s2:4","en":"I get up at six thirty.","zh":"我六點半起床。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s2:5","en":"Can you swim?","zh":"你會游泳嗎？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s2:6","en":"Yes, I can.","zh":"是的，我會。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s2:7","en":"No, I can't.","zh":"不，我不會。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s2:8","en":"Do you like monkeys?","zh":"你喜歡猴子嗎？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s2:9","en":"Yes, I do.","zh":"是的，我喜歡。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s2:10","en":"No, I don't.","zh":"不，我不喜歡。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s2:11","en":"What do you want?","zh":"你想要什麼？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s2:12","en":"I want some milk and cake.","zh":"我想要一些牛奶和蛋糕。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s2:13","en":"Where is the ball?","zh":"球在哪裡？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s2:14","en":"It's under the desk.","zh":"它在書桌下面。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s2:15","en":"Where are the books?","zh":"書在哪裡？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g4:s2:16","en":"They are on the chair.","zh":"它們在椅子上。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false}]},{"grade":5,"semester":0,"unit":"P1","title":"作息、休閒與家事片語","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g5:p1:1","en":"get up","zh":"起床","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:2","en":"do homework","zh":"做功課","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:3","en":"go to bed","zh":"上床睡覺","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:4","en":"take a shower","zh":"淋浴","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:5","en":"take a bath","zh":"泡澡","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:6","en":"have breakfast","zh":"吃早餐","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:7","en":"have lunch","zh":"吃午餐","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:8","en":"have dinner","zh":"吃晚餐","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:9","en":"play basketball","zh":"打籃球","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:10","en":"play soccer","zh":"踢足球","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:11","en":"play the piano","zh":"彈鋼琴","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:12","en":"play the violin","zh":"拉小提琴","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:13","en":"ride a bike","zh":"騎腳踏車","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:14","en":"watch TV","zh":"看電視","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:15","en":"by bus","zh":"搭公車","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:16","en":"by train","zh":"搭火車","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:17","en":"by MRT","zh":"搭捷運","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:18","en":"clean the room","zh":"打掃房間","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:19","en":"wash the dishes","zh":"洗碗","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:20","en":"cook dinner","zh":"做晚餐","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:21","en":"water the flowers","zh":"澆花","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:22","en":"give me a hand","zh":"幫我個忙","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:23","en":"take care","zh":"保重／小心","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:24","en":"have a cold","zh":"感冒","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:25","en":"get well soon","zh":"早日康復","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:26","en":"at school","zh":"在學校","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:27","en":"at home","zh":"在家","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:28","en":"watch a movie","zh":"看電影","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:29","en":"go to the movies","zh":"去看電影","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p1:30","en":"on foot","zh":"步行","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false}]},{"grade":5,"semester":0,"unit":"P2","title":"教室與生活片語複習","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g5:p2:1","en":"stand up","zh":"站起來","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p2:2","en":"sit down","zh":"坐下","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p2:3","en":"turn on","zh":"打開電器或燈","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p2:4","en":"turn off","zh":"關掉電器或燈","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p2:5","en":"open your book","zh":"打開書","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p2:6","en":"close your book","zh":"闔上書","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p2:7","en":"listen to the teacher","zh":"聽老師說話","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p2:8","en":"look at the board","zh":"看著黑板","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p2:9","en":"come in","zh":"進來","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p2:10","en":"go to school","zh":"上學","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p2:11","en":"go home","zh":"回家","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g5:p2:12","en":"wake up","zh":"醒來","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false}]},{"grade":5,"semester":0,"unit":"S1","title":"生活句型：自我與日常","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g5:s1:1","en":"What's your name?","zh":"你叫什麼名字？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:2","en":"My name is Kevin.","zh":"我的名字是 Kevin。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:3","en":"How old are you?","zh":"你幾歲？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:4","en":"I'm ten years old.","zh":"我十歲。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:5","en":"What do you look like?","zh":"你長什麼樣子？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:6","en":"I have big eyes and short hair.","zh":"我有大眼睛和短頭髮。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:7","en":"How do you feel?","zh":"你感覺如何？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:8","en":"Are you tired?","zh":"你累了嗎？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:9","en":"I'm hungry.","zh":"我餓了。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:10","en":"Yes, I am.","zh":"是的，我是。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:11","en":"No, I'm not.","zh":"不，我不是。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:12","en":"How's the weather?","zh":"天氣如何？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:13","en":"What's the weather like?","zh":"天氣怎麼樣？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:14","en":"It's sunny and warm.","zh":"天氣晴朗又溫暖。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:15","en":"What time is it?","zh":"現在幾點？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:16","en":"It's ten o'clock.","zh":"現在十點。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:17","en":"What time do you get up?","zh":"你幾點起床？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:18","en":"I get up at six thirty.","zh":"我六點半起床。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:19","en":"Can you swim?","zh":"你會游泳嗎？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:20","en":"Yes, I can.","zh":"是的，我會。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:21","en":"No, I can't.","zh":"不，我不會。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:22","en":"Do you like monkeys?","zh":"你喜歡猴子嗎？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:23","en":"Yes, I do.","zh":"是的，我喜歡。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:24","en":"No, I don't.","zh":"不，我不喜歡。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:25","en":"What do you want?","zh":"你想要什麼？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s1:26","en":"I want some milk and cake.","zh":"我想要一些牛奶和蛋糕。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false}]},{"grade":5,"semester":0,"unit":"S2","title":"生活句型：地點、能力與過去","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g5:s2:1","en":"Where is the ball?","zh":"球在哪裡？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s2:2","en":"It's under the desk.","zh":"它在書桌下面。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s2:3","en":"Where are the books?","zh":"書在哪裡？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s2:4","en":"They are on the chair.","zh":"它們在椅子上。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s2:5","en":"Where are you going?","zh":"你要去哪裡？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s2:6","en":"I'm going to the bakery.","zh":"我要去麵包店。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s2:7","en":"How can we get to the park?","zh":"我們可以怎麼去公園？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s2:8","en":"We can go there by bus.","zh":"我們可以搭公車去那裡。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s2:9","en":"We can go there on foot.","zh":"我們可以步行去那裡。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s2:10","en":"What do you want to be?","zh":"你想當什麼？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s2:11","en":"I want to be a doctor.","zh":"我想當醫生。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s2:12","en":"What does your father do?","zh":"你爸爸做什麼工作？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s2:13","en":"He is a cook.","zh":"他是一位廚師。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s2:14","en":"What are you doing?","zh":"你正在做什麼？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s2:15","en":"I'm doing my homework.","zh":"我正在做功課。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s2:16","en":"What is she doing?","zh":"她正在做什麼？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s2:17","en":"She is washing the dishes.","zh":"她正在洗碗。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s2:18","en":"Where did you go yesterday?","zh":"你昨天去了哪裡？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s2:19","en":"I went to the zoo.","zh":"我去了動物園。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s2:20","en":"What did you do last night?","zh":"你昨晚做了什麼？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g5:s2:21","en":"I cleaned my room.","zh":"我打掃了我的房間。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false}]},{"grade":5,"semester":0,"unit":"G1","title":"現在進行式挑戰","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g5:g1:1","en":"is reading","zh":"Look! He ___ a book.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"Look! He ___ a book.","explanation":"Look! 提醒正在發生的動作：he + is + 動詞-ing。","options":["is reading","reads","read","reading"],"fullSentence":"Look! He is reading a book."},{"id":"supplement:g5:g1:2","en":"are singing","zh":"Listen! They ___ in the classroom.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"Listen! They ___ in the classroom.","explanation":"they 用 are，再接動詞-ing。","options":["are singing","is singing","sings","singing"],"fullSentence":"Listen! They are singing in the classroom."},{"id":"supplement:g5:g1:3","en":"are dancing","zh":"They ___ now.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"They ___ now.","explanation":"now 表示現在正在做：they are dancing。","options":["are dancing","is dancing","dances","dancing"],"fullSentence":"They are dancing now."},{"id":"supplement:g5:g1:4","en":"am doing","zh":"I ___ my homework now.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"I ___ my homework now.","explanation":"I 的 be 動詞用 am。","options":["am doing","is doing","does","doing"],"fullSentence":"I am doing my homework now."},{"id":"supplement:g5:g1:5","en":"is washing","zh":"She ___ the dishes now.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"She ___ the dishes now.","explanation":"she 用 is washing 表示正在洗。","options":["is washing","are washing","washes","washing"],"fullSentence":"She is washing the dishes now."}]},{"grade":5,"semester":0,"unit":"G2","title":"現在簡單式挑戰","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g5:g2:1","en":"get","zh":"I ___ up at seven every day.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"I ___ up at seven every day.","explanation":"日常習慣用現在簡單式；I 接 get。","options":["get","gets","getting","got"],"fullSentence":"I get up at seven every day."},{"id":"supplement:g5:g2:2","en":"likes","zh":"She ___ apples.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"She ___ apples.","explanation":"現在簡單式第三人稱單數：like 加 s。","options":["likes","like","liking","to likes"],"fullSentence":"She likes apples."},{"id":"supplement:g5:g2:3","en":"goes","zh":"He usually ___ to school by bus.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"He usually ___ to school by bus.","explanation":"he 是第三人稱單數；go 改為 goes。","options":["goes","go","going","to go"],"fullSentence":"He usually goes to school by bus."},{"id":"supplement:g5:g2:4","en":"Do","zh":"___ you like monkeys?","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"___ you like monkeys?","explanation":"主詞 you 的一般動詞問句用 Do。","options":["Do","Does","Is","Are"],"fullSentence":"Do you like monkeys?"},{"id":"supplement:g5:g2:5","en":"does","zh":"What ___ your father do?","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"What ___ your father do?","explanation":"your father 是第三人稱單數，問句用 does。","options":["does","do","is","are"],"fullSentence":"What does your father do?"}]},{"grade":5,"semester":0,"unit":"G3","title":"過去簡單式挑戰","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g5:g3:1","en":"went","zh":"We ___ to the zoo yesterday.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"We ___ to the zoo yesterday.","explanation":"yesterday 指過去，go 的過去式是 went。","options":["went","go","goes","going"],"fullSentence":"We went to the zoo yesterday."},{"id":"supplement:g5:g3:2","en":"was","zh":"He ___ sick last week.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"He ___ sick last week.","explanation":"last week 指過去，he 搭配 was。","options":["was","is","were","be"],"fullSentence":"He was sick last week."},{"id":"supplement:g5:g3:3","en":"cleaned","zh":"I ___ my room last night.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"I ___ my room last night.","explanation":"last night 指過去；clean 加 ed。","options":["cleaned","clean","cleans","cleaning"],"fullSentence":"I cleaned my room last night."},{"id":"supplement:g5:g3:4","en":"go","zh":"Where did you ___ yesterday?","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"Where did you ___ yesterday?","explanation":"did 後面的主要動詞用原形 go。","options":["go","went","goes","going"],"fullSentence":"Where did you go yesterday?"},{"id":"supplement:g5:g3:5","en":"do","zh":"What did you ___ last night?","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"What did you ___ last night?","explanation":"did 問句後用原形 do。","options":["do","did","does","doing"],"fullSentence":"What did you do last night?"}]},{"grade":5,"semester":0,"unit":"G4","title":"易混淆搭配挑戰","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g5:g4:1","en":"play basketball","zh":"選出正確的「打籃球」。","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"選出正確的「打籃球」。","explanation":"一般活動用語中，play + 球類不加冠詞。","options":["play basketball","play the basketball","play a basketball","plays the basketball"],"fullSentence":"play basketball"},{"id":"supplement:g5:g4:2","en":"play the piano","zh":"選出正確的「彈鋼琴」。","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"選出正確的「彈鋼琴」。","explanation":"這裡練習常見搭配 play the piano。","options":["play the piano","play piano","play a piano","play the pianos"],"fullSentence":"play the piano"},{"id":"supplement:g5:g4:3","en":"have breakfast","zh":"選出正確的「吃早餐」。","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"選出正確的「吃早餐」。","explanation":"表示日常吃早餐時用 have breakfast。","options":["have breakfast","have a breakfast","have the breakfast","have breakfasts"],"fullSentence":"have breakfast"},{"id":"supplement:g5:g4:4","en":"go home","zh":"選出正確的「回家」。","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"選出正確的「回家」。","explanation":"home 在 go home 中作副詞，不加 to。","options":["go home","go to home","go to the home","go at home"],"fullSentence":"go home"},{"id":"supplement:g5:g4:5","en":"at home","zh":"選出正確的「在家」。","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"選出正確的「在家」。","explanation":"常見搭配是 at home。","options":["at home","at the home","in home","on home"],"fullSentence":"at home"},{"id":"supplement:g5:g4:6","en":"watch TV","zh":"選出正確的「看電視」。","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"選出正確的「看電視」。","explanation":"表示看電視這個活動時用 watch TV。","options":["watch TV","watch the TV","watch TVs","look TV"],"fullSentence":"watch TV"},{"id":"supplement:g5:g4:7","en":"by","zh":"We can go there ___ bus.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"We can go there ___ bus.","explanation":"交通方式：by bus。","options":["by","on","at","in"],"fullSentence":"We can go there by bus."},{"id":"supplement:g5:g4:8","en":"on","zh":"We can go there ___ foot.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"We can go there ___ foot.","explanation":"步行是 on foot。","options":["on","by","at","in"],"fullSentence":"We can go there on foot."}]},{"grade":5,"semester":0,"unit":"G5","title":"生活句型挑戰","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g5:g5:1","en":"is","zh":"The ball ___ under the desk.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"The ball ___ under the desk.","explanation":"單數 the ball 用 is。","options":["is","are","am","be"],"fullSentence":"The ball is under the desk."},{"id":"supplement:g5:g5:2","en":"are","zh":"The books ___ on the chair.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"The books ___ on the chair.","explanation":"複數 the books 用 are。","options":["are","is","am","be"],"fullSentence":"The books are on the chair."},{"id":"supplement:g5:g5:3","en":"swim","zh":"Can you ___?","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"Can you ___?","explanation":"can 後面接原形動詞。","options":["swim","swims","swimming","to swim"],"fullSentence":"Can you swim?"},{"id":"supplement:g5:g5:4","en":"to be","zh":"I want ___ a doctor.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"I want ___ a doctor.","explanation":"want to be + 職業：想成為……。","options":["to be","be","am","being"],"fullSentence":"I want to be a doctor."},{"id":"supplement:g5:g5:5","en":"Give","zh":"___ me a hand, please.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"___ me a hand, please.","explanation":"請求句用原形 Give；give me a hand 是幫我個忙。","options":["Give","Gives","Giving","Gave"],"fullSentence":"Give me a hand, please."}]},{"grade":6,"semester":0,"unit":"P1","title":"作息、休閒與家事片語","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g6:p1:1","en":"get up","zh":"起床","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:2","en":"do homework","zh":"做功課","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:3","en":"go to bed","zh":"上床睡覺","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:4","en":"take a shower","zh":"淋浴","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:5","en":"take a bath","zh":"泡澡","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:6","en":"have breakfast","zh":"吃早餐","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:7","en":"have lunch","zh":"吃午餐","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:8","en":"have dinner","zh":"吃晚餐","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:9","en":"play basketball","zh":"打籃球","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:10","en":"play soccer","zh":"踢足球","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:11","en":"play the piano","zh":"彈鋼琴","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:12","en":"play the violin","zh":"拉小提琴","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:13","en":"ride a bike","zh":"騎腳踏車","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:14","en":"watch TV","zh":"看電視","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:15","en":"by bus","zh":"搭公車","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:16","en":"by train","zh":"搭火車","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:17","en":"by MRT","zh":"搭捷運","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:18","en":"clean the room","zh":"打掃房間","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:19","en":"wash the dishes","zh":"洗碗","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:20","en":"cook dinner","zh":"做晚餐","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:21","en":"water the flowers","zh":"澆花","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:22","en":"give me a hand","zh":"幫我個忙","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:23","en":"take care","zh":"保重／小心","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:24","en":"have a cold","zh":"感冒","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:25","en":"get well soon","zh":"早日康復","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:26","en":"at school","zh":"在學校","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:27","en":"at home","zh":"在家","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:28","en":"watch a movie","zh":"看電影","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:29","en":"go to the movies","zh":"去看電影","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p1:30","en":"on foot","zh":"步行","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false}]},{"grade":6,"semester":0,"unit":"P2","title":"教室與生活片語複習","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g6:p2:1","en":"stand up","zh":"站起來","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p2:2","en":"sit down","zh":"坐下","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p2:3","en":"turn on","zh":"打開電器或燈","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p2:4","en":"turn off","zh":"關掉電器或燈","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p2:5","en":"open your book","zh":"打開書","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p2:6","en":"close your book","zh":"闔上書","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p2:7","en":"listen to the teacher","zh":"聽老師說話","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p2:8","en":"look at the board","zh":"看著黑板","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p2:9","en":"come in","zh":"進來","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p2:10","en":"go to school","zh":"上學","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p2:11","en":"go home","zh":"回家","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false},{"id":"supplement:g6:p2:12","en":"wake up","zh":"醒來","emoji":"🎒","kind":"phrase","sourceType":"user_provided","verified":false}]},{"grade":6,"semester":0,"unit":"S1","title":"生活句型：自我與日常","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g6:s1:1","en":"What's your name?","zh":"你叫什麼名字？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:2","en":"My name is Kevin.","zh":"我的名字是 Kevin。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:3","en":"How old are you?","zh":"你幾歲？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:4","en":"I'm ten years old.","zh":"我十歲。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:5","en":"What do you look like?","zh":"你長什麼樣子？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:6","en":"I have big eyes and short hair.","zh":"我有大眼睛和短頭髮。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:7","en":"How do you feel?","zh":"你感覺如何？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:8","en":"Are you tired?","zh":"你累了嗎？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:9","en":"I'm hungry.","zh":"我餓了。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:10","en":"Yes, I am.","zh":"是的，我是。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:11","en":"No, I'm not.","zh":"不，我不是。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:12","en":"How's the weather?","zh":"天氣如何？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:13","en":"What's the weather like?","zh":"天氣怎麼樣？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:14","en":"It's sunny and warm.","zh":"天氣晴朗又溫暖。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:15","en":"What time is it?","zh":"現在幾點？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:16","en":"It's ten o'clock.","zh":"現在十點。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:17","en":"What time do you get up?","zh":"你幾點起床？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:18","en":"I get up at six thirty.","zh":"我六點半起床。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:19","en":"Can you swim?","zh":"你會游泳嗎？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:20","en":"Yes, I can.","zh":"是的，我會。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:21","en":"No, I can't.","zh":"不，我不會。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:22","en":"Do you like monkeys?","zh":"你喜歡猴子嗎？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:23","en":"Yes, I do.","zh":"是的，我喜歡。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:24","en":"No, I don't.","zh":"不，我不喜歡。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:25","en":"What do you want?","zh":"你想要什麼？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s1:26","en":"I want some milk and cake.","zh":"我想要一些牛奶和蛋糕。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false}]},{"grade":6,"semester":0,"unit":"S2","title":"生活句型：地點、能力與過去","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g6:s2:1","en":"Where is the ball?","zh":"球在哪裡？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s2:2","en":"It's under the desk.","zh":"它在書桌下面。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s2:3","en":"Where are the books?","zh":"書在哪裡？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s2:4","en":"They are on the chair.","zh":"它們在椅子上。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s2:5","en":"Where are you going?","zh":"你要去哪裡？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s2:6","en":"I'm going to the bakery.","zh":"我要去麵包店。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s2:7","en":"How can we get to the park?","zh":"我們可以怎麼去公園？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s2:8","en":"We can go there by bus.","zh":"我們可以搭公車去那裡。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s2:9","en":"We can go there on foot.","zh":"我們可以步行去那裡。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s2:10","en":"What do you want to be?","zh":"你想當什麼？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s2:11","en":"I want to be a doctor.","zh":"我想當醫生。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s2:12","en":"What does your father do?","zh":"你爸爸做什麼工作？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s2:13","en":"He is a cook.","zh":"他是一位廚師。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s2:14","en":"What are you doing?","zh":"你正在做什麼？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s2:15","en":"I'm doing my homework.","zh":"我正在做功課。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s2:16","en":"What is she doing?","zh":"她正在做什麼？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s2:17","en":"She is washing the dishes.","zh":"她正在洗碗。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s2:18","en":"Where did you go yesterday?","zh":"你昨天去了哪裡？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s2:19","en":"I went to the zoo.","zh":"我去了動物園。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s2:20","en":"What did you do last night?","zh":"你昨晚做了什麼？","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false},{"id":"supplement:g6:s2:21","en":"I cleaned my room.","zh":"我打掃了我的房間。","emoji":"💬","kind":"sentence","sourceType":"user_provided","verified":false}]},{"grade":6,"semester":0,"unit":"G1","title":"現在進行式挑戰","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g6:g1:1","en":"is reading","zh":"Look! He ___ a book.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"Look! He ___ a book.","explanation":"Look! 提醒正在發生的動作：he + is + 動詞-ing。","options":["is reading","reads","read","reading"],"fullSentence":"Look! He is reading a book."},{"id":"supplement:g6:g1:2","en":"are singing","zh":"Listen! They ___ in the classroom.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"Listen! They ___ in the classroom.","explanation":"they 用 are，再接動詞-ing。","options":["are singing","is singing","sings","singing"],"fullSentence":"Listen! They are singing in the classroom."},{"id":"supplement:g6:g1:3","en":"are dancing","zh":"They ___ now.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"They ___ now.","explanation":"now 表示現在正在做：they are dancing。","options":["are dancing","is dancing","dances","dancing"],"fullSentence":"They are dancing now."},{"id":"supplement:g6:g1:4","en":"am doing","zh":"I ___ my homework now.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"I ___ my homework now.","explanation":"I 的 be 動詞用 am。","options":["am doing","is doing","does","doing"],"fullSentence":"I am doing my homework now."},{"id":"supplement:g6:g1:5","en":"is washing","zh":"She ___ the dishes now.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"She ___ the dishes now.","explanation":"she 用 is washing 表示正在洗。","options":["is washing","are washing","washes","washing"],"fullSentence":"She is washing the dishes now."}]},{"grade":6,"semester":0,"unit":"G2","title":"現在簡單式挑戰","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g6:g2:1","en":"get","zh":"I ___ up at seven every day.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"I ___ up at seven every day.","explanation":"日常習慣用現在簡單式；I 接 get。","options":["get","gets","getting","got"],"fullSentence":"I get up at seven every day."},{"id":"supplement:g6:g2:2","en":"likes","zh":"She ___ apples.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"She ___ apples.","explanation":"現在簡單式第三人稱單數：like 加 s。","options":["likes","like","liking","to likes"],"fullSentence":"She likes apples."},{"id":"supplement:g6:g2:3","en":"goes","zh":"He usually ___ to school by bus.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"He usually ___ to school by bus.","explanation":"he 是第三人稱單數；go 改為 goes。","options":["goes","go","going","to go"],"fullSentence":"He usually goes to school by bus."},{"id":"supplement:g6:g2:4","en":"Do","zh":"___ you like monkeys?","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"___ you like monkeys?","explanation":"主詞 you 的一般動詞問句用 Do。","options":["Do","Does","Is","Are"],"fullSentence":"Do you like monkeys?"},{"id":"supplement:g6:g2:5","en":"does","zh":"What ___ your father do?","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"What ___ your father do?","explanation":"your father 是第三人稱單數，問句用 does。","options":["does","do","is","are"],"fullSentence":"What does your father do?"}]},{"grade":6,"semester":0,"unit":"G3","title":"過去簡單式挑戰","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g6:g3:1","en":"went","zh":"We ___ to the zoo yesterday.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"We ___ to the zoo yesterday.","explanation":"yesterday 指過去，go 的過去式是 went。","options":["went","go","goes","going"],"fullSentence":"We went to the zoo yesterday."},{"id":"supplement:g6:g3:2","en":"was","zh":"He ___ sick last week.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"He ___ sick last week.","explanation":"last week 指過去，he 搭配 was。","options":["was","is","were","be"],"fullSentence":"He was sick last week."},{"id":"supplement:g6:g3:3","en":"cleaned","zh":"I ___ my room last night.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"I ___ my room last night.","explanation":"last night 指過去；clean 加 ed。","options":["cleaned","clean","cleans","cleaning"],"fullSentence":"I cleaned my room last night."},{"id":"supplement:g6:g3:4","en":"go","zh":"Where did you ___ yesterday?","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"Where did you ___ yesterday?","explanation":"did 後面的主要動詞用原形 go。","options":["go","went","goes","going"],"fullSentence":"Where did you go yesterday?"},{"id":"supplement:g6:g3:5","en":"do","zh":"What did you ___ last night?","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"What did you ___ last night?","explanation":"did 問句後用原形 do。","options":["do","did","does","doing"],"fullSentence":"What did you do last night?"}]},{"grade":6,"semester":0,"unit":"G4","title":"易混淆搭配挑戰","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g6:g4:1","en":"play basketball","zh":"選出正確的「打籃球」。","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"選出正確的「打籃球」。","explanation":"一般活動用語中，play + 球類不加冠詞。","options":["play basketball","play the basketball","play a basketball","plays the basketball"],"fullSentence":"play basketball"},{"id":"supplement:g6:g4:2","en":"play the piano","zh":"選出正確的「彈鋼琴」。","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"選出正確的「彈鋼琴」。","explanation":"這裡練習常見搭配 play the piano。","options":["play the piano","play piano","play a piano","play the pianos"],"fullSentence":"play the piano"},{"id":"supplement:g6:g4:3","en":"have breakfast","zh":"選出正確的「吃早餐」。","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"選出正確的「吃早餐」。","explanation":"表示日常吃早餐時用 have breakfast。","options":["have breakfast","have a breakfast","have the breakfast","have breakfasts"],"fullSentence":"have breakfast"},{"id":"supplement:g6:g4:4","en":"go home","zh":"選出正確的「回家」。","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"選出正確的「回家」。","explanation":"home 在 go home 中作副詞，不加 to。","options":["go home","go to home","go to the home","go at home"],"fullSentence":"go home"},{"id":"supplement:g6:g4:5","en":"at home","zh":"選出正確的「在家」。","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"選出正確的「在家」。","explanation":"常見搭配是 at home。","options":["at home","at the home","in home","on home"],"fullSentence":"at home"},{"id":"supplement:g6:g4:6","en":"watch TV","zh":"選出正確的「看電視」。","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"選出正確的「看電視」。","explanation":"表示看電視這個活動時用 watch TV。","options":["watch TV","watch the TV","watch TVs","look TV"],"fullSentence":"watch TV"},{"id":"supplement:g6:g4:7","en":"by","zh":"We can go there ___ bus.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"We can go there ___ bus.","explanation":"交通方式：by bus。","options":["by","on","at","in"],"fullSentence":"We can go there by bus."},{"id":"supplement:g6:g4:8","en":"on","zh":"We can go there ___ foot.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"We can go there ___ foot.","explanation":"步行是 on foot。","options":["on","by","at","in"],"fullSentence":"We can go there on foot."}]},{"grade":6,"semester":0,"unit":"G5","title":"生活句型挑戰","track":"supplement","sourceType":"user_provided","verified":false,"sourceNote":"使用者補充練習清單；非出版社逐課教材","words":[{"id":"supplement:g6:g5:1","en":"is","zh":"The ball ___ under the desk.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"The ball ___ under the desk.","explanation":"單數 the ball 用 is。","options":["is","are","am","be"],"fullSentence":"The ball is under the desk."},{"id":"supplement:g6:g5:2","en":"are","zh":"The books ___ on the chair.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"The books ___ on the chair.","explanation":"複數 the books 用 are。","options":["are","is","am","be"],"fullSentence":"The books are on the chair."},{"id":"supplement:g6:g5:3","en":"swim","zh":"Can you ___?","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"Can you ___?","explanation":"can 後面接原形動詞。","options":["swim","swims","swimming","to swim"],"fullSentence":"Can you swim?"},{"id":"supplement:g6:g5:4","en":"to be","zh":"I want ___ a doctor.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"I want ___ a doctor.","explanation":"want to be + 職業：想成為……。","options":["to be","be","am","being"],"fullSentence":"I want to be a doctor."},{"id":"supplement:g6:g5:5","en":"Give","zh":"___ me a hand, please.","emoji":"🎒","kind":"grammar","sourceType":"user_provided","verified":false,"prompt":"___ me a hand, please.","explanation":"請求句用原形 Give；give me a hand 是幫我個忙。","options":["Give","Gives","Giving","Gave"],"fullSentence":"Give me a hand, please."}]}];
+for(let u of PRACTICE_EXPANSION)if(!state.curriculum.some(c=>(c.track||'textbook')===u.track&&c.grade===u.grade&&c.semester===u.semester&&c.unit===u.unit))state.curriculum.push(u);
+// Display only lesson details, keeping provenance in the data rather than children's screens.
+const priorLearn=renderLearn;renderLearn=function(){priorLearn();let c=selected(),w=words()[idx%Math.max(1,words().length)];$('source').textContent=c?['國小'+c.grade+'年級',c.title,words().length+' 個練習'].join('｜'):'請選擇單元';if(c?.grade===0)$('source').textContent='幼兒｜'+c.title;if(w?.kind==='grammar')$('learnCard').innerHTML='<p>句型小提示</p><h2>'+esc(w.prompt)+'</h2><h1>'+esc(w.en)+'</h1><p>'+esc(w.explanation)+'</p>';};
+renderCurriculum=function(){$('curriculumContent').innerHTML='<div class="grid">'+[1,2,3,4,5,6].map(g=>'<div class="card"><h3>國小'+g+'年級</h3>'+['textbook','supplement'].map(t=>'<h4>'+(t==='textbook'?'學期課程':'主題與句型練習')+'</h4><p>'+state.curriculum.filter(c=>c.grade===g&&(c.track||'textbook')===t).map(c=>esc(c.title)+'（'+c.words.length+' 題）').join('<br>')+'</p>').join('')+'</div>').join('')+'</div>'};
+for(let [value,label] of [['grammarChoice','句型／文法選擇'],['grammarFill','句型／文法填空']]){let o=document.createElement('option');o.value=value;o.textContent=label;$('quizType').append(o)}
+const startBeforeExpansion=startQuiz;
+startQuiz=function(review=false){let c=selected(),t=$('quizType').value,isGrammar=c?.words.some(w=>w.kind==='grammar');if(isGrammar&&!['grammarChoice','grammarFill'].includes(t)){$('quizType').value='grammarChoice'}else if(!isGrammar&&['grammarChoice','grammarFill'].includes(t)){$('question').textContent='請先選擇句型挑戰單元，再開始文法題。';switchTab('quiz');return}startBeforeExpansion(review)};
+const renderBeforeExpansion=renderQuestion;
+renderQuestion=function(){if(!quiz||!['grammarChoice','grammarFill'].includes(quiz.type)||quiz.pos>=quiz.items.length){renderBeforeExpansion();return}let w=quiz.items[quiz.pos];$('question').innerHTML='<p>第 '+(quiz.pos+1)+' / '+quiz.items.length+' 題</p><h2>'+esc(w.prompt)+'</h2>'+(quiz.type==='grammarChoice'?'<div class="options">'+shuffle(w.options).map(x=>'<button class="grammar-answer">'+esc(x)+'</button>').join('')+'</div>':'<input id="grammarInput" aria-label="填入英文答案" autocomplete="off" autocapitalize="off" spellcheck="false"><button id="grammarSubmit">送出答案</button>')+'<div id="feedback" aria-live="polite"></div>';document.querySelectorAll('.grammar-answer').forEach(b=>b.onclick=()=>answer(normalizeAnswer(b.textContent)===normalizeAnswer(w.en)));if($('grammarSubmit')){$('grammarSubmit').onclick=()=>answer(normalizeAnswer($('grammarInput').value)===normalizeAnswer(w.en));$('grammarInput').onkeydown=e=>{if(e.key==='Enter')$('grammarSubmit').click()}}};
+const answerBeforeExpansion=answer;answer=function(ok){let q=quiz,w=q?.items[q.pos];if(!q||q.locked)return;answerBeforeExpansion(ok);if(q.locked){document.querySelectorAll('.grammar-answer,#grammarInput,#grammarSubmit').forEach(x=>x.disabled=true);if(w.explanation){let p=document.createElement('p');p.textContent=w.explanation;$('feedback').append(p)}}};
+$('speak').onclick=()=>{let w=words()[idx];if(w)speak(w.fullSentence||w.en)};
+// Export and restore already retain the additional question fields.
+const validateBeforeExpansion=validateUnits;validateUnits=function(units){let cleaned=validateBeforeExpansion(units);cleaned.forEach((u,i)=>u.words.forEach((w,j)=>{let raw=units[i].words[j];if(raw.kind==='grammar'){if(typeof raw.prompt!=='string'||!raw.prompt||raw.prompt.length>300||typeof raw.explanation!=='string'||raw.explanation.length>500||!Array.isArray(raw.options)||raw.options.length<2||raw.options.length>6||raw.options.some(x=>typeof x!=='string'||x.length>120)||!raw.options.includes(raw.en)||new Set(raw.options.map(normalizeAnswer)).size!==raw.options.length)throw Error('文法題格式錯誤');Object.assign(w,{kind:'grammar',prompt:raw.prompt,explanation:raw.explanation,options:[...raw.options],fullSentence:typeof raw.fullSentence==='string'?raw.fullSentence.slice(0,400):raw.en})}else if(['phrase','sentence'].includes(raw.kind))w.kind=raw.kind}));return cleaned};
+try{save()}catch{}
+
+if(kid().grade>=3)$("track").value="supplement";
+initSelectors();if("serviceWorker" in navigator&&location.protocol!=="file:")navigator.serviceWorker.register("./sw.js").catch(()=>{});
+</script><script>
+const ADVENTURE_CONTENT={
+  "titles": [
+    "神祕森林的呼喚",
+    "山洞裡的龍蛋",
+    "小星誕生了！",
+    "不會飛的小龍",
+    "黑暗龍王的傳說",
+    "第一次真正的飛翔",
+    "決戰岩石魔王格隆",
+    "通往冰雪世界的門",
+    "會說話的雪狐狸",
+    "消失的冰雪公主",
+    "被冰封的龍族村莊",
+    "小星學會冰晶魔法",
+    "冰雪城堡的大陷阱",
+    "決戰冰霜魔王寒牙",
+    "天空中的雷電島",
+    "失控的飛行魔法",
+    "弟弟的神祕能力",
+    "雷龍族的古老預言",
+    "消失的閃電寶石",
+    "穿越雷霆迷宮",
+    "決戰雷電魔王紫霆",
+    "火山裡的地下城市",
+    "會噴火的小恐龍",
+    "爸爸被困住了！",
+    "媽媽的治癒魔法",
+    "傳說中的火焰之心",
+    "小星的第二次進化",
+    "決戰烈焰魔王炎獄",
+    "會移動的魔法森林",
+    "精靈女王的請求",
+    "被偷走的生命種子",
+    "姐姐的魔法覺醒",
+    "弟弟與小龍軍團",
+    "千年神樹的祕密",
+    "決戰森林魔王藤皇",
+    "天空變成了黑色",
+    "黑暗龍族的入侵",
+    "小星被抓走了！",
+    "全家人的救援計畫",
+    "黑龍城堡的地下監獄",
+    "小星覺醒星空龍王",
+    "決戰暗影魔王闇影",
+    "七顆龍晶的祕密",
+    "星空神殿的大門",
+    "消失的七位守護龍",
+    "最後的龍族大軍",
+    "終焉降臨",
+    "星空龍王的終極型態",
+    "決戰滅星魔王終焉",
+    "邪惡女皇・邀普邀"
+  ],
+  "units": [
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K1",
+      "title": "交通工具",
+      "emoji": "🚗",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k1:1",
+          "en": "car",
+          "zh": "汽車",
+          "emoji": "🚗",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k1:2",
+          "en": "bus",
+          "zh": "公車",
+          "emoji": "🚌",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k1:3",
+          "en": "train",
+          "zh": "火車",
+          "emoji": "🚆",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k1:4",
+          "en": "bike",
+          "zh": "腳踏車",
+          "emoji": "🚲",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k1:5",
+          "en": "boat",
+          "zh": "船",
+          "emoji": "⛵",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K2",
+      "title": "動物",
+      "emoji": "🐶",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k2:1",
+          "en": "dog",
+          "zh": "狗",
+          "emoji": "🐶",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k2:2",
+          "en": "cat",
+          "zh": "貓",
+          "emoji": "🐱",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k2:3",
+          "en": "rabbit",
+          "zh": "兔子",
+          "emoji": "🐰",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k2:4",
+          "en": "elephant",
+          "zh": "大象",
+          "emoji": "🐘",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K3",
+      "title": "昆蟲",
+      "emoji": "🦋",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k3:1",
+          "en": "butterfly",
+          "zh": "蝴蝶",
+          "emoji": "🦋",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k3:2",
+          "en": "bee",
+          "zh": "蜜蜂",
+          "emoji": "🐝",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k3:3",
+          "en": "ant",
+          "zh": "螞蟻",
+          "emoji": "🐜",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k3:4",
+          "en": "ladybug",
+          "zh": "瓢蟲",
+          "emoji": "🐞",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K4",
+      "title": "鳥類",
+      "emoji": "🐦",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k4:1",
+          "en": "bird",
+          "zh": "鳥",
+          "emoji": "🐦",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k4:2",
+          "en": "duck",
+          "zh": "鴨子",
+          "emoji": "🦆",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k4:3",
+          "en": "chicken",
+          "zh": "雞",
+          "emoji": "🐔",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k4:4",
+          "en": "penguin",
+          "zh": "企鵝",
+          "emoji": "🐧",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K5",
+      "title": "河流與海洋動物",
+      "emoji": "🐟",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k5:1",
+          "en": "fish",
+          "zh": "魚",
+          "emoji": "🐟",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k5:2",
+          "en": "whale",
+          "zh": "鯨魚",
+          "emoji": "🐳",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k5:3",
+          "en": "dolphin",
+          "zh": "海豚",
+          "emoji": "🐬",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k5:4",
+          "en": "crab",
+          "zh": "螃蟹",
+          "emoji": "🦀",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K6",
+      "title": "水果",
+      "emoji": "🍎",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k6:1",
+          "en": "apple",
+          "zh": "蘋果",
+          "emoji": "🍎",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k6:2",
+          "en": "banana",
+          "zh": "香蕉",
+          "emoji": "🍌",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k6:3",
+          "en": "orange",
+          "zh": "橘子",
+          "emoji": "🍊",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k6:4",
+          "en": "grape",
+          "zh": "葡萄",
+          "emoji": "🍇",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K7",
+      "title": "點心和飲料",
+      "emoji": "🥛",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k7:1",
+          "en": "milk",
+          "zh": "牛奶",
+          "emoji": "🥛",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k7:2",
+          "en": "water",
+          "zh": "水",
+          "emoji": "💧",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k7:3",
+          "en": "cookie",
+          "zh": "餅乾",
+          "emoji": "🍪",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k7:4",
+          "en": "juice",
+          "zh": "果汁",
+          "emoji": "🧃",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K8",
+      "title": "食物",
+      "emoji": "🍚",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k8:1",
+          "en": "rice",
+          "zh": "飯",
+          "emoji": "🍚",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k8:2",
+          "en": "egg",
+          "zh": "蛋",
+          "emoji": "🥚",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k8:3",
+          "en": "bread",
+          "zh": "麵包",
+          "emoji": "🍞",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k8:4",
+          "en": "pizza",
+          "zh": "披薩",
+          "emoji": "🍕",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K9",
+      "title": "蔬菜",
+      "emoji": "🥕",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k9:1",
+          "en": "carrot",
+          "zh": "胡蘿蔔",
+          "emoji": "🥕",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k9:2",
+          "en": "corn",
+          "zh": "玉米",
+          "emoji": "🌽",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k9:3",
+          "en": "potato",
+          "zh": "馬鈴薯",
+          "emoji": "🥔",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k9:4",
+          "en": "tomato",
+          "zh": "番茄",
+          "emoji": "🍅",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K10",
+      "title": "日常用品",
+      "emoji": "🪥",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k10:1",
+          "en": "toothbrush",
+          "zh": "牙刷",
+          "emoji": "🪥",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k10:2",
+          "en": "soap",
+          "zh": "肥皂",
+          "emoji": "🧼",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k10:3",
+          "en": "towel",
+          "zh": "毛巾",
+          "emoji": "🧺",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k10:4",
+          "en": "cup",
+          "zh": "杯子",
+          "emoji": "☕",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K11",
+      "title": "衣服與配件",
+      "emoji": "👕",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k11:1",
+          "en": "shirt",
+          "zh": "襯衫",
+          "emoji": "👕",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k11:2",
+          "en": "hat",
+          "zh": "帽子",
+          "emoji": "🧢",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k11:3",
+          "en": "shoes",
+          "zh": "鞋子",
+          "emoji": "👟",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k11:4",
+          "en": "dress",
+          "zh": "洋裝",
+          "emoji": "👗",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K12",
+      "title": "玩具與運動用品",
+      "emoji": "🧸",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k12:1",
+          "en": "ball",
+          "zh": "球",
+          "emoji": "⚽",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k12:2",
+          "en": "kite",
+          "zh": "風箏",
+          "emoji": "🪁",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k12:3",
+          "en": "doll",
+          "zh": "娃娃",
+          "emoji": "🪆",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k12:4",
+          "en": "teddy bear",
+          "zh": "泰迪熊",
+          "emoji": "🧸",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K13",
+      "title": "樂器",
+      "emoji": "🎹",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k13:1",
+          "en": "piano",
+          "zh": "鋼琴",
+          "emoji": "🎹",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k13:2",
+          "en": "guitar",
+          "zh": "吉他",
+          "emoji": "🎸",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k13:3",
+          "en": "drum",
+          "zh": "鼓",
+          "emoji": "🥁",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k13:4",
+          "en": "violin",
+          "zh": "小提琴",
+          "emoji": "🎻",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K14",
+      "title": "植物",
+      "emoji": "🌳",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k14:1",
+          "en": "tree",
+          "zh": "樹",
+          "emoji": "🌳",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k14:2",
+          "en": "flower",
+          "zh": "花",
+          "emoji": "🌸",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k14:3",
+          "en": "leaf",
+          "zh": "葉子",
+          "emoji": "🍃",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k14:4",
+          "en": "grass",
+          "zh": "草",
+          "emoji": "🌱",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K15",
+      "title": "數字",
+      "emoji": "🔢",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k15:1",
+          "en": "one",
+          "zh": "一",
+          "emoji": "1️⃣",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k15:2",
+          "en": "two",
+          "zh": "二",
+          "emoji": "2️⃣",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k15:3",
+          "en": "three",
+          "zh": "三",
+          "emoji": "3️⃣",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k15:4",
+          "en": "four",
+          "zh": "四",
+          "emoji": "4️⃣",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k15:5",
+          "en": "five",
+          "zh": "五",
+          "emoji": "5️⃣",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K16",
+      "title": "顏色",
+      "emoji": "🎨",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k16:1",
+          "en": "red",
+          "zh": "紅色",
+          "emoji": "🔴",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k16:2",
+          "en": "blue",
+          "zh": "藍色",
+          "emoji": "🔵",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k16:3",
+          "en": "yellow",
+          "zh": "黃色",
+          "emoji": "🟡",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k16:4",
+          "en": "green",
+          "zh": "綠色",
+          "emoji": "🟢",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K17",
+      "title": "身體",
+      "emoji": "✋",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k17:1",
+          "en": "hand",
+          "zh": "手",
+          "emoji": "✋",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k17:2",
+          "en": "eye",
+          "zh": "眼睛",
+          "emoji": "👁️",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k17:3",
+          "en": "ear",
+          "zh": "耳朵",
+          "emoji": "👂",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k17:4",
+          "en": "nose",
+          "zh": "鼻子",
+          "emoji": "👃",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K18",
+      "title": "家庭",
+      "emoji": "👪",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k18:1",
+          "en": "mother",
+          "zh": "媽媽",
+          "emoji": "👩",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k18:2",
+          "en": "father",
+          "zh": "爸爸",
+          "emoji": "👨",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k18:3",
+          "en": "sister",
+          "zh": "姊妹",
+          "emoji": "👧",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k18:4",
+          "en": "brother",
+          "zh": "兄弟",
+          "emoji": "👦",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K19",
+      "title": "節慶",
+      "emoji": "🎄",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k19:1",
+          "en": "Christmas",
+          "zh": "聖誕節",
+          "emoji": "🎄",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k19:2",
+          "en": "birthday",
+          "zh": "生日",
+          "emoji": "🎂",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k19:3",
+          "en": "Halloween",
+          "zh": "萬聖節",
+          "emoji": "🎃",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k19:4",
+          "en": "New Year",
+          "zh": "新年",
+          "emoji": "🎆",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K20",
+      "title": "相反詞",
+      "emoji": "↔️",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k20:1",
+          "en": "big",
+          "zh": "大的",
+          "emoji": "🐘",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k20:2",
+          "en": "small",
+          "zh": "小的",
+          "emoji": "🐜",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k20:3",
+          "en": "hot",
+          "zh": "熱的",
+          "emoji": "🔥",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k20:4",
+          "en": "cold",
+          "zh": "冷的",
+          "emoji": "🧊",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K21",
+      "title": "問候語",
+      "emoji": "👋",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k21:1",
+          "en": "hello",
+          "zh": "你好",
+          "emoji": "👋",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k21:2",
+          "en": "goodbye",
+          "zh": "再見",
+          "emoji": "🙋",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k21:3",
+          "en": "good morning",
+          "zh": "早安",
+          "emoji": "🌅",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k21:4",
+          "en": "good night",
+          "zh": "晚安",
+          "emoji": "🌙",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K22",
+      "title": "動作",
+      "emoji": "🏃",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k22:1",
+          "en": "run",
+          "zh": "跑",
+          "emoji": "🏃",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k22:2",
+          "en": "jump",
+          "zh": "跳",
+          "emoji": "🦘",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k22:3",
+          "en": "read",
+          "zh": "閱讀",
+          "emoji": "📖",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k22:4",
+          "en": "sleep",
+          "zh": "睡覺",
+          "emoji": "😴",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K23",
+      "title": "房子",
+      "emoji": "🏠",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k23:1",
+          "en": "door",
+          "zh": "門",
+          "emoji": "🚪",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k23:2",
+          "en": "window",
+          "zh": "窗戶",
+          "emoji": "🪟",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k23:3",
+          "en": "bed",
+          "zh": "床",
+          "emoji": "🛏️",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k23:4",
+          "en": "chair",
+          "zh": "椅子",
+          "emoji": "🪑",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K24",
+      "title": "城市",
+      "emoji": "🏙️",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k24:1",
+          "en": "school",
+          "zh": "學校",
+          "emoji": "🏫",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k24:2",
+          "en": "hospital",
+          "zh": "醫院",
+          "emoji": "🏥",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k24:3",
+          "en": "park",
+          "zh": "公園",
+          "emoji": "🏞️",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k24:4",
+          "en": "store",
+          "zh": "商店",
+          "emoji": "🏪",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 0,
+      "semester": 0,
+      "unit": "K25",
+      "title": "大自然",
+      "emoji": "☀️",
+      "track": "supplement",
+      "sourceType": "original",
+      "verified": false,
+      "words": [
+        {
+          "id": "preschool:k25:1",
+          "en": "sun",
+          "zh": "太陽",
+          "emoji": "☀️",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k25:2",
+          "en": "moon",
+          "zh": "月亮",
+          "emoji": "🌙",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k25:3",
+          "en": "rain",
+          "zh": "雨",
+          "emoji": "🌧️",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        },
+        {
+          "id": "preschool:k25:4",
+          "en": "star",
+          "zh": "星星",
+          "emoji": "⭐",
+          "kind": "word",
+          "sourceType": "original",
+          "verified": false
+        }
+      ]
+    }
+  ]
+};
+// Family navigation and local-only adventure progress.
+const isYoung=()=>kid().id==='luo-brother'||kid().grade===0;
+for(let u of ADVENTURE_CONTENT.units)if(!state.curriculum.some(c=>c.grade===0&&c.semester===0&&c.unit===u.unit))state.curriculum.push(u);
+state.adventure=state.adventure||{};
+function adventureState(){return state.adventure[kid().id]||(state.adventure[kid().id]={bosses:[]})}
+function earnedPoints(childId=kid().id){let unique=new Set();let wordKeys=new Map(state.curriculum.flatMap(c=>c.words.map(w=>[w.id||w.en,normalizeAnswer(w.en)])));for(let r of state.records)if(r.childId===childId&&r.firstCorrect&&r.rewardEligible){let day=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(r.answeredAt));unique.add(day+':'+(wordKeys.get(r.wordId)||r.wordId))}return unique.size*2}
+function stageOpen(n,points=earnedPoints(),passed=adventureState().bosses){return points>=(n-1)*50&&Array.from({length:Math.floor((n-1)/7)},(_,i)=>(i+1)*7).every(b=>passed.includes(b))}
+let bossRun=null;
+const css=document.createElement('style');css.textContent=`.family-top{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;max-width:1050px;margin:10px auto;padding:0 12px}.hero-choice{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin:26px 0}.hero-choice button{background:#f4f0ff;color:#342762;border:3px solid #ded4ff;min-width:210px;padding:20px;font-weight:800;font-size:22px}.portrait{display:block;width:138px;height:138px;border-radius:50%;margin:0 auto 14px;background-image:url('./family-adventure.png');background-size:330px;border:5px solid white;box-shadow:0 5px 15px #402b7033}.portrait.sister{background-position:-165px -80px}.portrait.brother{background-position:-20px -135px}.theme-button{display:flex;align-items:center;gap:14px;background:#f7f2ff;color:#342762;text-align:left;padding:18px;border:2px solid #e5d9ff;min-height:100px;font-size:21px}.theme-button span{font-size:44px}.stage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.stage-card{background:#faf7ff;border:2px solid #e0d5f7;border-radius:18px;padding:14px;color:#342762;text-align:left;min-height:150px}.stage-card.boss{border-color:#f3b657;background:#fff5df}.stage-card:disabled{opacity:.62}.stage-art{display:block;font-size:36px}.young .options{grid-template-columns:repeat(2,minmax(0,1fr))}.young .options button{min-height:120px;font-size:22px}.picture-option{display:block;font-size:52px}.young #quiz> .row{display:none}.young #source{font-size:17px}#bossGame .options button{font-size:22px;min-height:90px}@media(max-width:500px){.hero-choice{gap:10px}.hero-choice button{min-width:0;width:46%;padding:10px;font-size:18px}.portrait{width:110px;height:110px}.stage-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stage-card{font-size:16px}}`;document.head.append(css);
+const familyToolbar=document.createElement('div');familyToolbar.className='family-top';familyToolbar.innerHTML='<button id="familyHome" class="secondary">🏝️ 換冒險家</button><button id="backCategories" class="secondary hidden">🧩 返回分類</button><button id="parentEntry" class="secondary">👪 家長專區</button>';document.querySelector('header').after(familyToolbar);
+const home=document.createElement('section');home.className='panel center';home.id='familyHomePage';home.innerHTML='<h2>今天誰要去冒險？</h2><p>和小星一起探索英文冒險島！</p><div class="hero-choice"><button data-family="luo-sister"><span class="portrait sister" role="img" aria-label="小四女生姊姊"></span>姊姊<small style="display:block">國小四年級</small></button><button data-family="luo-brother"><span class="portrait brother" role="img" aria-label="幼稚園小班弟弟"></span>弟弟<small style="display:block">幼稚園小班</small></button></div>';document.querySelector('main').prepend(home);
+const controls=$('child').closest('section');controls.id='learningControls';
+const categories=document.createElement('section');categories.id='categories';categories.className='panel hidden';categories.innerHTML='<h2>弟弟想去哪裡玩？</h2><p>點一個圖案，聽英文、找答案！</p><div class="grid" id="categoryGrid"></div>';controls.after(categories);
+const adventure=document.createElement('section');adventure.id='adventure';adventure.className='panel hidden';adventure.innerHTML='<h2>龍蛋守護者：星空龍族傳說</h2><div id="pointSummary"></div><p>每答對一個不同單字，每天可集 2 點。同一天重複練習不重複給點。每 50 點前進一關；魔王挑戰答對 4 / 5 題即可通關。</p><div id="bossGame"></div><div id="stageDetail" aria-live="polite"></div><div class="stage-grid" id="stageGrid"></div>';categories.after(adventure);
+for(let key of ['records','parent','curriculum'])document.querySelector('[data-tab="'+key+'"]')?.remove();
+for(let [key,label] of [['categories','🧩 主題分類'],['adventure','🐉 冒險與集點']]){let b=document.createElement('button');b.dataset.tab=key;b.textContent=label;$('tabs').append(b)}
+$('parent').querySelector('h2').textContent='家長專區';let parentActions=document.createElement('div');parentActions.className='row';parentActions.innerHTML='<button id="parentRecords">📊 學習紀錄</button><button id="parentCurriculum">📖 教材管理</button><button id="parentOverview">👪 家長管理</button>';let parentView=document.createElement('div');parentView.id='parentView';$('parent').prepend(parentActions);parentActions.after(parentView);
+$('parentRecords').onclick=()=>{renderRecords();$('parentView').innerHTML=$('recordContent').innerHTML};$('parentCurriculum').onclick=()=>{renderCurriculum();$('parentView').innerHTML=$('curriculumContent').innerHTML};$('parentOverview').onclick=()=>{$('parentView').textContent='孩子設定、教材匯入與備份工具如下。';renderParent()};
+function applyChildLayout(){document.body.classList.toggle('young',isYoung());for(let id of ['grade','semester','track','unit'])$(id).closest('label').classList.toggle('hidden',isYoung());$('child').closest('label').classList.add('hidden');document.querySelector('[data-tab="categories"]').classList.toggle('hidden',!isYoung());for(let id of ['learn','quiz','review'])document.querySelector('[data-tab="'+id+'"]').classList.toggle('hidden',isYoung());$('backCategories').classList.toggle('hidden',!isYoung())}
+const previousSwitch=switchTab;switchTab=function(t){previousSwitch(t);controls.classList.toggle('hidden',t==='familyHomePage'||t==='parent');if(t!=='parent'&&t!=='familyHomePage')applyChildLayout();if(t==='adventure')renderAdventure();if(t==='categories')renderCategories();if(t!=='adventure'){bossRun=null;$('bossGame').innerHTML=''}};
+function showHome(){cancelQuiz();bossRun=null;switchTab('familyHomePage');$('backCategories').classList.add('hidden')}
+function chooseFamily(id){if(!state.children.some(c=>c.id===id))return;cancelQuiz();state.active=id;if(isYoung()){$('track').value='supplement';initSelectors();$('grade').value='0';renderUnits();switchTab('categories')}else{$('track').value='supplement';initSelectors();switchTab('learn')}save()}
+home.querySelectorAll('[data-family]').forEach(b=>b.onclick=()=>chooseFamily(b.dataset.family));$('familyHome').onclick=showHome;$('backCategories').onclick=()=>{cancelQuiz();switchTab('categories')};$('parentEntry').onclick=()=>{cancelQuiz();switchTab('parent')};
+function renderCategories(){$('categoryGrid').innerHTML=ADVENTURE_CONTENT.units.map(u=>'<button class="theme-button" data-category="'+u.unit+'"><span>'+u.emoji+'</span>'+esc(u.title)+'</button>').join('');$('categoryGrid').querySelectorAll('button').forEach(b=>b.onclick=()=>{$('grade').value='0';$('track').value='supplement';renderUnits();$('unit').value=b.dataset.category;$('quizType').value='choice';startQuiz()})}
+const beforeYoungRender=renderQuestion;renderQuestion=function(){if(!isYoung()||!quiz||quiz.pos>=quiz.items.length){beforeYoungRender();return}let w=quiz.items[quiz.pos];let options=shuffle([w,...shuffle(words().filter(x=>x.id!==w.id)).slice(0,3)]);$('question').innerHTML='<p>第 '+(quiz.pos+1)+' / '+quiz.items.length+' 題</p><h2>聽一聽，找一找！</h2><button id="youngPlay">🔊 再聽一次</button><div class="options">'+options.map(o=>'<button class="answer" data-id="'+esc(o.id)+'"><span class="picture-option">'+esc(o.emoji)+'</span>'+esc(o.zh)+'</button>').join('')+'</div><div id="feedback" aria-live="polite"></div>';$('youngPlay').onclick=()=>speak(w.en);document.querySelectorAll('.answer').forEach(b=>b.onclick=()=>answer(b.dataset.id===w.id));speak(w.en)};
+const beforeYoungStart=startQuiz;startQuiz=function(review=false){if(isYoung())$('quizType').value='choice';beforeYoungStart(review);if(isYoung()&&quiz)quiz.items=quiz.items.slice(0,5)};
+const beforeYoungAnswer=answer;answer=function(ok){let q=quiz;if(!q||q.locked)return;let started=state.records.length;beforeYoungAnswer(ok);if(state.records.length>started){if(isYoung()&&kid().grade!==0){let ref=q;setTimeout(()=>{if(quiz===ref&&quiz.locked)$('advance')?.click()},ok?1200:2200)}}};
+function renderAdventure(){let p=earnedPoints(),passed=adventureState().bosses;let unlocked=ADVENTURE_CONTENT.titles.map((_,i)=>i+1).filter(n=>stageOpen(n,p,passed));$('pointSummary').innerHTML='<span class="stat">'+esc(kid().name)+'：'+p+' 點</span><span class="stat">已解鎖 '+unlocked.length+' / 50 關</span>';$('stageGrid').innerHTML=ADVENTURE_CONTENT.titles.map((title,i)=>{let n=i+1,boss=n%7===0,open=stageOpen(n,p,passed);return '<button class="stage-card '+(boss?'boss':'')+'" data-stage="'+n+'" '+(!open?'disabled':'')+'><span class="stage-art">'+(!open?'🔒':boss?(passed.includes(n)?'🏆':'🐲'):'🥚')+'</span><strong>第 '+n+' 話</strong><p>'+esc(title)+'</p><small>'+((n-1)*50)+' 點'+(boss?'・魔王挑戰':'')+(passed.includes(n)?'・已通關':'')+'</small></button>'}).join('');$('stageGrid').querySelectorAll('[data-stage]').forEach(b=>b.onclick=()=>{let n=Number(b.dataset.stage);if(!stageOpen(n))return;$('stageDetail').innerHTML='<h3>第 '+n+' 話：'+esc(ADVENTURE_CONTENT.titles[n-1])+'</h3><p>🖼️ 故事圖片準備中</p>';if(n%7===0)startBoss(n)})}
+function startBoss(n){if(n%7!==0||!stageOpen(n))return;let pool=isYoung()?ADVENTURE_CONTENT.units.flatMap(u=>u.words):state.curriculum.filter(c=>c.grade===Number($('grade').value)&&c.track==='supplement').flatMap(c=>c.words).filter(w=>w.kind!=='grammar');let unique=[...new Map(pool.map(w=>[w.en.toLowerCase(),w])).values()];if(unique.length<5){$('bossGame').textContent='至少準備 5 個單字再來挑戰。';return}bossRun={stage:n,childId:kid().id,items:shuffle(unique).slice(0,5),pool:unique,pos:0,score:0,locked:false};renderBoss()}
+function renderBoss(){let b=bossRun;if(!b)return;if(b.pos===5){let passed=b.score>=4;if(passed){let next=JSON.parse(JSON.stringify(state));next.adventure[b.childId]=next.adventure[b.childId]||{bosses:[]};if(!next.adventure[b.childId].bosses.includes(b.stage))next.adventure[b.childId].bosses.push(b.stage);try{commit(next)}catch{$('bossGame').textContent='儲存失敗，尚未完成通關，請重試。';return}}$('bossGame').innerHTML='<h3>'+ (passed?'🏆 挑戰成功！':'💪 再練習一下！')+'</h3><p>答對 '+b.score+' / 5 題。'+(passed?'已通過這一關的魔王門檻。':'答對 4 題就能通關。')+'</p><button id="bossRetry">再挑戰</button>';$('bossRetry').onclick=()=>startBoss(b.stage);renderAdventure();return}let w=b.items[b.pos],opts=shuffle([w,...shuffle(b.pool.filter(x=>x.en!==w.en)).slice(0,3)]);$('bossGame').innerHTML='<h3>🐲 魔王挑戰 '+(b.pos+1)+' / 5</h3><h2>'+(isYoung()?'聽聲音，找圖案！':esc(w.zh)+' 的英文？')+'</h2><button id="bossSpeak">🔊 聽英文</button><div class="options">'+opts.map((x,i)=>'<button data-boss-answer="'+i+'">'+(isYoung()?'<span class="picture-option">'+esc(x.emoji)+'</span>'+esc(x.zh):esc(x.en))+'</button>').join('')+'</div><div id="bossFeedback" aria-live="polite"></div>';$('bossSpeak').onclick=()=>speak(w.en);if(isYoung())speak(w.en);$('bossGame').querySelectorAll('[data-boss-answer]').forEach(btn=>btn.onclick=()=>answerBoss(opts[Number(btn.dataset.bossAnswer)].id===w.id))}
+function answerBoss(ok){let b=bossRun;if(!b||b.locked||b.childId!==kid().id)return;let w=b.items[b.pos],r={operationId:uid(),childId:b.childId,unitId:'adventure:boss:'+b.stage,wordId:w.id,firstCorrect:ok,totalAttempts:1,errorCount:ok?0:1,answeredAt:new Date().toISOString(),type:'boss',rewardEligible:false};try{commit({...state,records:[...state.records,r]})}catch{$('bossFeedback').textContent='儲存失敗，請重試。';return}b.locked=true;if(ok)b.score++;$('bossGame').querySelectorAll('[data-boss-answer]').forEach(x=>x.disabled=true);$('bossFeedback').innerHTML='<p>'+(ok?'答對了！':'答案是 '+esc(w.en)+'（'+esc(w.zh)+'）')+'</p><button id="bossNext">下一題</button>';let expectedPos=b.pos;let next=()=>{if(bossRun!==b||!b.locked||b.pos!==expectedPos)return;b.pos++;b.locked=false;renderBoss()};$('bossNext').onclick=next;if(isYoung()){if(!ok)speak(w.en);setTimeout(next,ok?1200:2200)}}
+
+let parentChildLabel=document.createElement('label');parentChildLabel.innerHTML='查看孩子<select id="parentChildSelect"></select>';parentActions.prepend(parentChildLabel);
+function refreshParentPicker(){$('parentChildSelect').innerHTML=state.children.map(c=>'<option value="'+esc(c.id)+'">'+esc(c.name)+'</option>').join('');$('parentChildSelect').value=kid().id}
+$('parentChildSelect').onchange=e=>{state.active=e.target.value;save();initSelectors();refreshParentPicker();renderParent();$('parentRecords').click()};
+const parentBeforeFamily=renderParent;renderParent=function(){parentBeforeFamily();refreshParentPicker();let p=document.createElement('p');p.textContent=state.children.map(c=>c.name+'：'+earnedPoints(c.id)+' 點').join('｜');$('parentContent').append(p)};
+const backupBeforeFamily=validateBackup;validateBackup=function(v){let next=backupBeforeFamily(v);if(next.adventure){if(typeof next.adventure!=='object'||Array.isArray(next.adventure))throw Error('冒險備份格式錯誤');for(let [child,a] of Object.entries(next.adventure)){if(!next.children.some(c=>c.id===child)||!a||!Array.isArray(a.bosses)||a.bosses.some(n=>!Number.isInteger(n)||n<7||n>49||n%7!==0)||new Set(a.bosses).size!==a.bosses.length)throw Error('魔王通關紀錄格式錯誤')}}for(let r of next.records)if(r.rewardEligible!==undefined&&typeof r.rewardEligible!=='boolean')throw Error('集點紀錄格式錯誤');return next};
+
+try{save()}catch{}showHome();
+
+</script><script>
+// Restore the earlier reward workflow in this independent browser-local test branch.
+function initialRewards(){return {catalog:[{id:'story',name:'📖 選一本親子故事',cost:10},{id:'game',name:'🎲 全家一起玩桌遊',cost:20},{id:'park',name:'🌳 決定週末去的公園',cost:35}],requests:[]}}
+state.rewardSystem=state.rewardSystem||initialRewards();
+let parentUntil=0;
+const PIN_KEY='luoEnglishV14ParentPin';
+function requireRewardParent(){if(Date.now()>=parentUntil)throw Error('請先輸入家長密碼')}
+function rewardBalance(childId=kid().id){return earnedPoints(childId)-state.rewardSystem.requests.filter(r=>r.childId===childId&&r.status==='approved').reduce((n,r)=>n+r.cost,0)}
+function rewardHeld(childId=kid().id){return state.rewardSystem.requests.filter(r=>r.childId===childId&&r.status==='pending').reduce((n,r)=>n+r.cost,0)}
+function rewardAvailable(childId=kid().id){return rewardBalance(childId)-rewardHeld(childId)}
+function rewardChange(fn){let next=JSON.parse(JSON.stringify(state));fn(next.rewardSystem);commit(next)}
+function addReward(name,cost){requireRewardParent();name=name.trim();if(!name||name.length>80||!Number.isSafeInteger(cost)||cost<1||cost>10000)throw Error('請輸入獎勵名稱與 1～10000 的整數點數');if(state.rewardSystem.catalog.length>=50)throw Error('最多設定50個獎勵');rewardChange(s=>s.catalog.push({id:uid(),name,cost}))}
+function removeReward(id){requireRewardParent();rewardChange(s=>{s.catalog=s.catalog.filter(r=>r.id!==id)})}
+function requestReward(id){if(state.rewardSystem.requests.some(q=>q.childId===kid().id&&q.rewardId===id&&q.status==='pending'))throw Error('這個獎勵已申請，請先等家長核對');let r=state.rewardSystem.catalog.find(r=>r.id===id);if(!r||rewardAvailable()<r.cost)throw Error('可用點數不足');let q={id:uid(),childId:kid().id,rewardId:r.id,name:r.name,cost:r.cost,status:'pending',time:new Date().toISOString()};rewardChange(s=>s.requests.push(q));return q.id}
+function reviewReward(id,approve){requireRewardParent();let r=state.rewardSystem.requests.find(r=>r.id===id);if(!r||r.status!=='pending')throw Error('這筆申請已處理');if(approve&&rewardBalance(r.childId)<r.cost)throw Error('點數不足');rewardChange(s=>{let q=s.requests.find(q=>q.id===id);q.status=approve?'approved':'rejected';q.reviewedAt=new Date().toISOString()})}
+const rewardSection=document.createElement('section');rewardSection.id='rewards';rewardSection.className='panel hidden';adventure.after(rewardSection);
+let rewardTab=document.createElement('button');rewardTab.dataset.tab='rewards';rewardTab.textContent='🎁 獎勵小舖';$('tabs').append(rewardTab);
+let parentRewardPanel=document.createElement('div');parentRewardPanel.id='parentRewardPanel';$('parent').append(parentRewardPanel);
+function rewardStats(childId){return '<span class="stat">累積 '+earnedPoints(childId)+' 點</span><span class="stat">可用 '+rewardAvailable(childId)+' 點</span><span class="stat">待核對 '+rewardHeld(childId)+' 點</span>'}
+function requestLabel(q){return q.status==='pending'?'⏳ 等家長核對':q.status==='approved'?'🎉 已發放':'↩️ 未兌換，點數已退回'}
+function renderRewards(){rewardSection.innerHTML='<h2>🎁 '+esc(kid().name)+'的獎勵小舖</h2>'+rewardStats(kid().id)+'<p>選想要的獎勵，家長核對並發放後就完成兌換！</p><div class="grid">'+state.rewardSystem.catalog.map(r=>'<div class="card"><h3>'+esc(r.name)+'</h3><p>'+r.cost+' 點</p><button data-redeem="'+esc(r.id)+'" '+(rewardAvailable()<r.cost?'disabled':'')+'>我要兌換</button></div>').join('')+'</div><p id="rewardMessage" aria-live="polite"></p><h3>我的兌換紀錄</h3>'+state.rewardSystem.requests.filter(q=>q.childId===kid().id).slice().reverse().map(q=>'<p>'+esc(q.name)+'｜'+q.cost+' 點｜'+requestLabel(q)+'</p>').join('');if(!state.rewardSystem.catalog.length)rewardSection.querySelector('.grid').textContent='請家長先準備獎勵。';rewardSection.querySelectorAll('[data-redeem]').forEach(b=>b.onclick=()=>{try{requestReward(b.dataset.redeem);renderRewards();$('rewardMessage').textContent='已送出！點數先幫你保留，請找家長核對。'}catch(e){$('rewardMessage').textContent=e.message}})}
+function hideParentTools(){for(let child of $('parent').children)child.classList.toggle('hidden',child!==parentRewardPanel)}
+async function pinHash(pin,salt){let key=await crypto.subtle.importKey('raw',new TextEncoder().encode(pin),'PBKDF2',false,['deriveBits']);let bytes=await crypto.subtle.deriveBits({name:'PBKDF2',salt:new TextEncoder().encode(salt),iterations:100000,hash:'SHA-256'},key,256);return Array.from(new Uint8Array(bytes),b=>b.toString(16).padStart(2,'0')).join('')}
+function renderRewardGate(){let configured=!!read(PIN_KEY);parentRewardPanel.innerHTML='<h2>👪 家長專區</h2><p>'+(configured?'輸入家長密碼，管理獎勵與核對兌換。':'先設定家長密碼，之後由家長管理獎勵與核對兌換。')+'</p><form id="rewardPinForm"><label>家長密碼（4～8位數字）<input id="rewardPin" type="password" inputmode="numeric" autocomplete="off" pattern="[0-9]{4,8}" required></label>'+(!configured?'<label>再次輸入<input id="rewardPinAgain" type="password" inputmode="numeric" autocomplete="off" required></label>':'')+'<button>進入家長專區</button></form><p id="pinMessage" aria-live="polite"></p>';$('rewardPinForm').onsubmit=async e=>{e.preventDefault();let p=$('rewardPin').value,button=e.target.querySelector('button');button.disabled=true;try{if(!/^\d{4,8}$/.test(p))throw Error('請輸入4～8位數字');let stored=read(PIN_KEY);if(stored?.blockedUntil>Date.now())throw Error('請稍後再試');if(!stored){if(p!==$('rewardPinAgain').value)throw Error('兩次密碼不同');let salt=Array.from(crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,'0')).join('');localStorage.setItem(PIN_KEY,JSON.stringify({salt,hash:await pinHash(p,salt),failures:0}))}else{if(await pinHash(p,stored.salt)!==stored.hash){stored.failures=(stored.failures||0)+1;if(stored.failures>=5){stored.blockedUntil=Date.now()+60000;stored.failures=0}localStorage.setItem(PIN_KEY,JSON.stringify(stored));throw Error('家長密碼不正確')}stored.failures=0;stored.blockedUntil=0;localStorage.setItem(PIN_KEY,JSON.stringify(stored))}parentUntil=Date.now()+30*60*1000;renderParent()}catch(err){if($('pinMessage'))$('pinMessage').textContent=err.message}finally{button.disabled=false}}}
+renderParent=function(){hideParentTools();if(Date.now()>=parentUntil){renderRewardGate();return}parentRewardPanel.innerHTML='<h2>👪 家長獎勵管理</h2><button id="lockRewards" class="secondary">🔒 鎖定家長專區</button><h3>孩子的點數</h3>'+state.children.map(c=>'<div class="card"><strong>'+esc(c.name)+'</strong><p>'+rewardStats(c.id)+'</p></div>').join('')+'<h3>提供新獎勵</h3><form id="newRewardForm"><label>獎勵名稱<input id="newRewardName" maxlength="80" placeholder="例如：選一本喜歡的書" required></label><label>需要點數<input id="newRewardCost" type="number" min="1" max="10000" step="1" value="20" required></label><button>新增獎勵</button></form><p id="parentRewardMessage" aria-live="polite"></p><h3>等待核對與發放</h3><div id="pendingRewards">'+state.rewardSystem.requests.filter(q=>q.status==='pending').map(q=>'<div class="card"><h4>'+esc(state.children.find(c=>c.id===q.childId)?.name)+'：'+esc(q.name)+'</h4><p>'+q.cost+' 點</p><button data-approve="'+q.id+'">確認已發放並扣點</button><button class="secondary" data-reject="'+q.id+'">不兌換／退回點數</button></div>').join('')+'</div><h3>目前獎勵</h3>'+state.rewardSystem.catalog.map(r=>'<div class="card">'+esc(r.name)+'｜'+r.cost+' 點 <button class="secondary" data-remove-reward="'+esc(r.id)+'">下架</button></div>').join('')+'<h3>兌換紀錄</h3>'+state.rewardSystem.requests.filter(q=>q.status!=='pending').slice(-30).reverse().map(q=>'<p>'+esc(state.children.find(c=>c.id===q.childId)?.name)+'｜'+esc(q.name)+'｜'+q.cost+' 點｜'+requestLabel(q)+'</p>').join('');if(!$('pendingRewards').textContent)$('pendingRewards').textContent='目前沒有待核對的申請。';$('lockRewards').onclick=()=>{parentUntil=0;renderParent()};$('newRewardForm').onsubmit=e=>{e.preventDefault();try{addReward($('newRewardName').value,Number($('newRewardCost').value));renderParent();$('parentRewardMessage').textContent='獎勵已新增，孩子可以到獎勵小舖兌換。'}catch(err){$('parentRewardMessage').textContent=err.message}};for(let [attr,fn] of [['data-approve',id=>reviewReward(id,true)],['data-reject',id=>reviewReward(id,false)],['data-remove-reward',removeReward]])parentRewardPanel.querySelectorAll('['+attr+']').forEach(b=>b.onclick=()=>{try{fn(b.getAttribute(attr));renderParent()}catch(err){$('parentRewardMessage').textContent=err.message}})};
+const switchBeforeRewards=switchTab;switchTab=function(t){if(t!=='parent')parentUntil=0;switchBeforeRewards(t);if(t==='rewards')renderRewards()};
+const backupBeforeRewards=validateBackup;validateBackup=function(v){let n=backupBeforeRewards(v);if(!n.rewardSystem)n.rewardSystem=initialRewards();let s=n.rewardSystem;if(!Array.isArray(s.catalog)||s.catalog.length>50||!Array.isArray(s.requests)||s.requests.length>100000)throw Error('獎勵備份格式錯誤');for(let r of [...s.catalog,...s.requests])if(!r||typeof r.id!=='string'||typeof r.name!=='string'||r.name.length>80||!Number.isSafeInteger(r.cost)||r.cost<1||r.cost>10000)throw Error('獎勵欄位錯誤');for(let q of s.requests)if(!n.children.some(c=>c.id===q.childId)||!['pending','approved','rejected'].includes(q.status)||!Number.isFinite(Date.parse(q.time)))throw Error('兌換紀錄錯誤');if(new Set(s.catalog.map(x=>x.id)).size!==s.catalog.length||new Set(s.requests.map(x=>x.id)).size!==s.requests.length)throw Error('重複獎勵紀錄');return n};
+try{save()}catch{};
+
+</script><script>
+const gradeButtons=document.createElement('div');gradeButtons.id='gradeButtons';gradeButtons.setAttribute('role','group');gradeButtons.setAttribute('aria-label','選年級');gradeButtons.innerHTML='<strong>選年級</strong><div class="row">'+[3,4,5,6].map(g=>'<button class="grade-button secondary" type="button" data-grade="'+g+'" aria-pressed="false">'+['','','','三','四','五','六'][g]+'年級</button>').join('')+'</div>';$('grade').closest('label').before(gradeButtons);
+function refreshGradeButtons(){let young=isYoung();gradeButtons.classList.toggle('hidden',young);$('grade').closest('label').classList.add('hidden');gradeButtons.querySelectorAll('[data-grade]').forEach(b=>{let active=b.dataset.grade===$('grade').value;b.setAttribute('aria-pressed',String(active));b.classList.toggle('secondary',!active)})}
+function simplifySelectors(){let g=$('grade');for(let o of [...g.options])if(![3,4,5,6].includes(Number(o.value))&&!(isYoung()&&o.value==='0'))o.remove();if(isYoung())g.value='0';else if(![3,4,5,6].includes(Number(g.value)))g.value='4';refreshGradeButtons()}
+const initBeforeButtons=initSelectors;initSelectors=function(){initBeforeButtons();simplifySelectors();renderUnits()};
+const layoutBeforeButtons=applyChildLayout;applyChildLayout=function(){layoutBeforeButtons();refreshGradeButtons()};
+const unitsBeforeButtons=renderUnits;renderUnits=function(){unitsBeforeButtons();for(let option of $('unit').options){let c=state.curriculum.find(c=>c.grade===Number($('grade').value)&&c.semester===($('track').value==='supplement'?0:Number($('semester').value))&&(c.track||'textbook')===$('track').value&&c.unit===option.value);if(c)option.textContent=c.title.replace(/（原創示範）/g,'')}refreshGradeButtons();$('semester').closest('label').classList.toggle('hidden',isYoung()||$('track').value==='supplement')};
+for(let [id,label] of [['track','想學什麼'],['unit','選一課'],['semester','選學期']]){let field=$(id).closest('label');for(let node of [...field.childNodes])if(node.nodeType===3)node.remove();field.prepend(document.createTextNode(label))}
+$('track').querySelector('[value="textbook"]').textContent='課堂練習';$('track').querySelector('[value="supplement"]').textContent='生活英文';
+gradeButtons.querySelectorAll('[data-grade]').forEach(b=>b.onclick=()=>{$('grade').value=b.dataset.grade;$('grade').dispatchEvent(new Event('change'));refreshGradeButtons()});
+const imageStyle=document.createElement('style');imageStyle.textContent='.grade-button{min-width:95px;min-height:52px;font-size:20px;font-weight:700}.grade-button[aria-pressed="true"]{box-shadow:0 0 0 3px #ffbe49;background:#6c55d9;color:white}#gradeButtons{margin:5px 8px 10px 0}.story-thumb{display:block;width:100%;aspect-ratio:226/134;object-fit:contain;border-radius:12px;background:#eee8f6}.stage-card{padding:10px}.stage-card:disabled .story-thumb{filter:grayscale(.45);opacity:.75}.story-full{display:block;width:min(100%,720px);height:auto;image-rendering:auto;border-radius:14px;margin:12px auto}.story-placeholder{display:flex;min-height:110px;align-items:center;justify-content:center;background:#eee9fa;border-radius:12px;font-size:16px}.stage-art{margin-bottom:10px}';document.head.append(imageStyle);
+const STORY_IMAGES=Object.fromEntries(Array.from({length:50},(_,i)=>[i+1,i<45?'./stories/panel_'+String(i+1).padStart(2,'0')+'.png':'./stories/episode_'+(i+1)+'.png']));
+function storyImage(n,full=false){let image=document.createElement('img');image.className=full?'story-full':'story-thumb';image.src=STORY_IMAGES[n];image.alt='第'+n+'話：'+ADVENTURE_CONTENT.titles[n-1];image.loading=full?'eager':'lazy';image.decoding='async';image.width=226;image.height=134;image.onerror=()=>{let p=document.createElement('p');p.textContent='圖片暫時未載入，請重新整理。';image.replaceWith(p)};return image}
+const adventureBeforePictures=renderAdventure;renderAdventure=function(){adventureBeforePictures();$('stageGrid').querySelectorAll('[data-stage]').forEach(b=>{let n=Number(b.dataset.stage),art=b.querySelector('.stage-art');if(STORY_IMAGES[n]){art.replaceChildren(storyImage(n))}else{art.classList.add('story-placeholder');art.textContent='🖼️ 圖片待補'};b.addEventListener('click',()=>{if(!stageOpen(n))return;let detail=$('stageDetail');detail.querySelector('p')?.remove();if(STORY_IMAGES[n])detail.append(storyImage(n,true));else{let p=document.createElement('p');p.textContent='第'+n+'話圖片待補';detail.append(p)}})})};
+simplifySelectors();renderUnits();
+
+</script><script>
+const installButton=document.createElement('button');installButton.id='installApp';installButton.className='secondary';installButton.textContent='📲 安裝到主畫面';document.querySelector('.family-top').append(installButton);
+let installPrompt=null;
+function installedMode(){return window.matchMedia?.('(display-mode: standalone)').matches||navigator.standalone===true}
+installButton.hidden=!!installedMode();
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;installButton.hidden=false});window.addEventListener('appinstalled',()=>{installPrompt=null;installButton.hidden=true});
+installButton.onclick=async()=>{if(installPrompt){const prompt=installPrompt;installPrompt=null;await prompt.prompt();await prompt.userChoice;return}let overlay=document.createElement('div');overlay.className='install-overlay';overlay.innerHTML='<div class="install-card" role="dialog" aria-modal="true" aria-labelledby="installTitle"><h2 id="installTitle">把冒險島放到主畫面</h2><p><strong>iPhone／iPad：</strong>使用 Safari 開啟本站，按分享，再選「加入主畫面」；若有「作為網頁 App 開啟」選項請開啟。</p><p><strong>Android：</strong>使用 Chrome 開啟本站，在選單選擇「安裝應用程式」或「新增至主畫面」。</p><p><strong>電腦：</strong>使用 Chrome／Edge，點網址列安裝圖示，或在瀏覽器選單尋找安裝選項。</p><p>安裝前請先連網開啟一次，讓教材與故事圖片準備好。</p><button id="closeInstall">我知道了</button></div>';document.body.append(overlay);let close=()=>{overlay.remove();installButton.focus()};overlay.querySelector('button').onclick=close;overlay.addEventListener('click',e=>{if(e.target===overlay)close()});overlay.addEventListener('keydown',e=>{if(e.key==='Escape')close();if(e.key==='Tab'){e.preventDefault();overlay.querySelector('button').focus()}});overlay.querySelector('button').focus()};
+const responsive=document.createElement('style');responsive.textContent=`html{scrollbar-gutter:stable}body{min-width:320px;overflow-wrap:anywhere;padding-bottom:env(safe-area-inset-bottom)}main,header>div,.family-top{box-sizing:border-box}button,input,select{min-height:46px}input,select{font-size:16px}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #ed9b18;outline-offset:3px}header{padding-top:max(16px,env(safe-area-inset-top));padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}.install-overlay{position:fixed;inset:0;z-index:999;background:#1d164fa8;display:grid;place-items:center;padding:18px}.install-card{background:white;border-radius:22px;padding:24px;width:min(100%,520px);max-height:85dvh;overflow:auto}.row>*{min-width:0}.story-thumb{aspect-ratio:4/3;object-fit:contain}.story-full{max-height:80dvh;object-fit:contain}#gradeButtons .row{gap:8px;flex-wrap:wrap}.grade-button{flex:1 1 85px}#unit{width:min(100%,420px)}.stage-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr))}.tabs{gap:6px}.tabs button{flex:0 1 auto}header h1{font-size:clamp(23px,4vw,34px)}@media(min-width:1400px){main,header>div,.family-top{max-width:1200px}.stage-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}@media(min-width:601px) and (max-width:1000px){.stage-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.panel{padding:18px}#learningControls>.row{gap:12px}}@media(max-width:600px){main{padding:8px}.panel{padding:14px;margin:8px 0}header>div{gap:12px}header img{width:72px}header p{font-size:13px}.family-top{padding:0 8px;gap:5px}.family-top button{font-size:14px;padding:9px;margin:0}.stage-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.stage-card{padding:8px;min-height:0}.stage-card p{margin:8px 0;font-size:16px}.stage-card small{font-size:12px}.row label{width:100%;margin:3px 0}.row select,.row input{width:100%}#gradeButtons{width:100%;margin:0 0 10px}.grade-button{min-width:0;padding:10px 5px;font-size:18px}.hero-choice button{width:46%;padding:12px 4px}.hero-choice{gap:10px}.portrait{width:100px;height:100px}.theme-button{padding:12px;font-size:18px;gap:9px}.theme-button span{font-size:36px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.card{padding:12px}.options button{font-size:19px}.tabs button{flex:1 1 28%;padding:10px 6px;font-size:15px}#newRewardForm{display:flex;flex-direction:column;gap:8px}#newRewardForm label{margin:0}.install-card{padding:20px}.stat{font-size:14px}h2{font-size:23px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}`;document.head.append(responsive);
+
+</script></body></html>

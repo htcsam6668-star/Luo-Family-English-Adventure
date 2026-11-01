@@ -1,0 +1,23 @@
+{
+  "units": [
+    {
+      "grade": 4,
+      "semester": 1,
+      "unit": "U3",
+      "title": "家長自行核對的練習單元",
+      "sourceUrl": "",
+      "words": [
+        {
+          "en": "pencil",
+          "zh": "鉛筆",
+          "emoji": "✏️"
+        },
+        {
+          "en": "book",
+          "zh": "書",
+          "emoji": "📖"
+        }
+      ]
+    }
+  ]
+}

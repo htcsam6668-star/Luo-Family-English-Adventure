@@ -1,0 +1,16 @@
+{
+  "name": "luo-family-english-adventure",
+  "version": "1.4.1",
+  "private": true,
+  "description": "Responsive family English learning PWA",
+  "scripts": {
+    "test": "node tests/smoke.cjs",
+    "start": "node scripts/serve.cjs"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

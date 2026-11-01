@@ -1,0 +1,3659 @@
+{
+  "version": 1,
+  "units": [
+    {
+      "grade": 3,
+      "semester": 0,
+      "unit": "P1",
+      "title": "教室與生活核心片語",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g3:p1:1",
+          "en": "stand up",
+          "zh": "站起來",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:p1:2",
+          "en": "sit down",
+          "zh": "坐下",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:p1:3",
+          "en": "turn on",
+          "zh": "打開電器或燈",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:p1:4",
+          "en": "turn off",
+          "zh": "關掉電器或燈",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:p1:5",
+          "en": "open your book",
+          "zh": "打開書",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:p1:6",
+          "en": "close your book",
+          "zh": "闔上書",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:p1:7",
+          "en": "listen to the teacher",
+          "zh": "聽老師說話",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:p1:8",
+          "en": "look at the board",
+          "zh": "看著黑板",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:p1:9",
+          "en": "come in",
+          "zh": "進來",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:p1:10",
+          "en": "go to school",
+          "zh": "上學",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:p1:11",
+          "en": "go home",
+          "zh": "回家",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:p1:12",
+          "en": "wake up",
+          "zh": "醒來",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 3,
+      "semester": 0,
+      "unit": "S1",
+      "title": "生活句型：自我、心情與天氣",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g3:s1:1",
+          "en": "What's your name?",
+          "zh": "你叫什麼名字？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s1:2",
+          "en": "My name is Kevin.",
+          "zh": "我的名字是 Kevin。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s1:3",
+          "en": "How old are you?",
+          "zh": "你幾歲？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s1:4",
+          "en": "I'm ten years old.",
+          "zh": "我十歲。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s1:5",
+          "en": "What do you look like?",
+          "zh": "你長什麼樣子？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s1:6",
+          "en": "I have big eyes and short hair.",
+          "zh": "我有大眼睛和短頭髮。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s1:7",
+          "en": "How do you feel?",
+          "zh": "你感覺如何？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s1:8",
+          "en": "Are you tired?",
+          "zh": "你累了嗎？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s1:9",
+          "en": "I'm hungry.",
+          "zh": "我餓了。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s1:10",
+          "en": "Yes, I am.",
+          "zh": "是的，我是。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s1:11",
+          "en": "No, I'm not.",
+          "zh": "不，我不是。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s1:12",
+          "en": "How's the weather?",
+          "zh": "天氣如何？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s1:13",
+          "en": "What's the weather like?",
+          "zh": "天氣怎麼樣？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s1:14",
+          "en": "It's sunny and warm.",
+          "zh": "天氣晴朗又溫暖。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 3,
+      "semester": 0,
+      "unit": "S2",
+      "title": "生活句型：時間、喜好與位置",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g3:s2:1",
+          "en": "What time is it?",
+          "zh": "現在幾點？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s2:2",
+          "en": "It's ten o'clock.",
+          "zh": "現在十點。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s2:3",
+          "en": "What time do you get up?",
+          "zh": "你幾點起床？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s2:4",
+          "en": "I get up at six thirty.",
+          "zh": "我六點半起床。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s2:5",
+          "en": "Can you swim?",
+          "zh": "你會游泳嗎？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s2:6",
+          "en": "Yes, I can.",
+          "zh": "是的，我會。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s2:7",
+          "en": "No, I can't.",
+          "zh": "不，我不會。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s2:8",
+          "en": "Do you like monkeys?",
+          "zh": "你喜歡猴子嗎？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s2:9",
+          "en": "Yes, I do.",
+          "zh": "是的，我喜歡。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s2:10",
+          "en": "No, I don't.",
+          "zh": "不，我不喜歡。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s2:11",
+          "en": "What do you want?",
+          "zh": "你想要什麼？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s2:12",
+          "en": "I want some milk and cake.",
+          "zh": "我想要一些牛奶和蛋糕。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s2:13",
+          "en": "Where is the ball?",
+          "zh": "球在哪裡？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s2:14",
+          "en": "It's under the desk.",
+          "zh": "它在書桌下面。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s2:15",
+          "en": "Where are the books?",
+          "zh": "書在哪裡？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:s2:16",
+          "en": "They are on the chair.",
+          "zh": "它們在椅子上。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 4,
+      "semester": 0,
+      "unit": "P1",
+      "title": "教室與生活核心片語",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g4:p1:1",
+          "en": "stand up",
+          "zh": "站起來",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:p1:2",
+          "en": "sit down",
+          "zh": "坐下",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:p1:3",
+          "en": "turn on",
+          "zh": "打開電器或燈",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:p1:4",
+          "en": "turn off",
+          "zh": "關掉電器或燈",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:p1:5",
+          "en": "open your book",
+          "zh": "打開書",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:p1:6",
+          "en": "close your book",
+          "zh": "闔上書",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:p1:7",
+          "en": "listen to the teacher",
+          "zh": "聽老師說話",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:p1:8",
+          "en": "look at the board",
+          "zh": "看著黑板",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:p1:9",
+          "en": "come in",
+          "zh": "進來",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:p1:10",
+          "en": "go to school",
+          "zh": "上學",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:p1:11",
+          "en": "go home",
+          "zh": "回家",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:p1:12",
+          "en": "wake up",
+          "zh": "醒來",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 4,
+      "semester": 0,
+      "unit": "S1",
+      "title": "生活句型：自我、心情與天氣",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g4:s1:1",
+          "en": "What's your name?",
+          "zh": "你叫什麼名字？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s1:2",
+          "en": "My name is Kevin.",
+          "zh": "我的名字是 Kevin。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s1:3",
+          "en": "How old are you?",
+          "zh": "你幾歲？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s1:4",
+          "en": "I'm ten years old.",
+          "zh": "我十歲。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s1:5",
+          "en": "What do you look like?",
+          "zh": "你長什麼樣子？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s1:6",
+          "en": "I have big eyes and short hair.",
+          "zh": "我有大眼睛和短頭髮。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s1:7",
+          "en": "How do you feel?",
+          "zh": "你感覺如何？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s1:8",
+          "en": "Are you tired?",
+          "zh": "你累了嗎？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s1:9",
+          "en": "I'm hungry.",
+          "zh": "我餓了。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s1:10",
+          "en": "Yes, I am.",
+          "zh": "是的，我是。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s1:11",
+          "en": "No, I'm not.",
+          "zh": "不，我不是。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s1:12",
+          "en": "How's the weather?",
+          "zh": "天氣如何？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s1:13",
+          "en": "What's the weather like?",
+          "zh": "天氣怎麼樣？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s1:14",
+          "en": "It's sunny and warm.",
+          "zh": "天氣晴朗又溫暖。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 4,
+      "semester": 0,
+      "unit": "S2",
+      "title": "生活句型：時間、喜好與位置",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g4:s2:1",
+          "en": "What time is it?",
+          "zh": "現在幾點？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s2:2",
+          "en": "It's ten o'clock.",
+          "zh": "現在十點。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s2:3",
+          "en": "What time do you get up?",
+          "zh": "你幾點起床？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s2:4",
+          "en": "I get up at six thirty.",
+          "zh": "我六點半起床。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s2:5",
+          "en": "Can you swim?",
+          "zh": "你會游泳嗎？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s2:6",
+          "en": "Yes, I can.",
+          "zh": "是的，我會。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s2:7",
+          "en": "No, I can't.",
+          "zh": "不，我不會。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s2:8",
+          "en": "Do you like monkeys?",
+          "zh": "你喜歡猴子嗎？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s2:9",
+          "en": "Yes, I do.",
+          "zh": "是的，我喜歡。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s2:10",
+          "en": "No, I don't.",
+          "zh": "不，我不喜歡。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s2:11",
+          "en": "What do you want?",
+          "zh": "你想要什麼？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s2:12",
+          "en": "I want some milk and cake.",
+          "zh": "我想要一些牛奶和蛋糕。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s2:13",
+          "en": "Where is the ball?",
+          "zh": "球在哪裡？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s2:14",
+          "en": "It's under the desk.",
+          "zh": "它在書桌下面。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s2:15",
+          "en": "Where are the books?",
+          "zh": "書在哪裡？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:s2:16",
+          "en": "They are on the chair.",
+          "zh": "它們在椅子上。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 5,
+      "semester": 0,
+      "unit": "P1",
+      "title": "作息、休閒與家事片語",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g5:p1:1",
+          "en": "get up",
+          "zh": "起床",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:2",
+          "en": "do homework",
+          "zh": "做功課",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:3",
+          "en": "go to bed",
+          "zh": "上床睡覺",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:4",
+          "en": "take a shower",
+          "zh": "淋浴",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:5",
+          "en": "take a bath",
+          "zh": "泡澡",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:6",
+          "en": "have breakfast",
+          "zh": "吃早餐",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:7",
+          "en": "have lunch",
+          "zh": "吃午餐",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:8",
+          "en": "have dinner",
+          "zh": "吃晚餐",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:9",
+          "en": "play basketball",
+          "zh": "打籃球",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:10",
+          "en": "play soccer",
+          "zh": "踢足球",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:11",
+          "en": "play the piano",
+          "zh": "彈鋼琴",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:12",
+          "en": "play the violin",
+          "zh": "拉小提琴",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:13",
+          "en": "ride a bike",
+          "zh": "騎腳踏車",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:14",
+          "en": "watch TV",
+          "zh": "看電視",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:15",
+          "en": "by bus",
+          "zh": "搭公車",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:16",
+          "en": "by train",
+          "zh": "搭火車",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:17",
+          "en": "by MRT",
+          "zh": "搭捷運",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:18",
+          "en": "clean the room",
+          "zh": "打掃房間",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:19",
+          "en": "wash the dishes",
+          "zh": "洗碗",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:20",
+          "en": "cook dinner",
+          "zh": "做晚餐",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:21",
+          "en": "water the flowers",
+          "zh": "澆花",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:22",
+          "en": "give me a hand",
+          "zh": "幫我個忙",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:23",
+          "en": "take care",
+          "zh": "保重／小心",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:24",
+          "en": "have a cold",
+          "zh": "感冒",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:25",
+          "en": "get well soon",
+          "zh": "早日康復",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:26",
+          "en": "at school",
+          "zh": "在學校",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:27",
+          "en": "at home",
+          "zh": "在家",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:28",
+          "en": "watch a movie",
+          "zh": "看電影",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:29",
+          "en": "go to the movies",
+          "zh": "去看電影",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p1:30",
+          "en": "on foot",
+          "zh": "步行",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 5,
+      "semester": 0,
+      "unit": "P2",
+      "title": "教室與生活片語複習",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g5:p2:1",
+          "en": "stand up",
+          "zh": "站起來",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p2:2",
+          "en": "sit down",
+          "zh": "坐下",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p2:3",
+          "en": "turn on",
+          "zh": "打開電器或燈",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p2:4",
+          "en": "turn off",
+          "zh": "關掉電器或燈",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p2:5",
+          "en": "open your book",
+          "zh": "打開書",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p2:6",
+          "en": "close your book",
+          "zh": "闔上書",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p2:7",
+          "en": "listen to the teacher",
+          "zh": "聽老師說話",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p2:8",
+          "en": "look at the board",
+          "zh": "看著黑板",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p2:9",
+          "en": "come in",
+          "zh": "進來",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p2:10",
+          "en": "go to school",
+          "zh": "上學",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p2:11",
+          "en": "go home",
+          "zh": "回家",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:p2:12",
+          "en": "wake up",
+          "zh": "醒來",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 5,
+      "semester": 0,
+      "unit": "S1",
+      "title": "生活句型：自我與日常",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g5:s1:1",
+          "en": "What's your name?",
+          "zh": "你叫什麼名字？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:2",
+          "en": "My name is Kevin.",
+          "zh": "我的名字是 Kevin。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:3",
+          "en": "How old are you?",
+          "zh": "你幾歲？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:4",
+          "en": "I'm ten years old.",
+          "zh": "我十歲。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:5",
+          "en": "What do you look like?",
+          "zh": "你長什麼樣子？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:6",
+          "en": "I have big eyes and short hair.",
+          "zh": "我有大眼睛和短頭髮。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:7",
+          "en": "How do you feel?",
+          "zh": "你感覺如何？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:8",
+          "en": "Are you tired?",
+          "zh": "你累了嗎？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:9",
+          "en": "I'm hungry.",
+          "zh": "我餓了。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:10",
+          "en": "Yes, I am.",
+          "zh": "是的，我是。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:11",
+          "en": "No, I'm not.",
+          "zh": "不，我不是。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:12",
+          "en": "How's the weather?",
+          "zh": "天氣如何？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:13",
+          "en": "What's the weather like?",
+          "zh": "天氣怎麼樣？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:14",
+          "en": "It's sunny and warm.",
+          "zh": "天氣晴朗又溫暖。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:15",
+          "en": "What time is it?",
+          "zh": "現在幾點？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:16",
+          "en": "It's ten o'clock.",
+          "zh": "現在十點。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:17",
+          "en": "What time do you get up?",
+          "zh": "你幾點起床？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:18",
+          "en": "I get up at six thirty.",
+          "zh": "我六點半起床。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:19",
+          "en": "Can you swim?",
+          "zh": "你會游泳嗎？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:20",
+          "en": "Yes, I can.",
+          "zh": "是的，我會。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:21",
+          "en": "No, I can't.",
+          "zh": "不，我不會。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:22",
+          "en": "Do you like monkeys?",
+          "zh": "你喜歡猴子嗎？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:23",
+          "en": "Yes, I do.",
+          "zh": "是的，我喜歡。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:24",
+          "en": "No, I don't.",
+          "zh": "不，我不喜歡。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:25",
+          "en": "What do you want?",
+          "zh": "你想要什麼？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s1:26",
+          "en": "I want some milk and cake.",
+          "zh": "我想要一些牛奶和蛋糕。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 5,
+      "semester": 0,
+      "unit": "S2",
+      "title": "生活句型：地點、能力與過去",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g5:s2:1",
+          "en": "Where is the ball?",
+          "zh": "球在哪裡？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s2:2",
+          "en": "It's under the desk.",
+          "zh": "它在書桌下面。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s2:3",
+          "en": "Where are the books?",
+          "zh": "書在哪裡？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s2:4",
+          "en": "They are on the chair.",
+          "zh": "它們在椅子上。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s2:5",
+          "en": "Where are you going?",
+          "zh": "你要去哪裡？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s2:6",
+          "en": "I'm going to the bakery.",
+          "zh": "我要去麵包店。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s2:7",
+          "en": "How can we get to the park?",
+          "zh": "我們可以怎麼去公園？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s2:8",
+          "en": "We can go there by bus.",
+          "zh": "我們可以搭公車去那裡。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s2:9",
+          "en": "We can go there on foot.",
+          "zh": "我們可以步行去那裡。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s2:10",
+          "en": "What do you want to be?",
+          "zh": "你想當什麼？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s2:11",
+          "en": "I want to be a doctor.",
+          "zh": "我想當醫生。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s2:12",
+          "en": "What does your father do?",
+          "zh": "你爸爸做什麼工作？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s2:13",
+          "en": "He is a cook.",
+          "zh": "他是一位廚師。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s2:14",
+          "en": "What are you doing?",
+          "zh": "你正在做什麼？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s2:15",
+          "en": "I'm doing my homework.",
+          "zh": "我正在做功課。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s2:16",
+          "en": "What is she doing?",
+          "zh": "她正在做什麼？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s2:17",
+          "en": "She is washing the dishes.",
+          "zh": "她正在洗碗。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s2:18",
+          "en": "Where did you go yesterday?",
+          "zh": "你昨天去了哪裡？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s2:19",
+          "en": "I went to the zoo.",
+          "zh": "我去了動物園。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s2:20",
+          "en": "What did you do last night?",
+          "zh": "你昨晚做了什麼？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:s2:21",
+          "en": "I cleaned my room.",
+          "zh": "我打掃了我的房間。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 5,
+      "semester": 0,
+      "unit": "G1",
+      "title": "現在進行式挑戰",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g5:g1:1",
+          "en": "is reading",
+          "zh": "Look! He ___ a book.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "Look! He ___ a book.",
+          "explanation": "Look! 提醒正在發生的動作：he + is + 動詞-ing。",
+          "options": [
+            "is reading",
+            "reads",
+            "read",
+            "reading"
+          ],
+          "fullSentence": "Look! He is reading a book."
+        },
+        {
+          "id": "supplement:g5:g1:2",
+          "en": "are singing",
+          "zh": "Listen! They ___ in the classroom.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "Listen! They ___ in the classroom.",
+          "explanation": "they 用 are，再接動詞-ing。",
+          "options": [
+            "are singing",
+            "is singing",
+            "sings",
+            "singing"
+          ],
+          "fullSentence": "Listen! They are singing in the classroom."
+        },
+        {
+          "id": "supplement:g5:g1:3",
+          "en": "are dancing",
+          "zh": "They ___ now.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "They ___ now.",
+          "explanation": "now 表示現在正在做：they are dancing。",
+          "options": [
+            "are dancing",
+            "is dancing",
+            "dances",
+            "dancing"
+          ],
+          "fullSentence": "They are dancing now."
+        },
+        {
+          "id": "supplement:g5:g1:4",
+          "en": "am doing",
+          "zh": "I ___ my homework now.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "I ___ my homework now.",
+          "explanation": "I 的 be 動詞用 am。",
+          "options": [
+            "am doing",
+            "is doing",
+            "does",
+            "doing"
+          ],
+          "fullSentence": "I am doing my homework now."
+        },
+        {
+          "id": "supplement:g5:g1:5",
+          "en": "is washing",
+          "zh": "She ___ the dishes now.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "She ___ the dishes now.",
+          "explanation": "she 用 is washing 表示正在洗。",
+          "options": [
+            "is washing",
+            "are washing",
+            "washes",
+            "washing"
+          ],
+          "fullSentence": "She is washing the dishes now."
+        }
+      ]
+    },
+    {
+      "grade": 5,
+      "semester": 0,
+      "unit": "G2",
+      "title": "現在簡單式挑戰",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g5:g2:1",
+          "en": "get",
+          "zh": "I ___ up at seven every day.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "I ___ up at seven every day.",
+          "explanation": "日常習慣用現在簡單式；I 接 get。",
+          "options": [
+            "get",
+            "gets",
+            "getting",
+            "got"
+          ],
+          "fullSentence": "I get up at seven every day."
+        },
+        {
+          "id": "supplement:g5:g2:2",
+          "en": "likes",
+          "zh": "She ___ apples.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "She ___ apples.",
+          "explanation": "現在簡單式第三人稱單數：like 加 s。",
+          "options": [
+            "likes",
+            "like",
+            "liking",
+            "to likes"
+          ],
+          "fullSentence": "She likes apples."
+        },
+        {
+          "id": "supplement:g5:g2:3",
+          "en": "goes",
+          "zh": "He usually ___ to school by bus.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "He usually ___ to school by bus.",
+          "explanation": "he 是第三人稱單數；go 改為 goes。",
+          "options": [
+            "goes",
+            "go",
+            "going",
+            "to go"
+          ],
+          "fullSentence": "He usually goes to school by bus."
+        },
+        {
+          "id": "supplement:g5:g2:4",
+          "en": "Do",
+          "zh": "___ you like monkeys?",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "___ you like monkeys?",
+          "explanation": "主詞 you 的一般動詞問句用 Do。",
+          "options": [
+            "Do",
+            "Does",
+            "Is",
+            "Are"
+          ],
+          "fullSentence": "Do you like monkeys?"
+        },
+        {
+          "id": "supplement:g5:g2:5",
+          "en": "does",
+          "zh": "What ___ your father do?",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "What ___ your father do?",
+          "explanation": "your father 是第三人稱單數，問句用 does。",
+          "options": [
+            "does",
+            "do",
+            "is",
+            "are"
+          ],
+          "fullSentence": "What does your father do?"
+        }
+      ]
+    },
+    {
+      "grade": 5,
+      "semester": 0,
+      "unit": "G3",
+      "title": "過去簡單式挑戰",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g5:g3:1",
+          "en": "went",
+          "zh": "We ___ to the zoo yesterday.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "We ___ to the zoo yesterday.",
+          "explanation": "yesterday 指過去，go 的過去式是 went。",
+          "options": [
+            "went",
+            "go",
+            "goes",
+            "going"
+          ],
+          "fullSentence": "We went to the zoo yesterday."
+        },
+        {
+          "id": "supplement:g5:g3:2",
+          "en": "was",
+          "zh": "He ___ sick last week.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "He ___ sick last week.",
+          "explanation": "last week 指過去，he 搭配 was。",
+          "options": [
+            "was",
+            "is",
+            "were",
+            "be"
+          ],
+          "fullSentence": "He was sick last week."
+        },
+        {
+          "id": "supplement:g5:g3:3",
+          "en": "cleaned",
+          "zh": "I ___ my room last night.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "I ___ my room last night.",
+          "explanation": "last night 指過去；clean 加 ed。",
+          "options": [
+            "cleaned",
+            "clean",
+            "cleans",
+            "cleaning"
+          ],
+          "fullSentence": "I cleaned my room last night."
+        },
+        {
+          "id": "supplement:g5:g3:4",
+          "en": "go",
+          "zh": "Where did you ___ yesterday?",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "Where did you ___ yesterday?",
+          "explanation": "did 後面的主要動詞用原形 go。",
+          "options": [
+            "go",
+            "went",
+            "goes",
+            "going"
+          ],
+          "fullSentence": "Where did you go yesterday?"
+        },
+        {
+          "id": "supplement:g5:g3:5",
+          "en": "do",
+          "zh": "What did you ___ last night?",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "What did you ___ last night?",
+          "explanation": "did 問句後用原形 do。",
+          "options": [
+            "do",
+            "did",
+            "does",
+            "doing"
+          ],
+          "fullSentence": "What did you do last night?"
+        }
+      ]
+    },
+    {
+      "grade": 5,
+      "semester": 0,
+      "unit": "G4",
+      "title": "易混淆搭配挑戰",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g5:g4:1",
+          "en": "play basketball",
+          "zh": "選出正確的「打籃球」。",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "選出正確的「打籃球」。",
+          "explanation": "一般活動用語中，play + 球類不加冠詞。",
+          "options": [
+            "play basketball",
+            "play the basketball",
+            "play a basketball",
+            "plays the basketball"
+          ],
+          "fullSentence": "play basketball"
+        },
+        {
+          "id": "supplement:g5:g4:2",
+          "en": "play the piano",
+          "zh": "選出正確的「彈鋼琴」。",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "選出正確的「彈鋼琴」。",
+          "explanation": "這裡練習常見搭配 play the piano。",
+          "options": [
+            "play the piano",
+            "play piano",
+            "play a piano",
+            "play the pianos"
+          ],
+          "fullSentence": "play the piano"
+        },
+        {
+          "id": "supplement:g5:g4:3",
+          "en": "have breakfast",
+          "zh": "選出正確的「吃早餐」。",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "選出正確的「吃早餐」。",
+          "explanation": "表示日常吃早餐時用 have breakfast。",
+          "options": [
+            "have breakfast",
+            "have a breakfast",
+            "have the breakfast",
+            "have breakfasts"
+          ],
+          "fullSentence": "have breakfast"
+        },
+        {
+          "id": "supplement:g5:g4:4",
+          "en": "go home",
+          "zh": "選出正確的「回家」。",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "選出正確的「回家」。",
+          "explanation": "home 在 go home 中作副詞，不加 to。",
+          "options": [
+            "go home",
+            "go to home",
+            "go to the home",
+            "go at home"
+          ],
+          "fullSentence": "go home"
+        },
+        {
+          "id": "supplement:g5:g4:5",
+          "en": "at home",
+          "zh": "選出正確的「在家」。",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "選出正確的「在家」。",
+          "explanation": "常見搭配是 at home。",
+          "options": [
+            "at home",
+            "at the home",
+            "in home",
+            "on home"
+          ],
+          "fullSentence": "at home"
+        },
+        {
+          "id": "supplement:g5:g4:6",
+          "en": "watch TV",
+          "zh": "選出正確的「看電視」。",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "選出正確的「看電視」。",
+          "explanation": "表示看電視這個活動時用 watch TV。",
+          "options": [
+            "watch TV",
+            "watch the TV",
+            "watch TVs",
+            "look TV"
+          ],
+          "fullSentence": "watch TV"
+        },
+        {
+          "id": "supplement:g5:g4:7",
+          "en": "by",
+          "zh": "We can go there ___ bus.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "We can go there ___ bus.",
+          "explanation": "交通方式：by bus。",
+          "options": [
+            "by",
+            "on",
+            "at",
+            "in"
+          ],
+          "fullSentence": "We can go there by bus."
+        },
+        {
+          "id": "supplement:g5:g4:8",
+          "en": "on",
+          "zh": "We can go there ___ foot.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "We can go there ___ foot.",
+          "explanation": "步行是 on foot。",
+          "options": [
+            "on",
+            "by",
+            "at",
+            "in"
+          ],
+          "fullSentence": "We can go there on foot."
+        }
+      ]
+    },
+    {
+      "grade": 5,
+      "semester": 0,
+      "unit": "G5",
+      "title": "生活句型挑戰",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g5:g5:1",
+          "en": "is",
+          "zh": "The ball ___ under the desk.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "The ball ___ under the desk.",
+          "explanation": "單數 the ball 用 is。",
+          "options": [
+            "is",
+            "are",
+            "am",
+            "be"
+          ],
+          "fullSentence": "The ball is under the desk."
+        },
+        {
+          "id": "supplement:g5:g5:2",
+          "en": "are",
+          "zh": "The books ___ on the chair.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "The books ___ on the chair.",
+          "explanation": "複數 the books 用 are。",
+          "options": [
+            "are",
+            "is",
+            "am",
+            "be"
+          ],
+          "fullSentence": "The books are on the chair."
+        },
+        {
+          "id": "supplement:g5:g5:3",
+          "en": "swim",
+          "zh": "Can you ___?",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "Can you ___?",
+          "explanation": "can 後面接原形動詞。",
+          "options": [
+            "swim",
+            "swims",
+            "swimming",
+            "to swim"
+          ],
+          "fullSentence": "Can you swim?"
+        },
+        {
+          "id": "supplement:g5:g5:4",
+          "en": "to be",
+          "zh": "I want ___ a doctor.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "I want ___ a doctor.",
+          "explanation": "want to be + 職業：想成為……。",
+          "options": [
+            "to be",
+            "be",
+            "am",
+            "being"
+          ],
+          "fullSentence": "I want to be a doctor."
+        },
+        {
+          "id": "supplement:g5:g5:5",
+          "en": "Give",
+          "zh": "___ me a hand, please.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "___ me a hand, please.",
+          "explanation": "請求句用原形 Give；give me a hand 是幫我個忙。",
+          "options": [
+            "Give",
+            "Gives",
+            "Giving",
+            "Gave"
+          ],
+          "fullSentence": "Give me a hand, please."
+        }
+      ]
+    },
+    {
+      "grade": 6,
+      "semester": 0,
+      "unit": "P1",
+      "title": "作息、休閒與家事片語",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g6:p1:1",
+          "en": "get up",
+          "zh": "起床",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:2",
+          "en": "do homework",
+          "zh": "做功課",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:3",
+          "en": "go to bed",
+          "zh": "上床睡覺",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:4",
+          "en": "take a shower",
+          "zh": "淋浴",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:5",
+          "en": "take a bath",
+          "zh": "泡澡",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:6",
+          "en": "have breakfast",
+          "zh": "吃早餐",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:7",
+          "en": "have lunch",
+          "zh": "吃午餐",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:8",
+          "en": "have dinner",
+          "zh": "吃晚餐",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:9",
+          "en": "play basketball",
+          "zh": "打籃球",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:10",
+          "en": "play soccer",
+          "zh": "踢足球",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:11",
+          "en": "play the piano",
+          "zh": "彈鋼琴",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:12",
+          "en": "play the violin",
+          "zh": "拉小提琴",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:13",
+          "en": "ride a bike",
+          "zh": "騎腳踏車",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:14",
+          "en": "watch TV",
+          "zh": "看電視",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:15",
+          "en": "by bus",
+          "zh": "搭公車",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:16",
+          "en": "by train",
+          "zh": "搭火車",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:17",
+          "en": "by MRT",
+          "zh": "搭捷運",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:18",
+          "en": "clean the room",
+          "zh": "打掃房間",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:19",
+          "en": "wash the dishes",
+          "zh": "洗碗",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:20",
+          "en": "cook dinner",
+          "zh": "做晚餐",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:21",
+          "en": "water the flowers",
+          "zh": "澆花",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:22",
+          "en": "give me a hand",
+          "zh": "幫我個忙",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:23",
+          "en": "take care",
+          "zh": "保重／小心",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:24",
+          "en": "have a cold",
+          "zh": "感冒",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:25",
+          "en": "get well soon",
+          "zh": "早日康復",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:26",
+          "en": "at school",
+          "zh": "在學校",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:27",
+          "en": "at home",
+          "zh": "在家",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:28",
+          "en": "watch a movie",
+          "zh": "看電影",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:29",
+          "en": "go to the movies",
+          "zh": "去看電影",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p1:30",
+          "en": "on foot",
+          "zh": "步行",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 6,
+      "semester": 0,
+      "unit": "P2",
+      "title": "教室與生活片語複習",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g6:p2:1",
+          "en": "stand up",
+          "zh": "站起來",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p2:2",
+          "en": "sit down",
+          "zh": "坐下",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p2:3",
+          "en": "turn on",
+          "zh": "打開電器或燈",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p2:4",
+          "en": "turn off",
+          "zh": "關掉電器或燈",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p2:5",
+          "en": "open your book",
+          "zh": "打開書",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p2:6",
+          "en": "close your book",
+          "zh": "闔上書",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p2:7",
+          "en": "listen to the teacher",
+          "zh": "聽老師說話",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p2:8",
+          "en": "look at the board",
+          "zh": "看著黑板",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p2:9",
+          "en": "come in",
+          "zh": "進來",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p2:10",
+          "en": "go to school",
+          "zh": "上學",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p2:11",
+          "en": "go home",
+          "zh": "回家",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:p2:12",
+          "en": "wake up",
+          "zh": "醒來",
+          "emoji": "🎒",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 6,
+      "semester": 0,
+      "unit": "S1",
+      "title": "生活句型：自我與日常",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g6:s1:1",
+          "en": "What's your name?",
+          "zh": "你叫什麼名字？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:2",
+          "en": "My name is Kevin.",
+          "zh": "我的名字是 Kevin。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:3",
+          "en": "How old are you?",
+          "zh": "你幾歲？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:4",
+          "en": "I'm ten years old.",
+          "zh": "我十歲。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:5",
+          "en": "What do you look like?",
+          "zh": "你長什麼樣子？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:6",
+          "en": "I have big eyes and short hair.",
+          "zh": "我有大眼睛和短頭髮。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:7",
+          "en": "How do you feel?",
+          "zh": "你感覺如何？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:8",
+          "en": "Are you tired?",
+          "zh": "你累了嗎？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:9",
+          "en": "I'm hungry.",
+          "zh": "我餓了。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:10",
+          "en": "Yes, I am.",
+          "zh": "是的，我是。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:11",
+          "en": "No, I'm not.",
+          "zh": "不，我不是。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:12",
+          "en": "How's the weather?",
+          "zh": "天氣如何？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:13",
+          "en": "What's the weather like?",
+          "zh": "天氣怎麼樣？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:14",
+          "en": "It's sunny and warm.",
+          "zh": "天氣晴朗又溫暖。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:15",
+          "en": "What time is it?",
+          "zh": "現在幾點？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:16",
+          "en": "It's ten o'clock.",
+          "zh": "現在十點。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:17",
+          "en": "What time do you get up?",
+          "zh": "你幾點起床？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:18",
+          "en": "I get up at six thirty.",
+          "zh": "我六點半起床。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:19",
+          "en": "Can you swim?",
+          "zh": "你會游泳嗎？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:20",
+          "en": "Yes, I can.",
+          "zh": "是的，我會。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:21",
+          "en": "No, I can't.",
+          "zh": "不，我不會。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:22",
+          "en": "Do you like monkeys?",
+          "zh": "你喜歡猴子嗎？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:23",
+          "en": "Yes, I do.",
+          "zh": "是的，我喜歡。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:24",
+          "en": "No, I don't.",
+          "zh": "不，我不喜歡。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:25",
+          "en": "What do you want?",
+          "zh": "你想要什麼？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s1:26",
+          "en": "I want some milk and cake.",
+          "zh": "我想要一些牛奶和蛋糕。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 6,
+      "semester": 0,
+      "unit": "S2",
+      "title": "生活句型：地點、能力與過去",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g6:s2:1",
+          "en": "Where is the ball?",
+          "zh": "球在哪裡？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s2:2",
+          "en": "It's under the desk.",
+          "zh": "它在書桌下面。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s2:3",
+          "en": "Where are the books?",
+          "zh": "書在哪裡？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s2:4",
+          "en": "They are on the chair.",
+          "zh": "它們在椅子上。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s2:5",
+          "en": "Where are you going?",
+          "zh": "你要去哪裡？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s2:6",
+          "en": "I'm going to the bakery.",
+          "zh": "我要去麵包店。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s2:7",
+          "en": "How can we get to the park?",
+          "zh": "我們可以怎麼去公園？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s2:8",
+          "en": "We can go there by bus.",
+          "zh": "我們可以搭公車去那裡。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s2:9",
+          "en": "We can go there on foot.",
+          "zh": "我們可以步行去那裡。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s2:10",
+          "en": "What do you want to be?",
+          "zh": "你想當什麼？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s2:11",
+          "en": "I want to be a doctor.",
+          "zh": "我想當醫生。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s2:12",
+          "en": "What does your father do?",
+          "zh": "你爸爸做什麼工作？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s2:13",
+          "en": "He is a cook.",
+          "zh": "他是一位廚師。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s2:14",
+          "en": "What are you doing?",
+          "zh": "你正在做什麼？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s2:15",
+          "en": "I'm doing my homework.",
+          "zh": "我正在做功課。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s2:16",
+          "en": "What is she doing?",
+          "zh": "她正在做什麼？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s2:17",
+          "en": "She is washing the dishes.",
+          "zh": "她正在洗碗。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s2:18",
+          "en": "Where did you go yesterday?",
+          "zh": "你昨天去了哪裡？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s2:19",
+          "en": "I went to the zoo.",
+          "zh": "我去了動物園。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s2:20",
+          "en": "What did you do last night?",
+          "zh": "你昨晚做了什麼？",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:s2:21",
+          "en": "I cleaned my room.",
+          "zh": "我打掃了我的房間。",
+          "emoji": "💬",
+          "kind": "sentence",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 6,
+      "semester": 0,
+      "unit": "G1",
+      "title": "現在進行式挑戰",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g6:g1:1",
+          "en": "is reading",
+          "zh": "Look! He ___ a book.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "Look! He ___ a book.",
+          "explanation": "Look! 提醒正在發生的動作：he + is + 動詞-ing。",
+          "options": [
+            "is reading",
+            "reads",
+            "read",
+            "reading"
+          ],
+          "fullSentence": "Look! He is reading a book."
+        },
+        {
+          "id": "supplement:g6:g1:2",
+          "en": "are singing",
+          "zh": "Listen! They ___ in the classroom.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "Listen! They ___ in the classroom.",
+          "explanation": "they 用 are，再接動詞-ing。",
+          "options": [
+            "are singing",
+            "is singing",
+            "sings",
+            "singing"
+          ],
+          "fullSentence": "Listen! They are singing in the classroom."
+        },
+        {
+          "id": "supplement:g6:g1:3",
+          "en": "are dancing",
+          "zh": "They ___ now.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "They ___ now.",
+          "explanation": "now 表示現在正在做：they are dancing。",
+          "options": [
+            "are dancing",
+            "is dancing",
+            "dances",
+            "dancing"
+          ],
+          "fullSentence": "They are dancing now."
+        },
+        {
+          "id": "supplement:g6:g1:4",
+          "en": "am doing",
+          "zh": "I ___ my homework now.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "I ___ my homework now.",
+          "explanation": "I 的 be 動詞用 am。",
+          "options": [
+            "am doing",
+            "is doing",
+            "does",
+            "doing"
+          ],
+          "fullSentence": "I am doing my homework now."
+        },
+        {
+          "id": "supplement:g6:g1:5",
+          "en": "is washing",
+          "zh": "She ___ the dishes now.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "She ___ the dishes now.",
+          "explanation": "she 用 is washing 表示正在洗。",
+          "options": [
+            "is washing",
+            "are washing",
+            "washes",
+            "washing"
+          ],
+          "fullSentence": "She is washing the dishes now."
+        }
+      ]
+    },
+    {
+      "grade": 6,
+      "semester": 0,
+      "unit": "G2",
+      "title": "現在簡單式挑戰",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g6:g2:1",
+          "en": "get",
+          "zh": "I ___ up at seven every day.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "I ___ up at seven every day.",
+          "explanation": "日常習慣用現在簡單式；I 接 get。",
+          "options": [
+            "get",
+            "gets",
+            "getting",
+            "got"
+          ],
+          "fullSentence": "I get up at seven every day."
+        },
+        {
+          "id": "supplement:g6:g2:2",
+          "en": "likes",
+          "zh": "She ___ apples.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "She ___ apples.",
+          "explanation": "現在簡單式第三人稱單數：like 加 s。",
+          "options": [
+            "likes",
+            "like",
+            "liking",
+            "to likes"
+          ],
+          "fullSentence": "She likes apples."
+        },
+        {
+          "id": "supplement:g6:g2:3",
+          "en": "goes",
+          "zh": "He usually ___ to school by bus.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "He usually ___ to school by bus.",
+          "explanation": "he 是第三人稱單數；go 改為 goes。",
+          "options": [
+            "goes",
+            "go",
+            "going",
+            "to go"
+          ],
+          "fullSentence": "He usually goes to school by bus."
+        },
+        {
+          "id": "supplement:g6:g2:4",
+          "en": "Do",
+          "zh": "___ you like monkeys?",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "___ you like monkeys?",
+          "explanation": "主詞 you 的一般動詞問句用 Do。",
+          "options": [
+            "Do",
+            "Does",
+            "Is",
+            "Are"
+          ],
+          "fullSentence": "Do you like monkeys?"
+        },
+        {
+          "id": "supplement:g6:g2:5",
+          "en": "does",
+          "zh": "What ___ your father do?",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "What ___ your father do?",
+          "explanation": "your father 是第三人稱單數，問句用 does。",
+          "options": [
+            "does",
+            "do",
+            "is",
+            "are"
+          ],
+          "fullSentence": "What does your father do?"
+        }
+      ]
+    },
+    {
+      "grade": 6,
+      "semester": 0,
+      "unit": "G3",
+      "title": "過去簡單式挑戰",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g6:g3:1",
+          "en": "went",
+          "zh": "We ___ to the zoo yesterday.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "We ___ to the zoo yesterday.",
+          "explanation": "yesterday 指過去，go 的過去式是 went。",
+          "options": [
+            "went",
+            "go",
+            "goes",
+            "going"
+          ],
+          "fullSentence": "We went to the zoo yesterday."
+        },
+        {
+          "id": "supplement:g6:g3:2",
+          "en": "was",
+          "zh": "He ___ sick last week.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "He ___ sick last week.",
+          "explanation": "last week 指過去，he 搭配 was。",
+          "options": [
+            "was",
+            "is",
+            "were",
+            "be"
+          ],
+          "fullSentence": "He was sick last week."
+        },
+        {
+          "id": "supplement:g6:g3:3",
+          "en": "cleaned",
+          "zh": "I ___ my room last night.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "I ___ my room last night.",
+          "explanation": "last night 指過去；clean 加 ed。",
+          "options": [
+            "cleaned",
+            "clean",
+            "cleans",
+            "cleaning"
+          ],
+          "fullSentence": "I cleaned my room last night."
+        },
+        {
+          "id": "supplement:g6:g3:4",
+          "en": "go",
+          "zh": "Where did you ___ yesterday?",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "Where did you ___ yesterday?",
+          "explanation": "did 後面的主要動詞用原形 go。",
+          "options": [
+            "go",
+            "went",
+            "goes",
+            "going"
+          ],
+          "fullSentence": "Where did you go yesterday?"
+        },
+        {
+          "id": "supplement:g6:g3:5",
+          "en": "do",
+          "zh": "What did you ___ last night?",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "What did you ___ last night?",
+          "explanation": "did 問句後用原形 do。",
+          "options": [
+            "do",
+            "did",
+            "does",
+            "doing"
+          ],
+          "fullSentence": "What did you do last night?"
+        }
+      ]
+    },
+    {
+      "grade": 6,
+      "semester": 0,
+      "unit": "G4",
+      "title": "易混淆搭配挑戰",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g6:g4:1",
+          "en": "play basketball",
+          "zh": "選出正確的「打籃球」。",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "選出正確的「打籃球」。",
+          "explanation": "一般活動用語中，play + 球類不加冠詞。",
+          "options": [
+            "play basketball",
+            "play the basketball",
+            "play a basketball",
+            "plays the basketball"
+          ],
+          "fullSentence": "play basketball"
+        },
+        {
+          "id": "supplement:g6:g4:2",
+          "en": "play the piano",
+          "zh": "選出正確的「彈鋼琴」。",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "選出正確的「彈鋼琴」。",
+          "explanation": "這裡練習常見搭配 play the piano。",
+          "options": [
+            "play the piano",
+            "play piano",
+            "play a piano",
+            "play the pianos"
+          ],
+          "fullSentence": "play the piano"
+        },
+        {
+          "id": "supplement:g6:g4:3",
+          "en": "have breakfast",
+          "zh": "選出正確的「吃早餐」。",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "選出正確的「吃早餐」。",
+          "explanation": "表示日常吃早餐時用 have breakfast。",
+          "options": [
+            "have breakfast",
+            "have a breakfast",
+            "have the breakfast",
+            "have breakfasts"
+          ],
+          "fullSentence": "have breakfast"
+        },
+        {
+          "id": "supplement:g6:g4:4",
+          "en": "go home",
+          "zh": "選出正確的「回家」。",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "選出正確的「回家」。",
+          "explanation": "home 在 go home 中作副詞，不加 to。",
+          "options": [
+            "go home",
+            "go to home",
+            "go to the home",
+            "go at home"
+          ],
+          "fullSentence": "go home"
+        },
+        {
+          "id": "supplement:g6:g4:5",
+          "en": "at home",
+          "zh": "選出正確的「在家」。",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "選出正確的「在家」。",
+          "explanation": "常見搭配是 at home。",
+          "options": [
+            "at home",
+            "at the home",
+            "in home",
+            "on home"
+          ],
+          "fullSentence": "at home"
+        },
+        {
+          "id": "supplement:g6:g4:6",
+          "en": "watch TV",
+          "zh": "選出正確的「看電視」。",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "選出正確的「看電視」。",
+          "explanation": "表示看電視這個活動時用 watch TV。",
+          "options": [
+            "watch TV",
+            "watch the TV",
+            "watch TVs",
+            "look TV"
+          ],
+          "fullSentence": "watch TV"
+        },
+        {
+          "id": "supplement:g6:g4:7",
+          "en": "by",
+          "zh": "We can go there ___ bus.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "We can go there ___ bus.",
+          "explanation": "交通方式：by bus。",
+          "options": [
+            "by",
+            "on",
+            "at",
+            "in"
+          ],
+          "fullSentence": "We can go there by bus."
+        },
+        {
+          "id": "supplement:g6:g4:8",
+          "en": "on",
+          "zh": "We can go there ___ foot.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "We can go there ___ foot.",
+          "explanation": "步行是 on foot。",
+          "options": [
+            "on",
+            "by",
+            "at",
+            "in"
+          ],
+          "fullSentence": "We can go there on foot."
+        }
+      ]
+    },
+    {
+      "grade": 6,
+      "semester": 0,
+      "unit": "G5",
+      "title": "生活句型挑戰",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者補充練習清單；非出版社逐課教材",
+      "words": [
+        {
+          "id": "supplement:g6:g5:1",
+          "en": "is",
+          "zh": "The ball ___ under the desk.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "The ball ___ under the desk.",
+          "explanation": "單數 the ball 用 is。",
+          "options": [
+            "is",
+            "are",
+            "am",
+            "be"
+          ],
+          "fullSentence": "The ball is under the desk."
+        },
+        {
+          "id": "supplement:g6:g5:2",
+          "en": "are",
+          "zh": "The books ___ on the chair.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "The books ___ on the chair.",
+          "explanation": "複數 the books 用 are。",
+          "options": [
+            "are",
+            "is",
+            "am",
+            "be"
+          ],
+          "fullSentence": "The books are on the chair."
+        },
+        {
+          "id": "supplement:g6:g5:3",
+          "en": "swim",
+          "zh": "Can you ___?",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "Can you ___?",
+          "explanation": "can 後面接原形動詞。",
+          "options": [
+            "swim",
+            "swims",
+            "swimming",
+            "to swim"
+          ],
+          "fullSentence": "Can you swim?"
+        },
+        {
+          "id": "supplement:g6:g5:4",
+          "en": "to be",
+          "zh": "I want ___ a doctor.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "I want ___ a doctor.",
+          "explanation": "want to be + 職業：想成為……。",
+          "options": [
+            "to be",
+            "be",
+            "am",
+            "being"
+          ],
+          "fullSentence": "I want to be a doctor."
+        },
+        {
+          "id": "supplement:g6:g5:5",
+          "en": "Give",
+          "zh": "___ me a hand, please.",
+          "emoji": "🎒",
+          "kind": "grammar",
+          "sourceType": "user_provided",
+          "verified": false,
+          "prompt": "___ me a hand, please.",
+          "explanation": "請求句用原形 Give；give me a hand 是幫我個忙。",
+          "options": [
+            "Give",
+            "Gives",
+            "Giving",
+            "Gave"
+          ],
+          "fullSentence": "Give me a hand, please."
+        }
+      ]
+    }
+  ]
+}

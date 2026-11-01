@@ -1,0 +1,1308 @@
+{
+  "schemaVersion": 1,
+  "track": "supplement",
+  "units": [
+    {
+      "grade": 3,
+      "semester": 0,
+      "unit": "T1",
+      "title": "數字 Numbers 1–15",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者提供的分年級補充清單；非翰林官方逐課教材",
+      "words": [
+        {
+          "id": "supplement:g3:t1:one",
+          "en": "one",
+          "zh": "一",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t1:two",
+          "en": "two",
+          "zh": "二",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t1:three",
+          "en": "three",
+          "zh": "三",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t1:four",
+          "en": "four",
+          "zh": "四",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t1:five",
+          "en": "five",
+          "zh": "五",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t1:six",
+          "en": "six",
+          "zh": "六",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t1:seven",
+          "en": "seven",
+          "zh": "七",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t1:eight",
+          "en": "eight",
+          "zh": "八",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t1:nine",
+          "en": "nine",
+          "zh": "九",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t1:ten",
+          "en": "ten",
+          "zh": "十",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t1:eleven",
+          "en": "eleven",
+          "zh": "十一",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t1:twelve",
+          "en": "twelve",
+          "zh": "十二",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t1:thirteen",
+          "en": "thirteen",
+          "zh": "十三",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t1:fourteen",
+          "en": "fourteen",
+          "zh": "十四",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t1:fifteen",
+          "en": "fifteen",
+          "zh": "十五",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 3,
+      "semester": 0,
+      "unit": "T2",
+      "title": "文具 Classroom Objects",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者提供的分年級補充清單；非翰林官方逐課教材",
+      "words": [
+        {
+          "id": "supplement:g3:t2:book",
+          "en": "book",
+          "zh": "書",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t2:pen",
+          "en": "pen",
+          "zh": "原子筆",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t2:pencil",
+          "en": "pencil",
+          "zh": "鉛筆",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t2:eraser",
+          "en": "eraser",
+          "zh": "橡皮擦",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t2:ruler",
+          "en": "ruler",
+          "zh": "尺",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t2:marker",
+          "en": "marker",
+          "zh": "麥克筆",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 3,
+      "semester": 0,
+      "unit": "T3",
+      "title": "顏色 Colors",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者提供的分年級補充清單；非翰林官方逐課教材",
+      "words": [
+        {
+          "id": "supplement:g3:t3:red",
+          "en": "red",
+          "zh": "紅色",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t3:yellow",
+          "en": "yellow",
+          "zh": "黃色",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t3:blue",
+          "en": "blue",
+          "zh": "藍色",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t3:green",
+          "en": "green",
+          "zh": "綠色",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t3:white",
+          "en": "white",
+          "zh": "白色",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t3:black",
+          "en": "black",
+          "zh": "黑色",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 3,
+      "semester": 0,
+      "unit": "T4",
+      "title": "動物 Animals",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者提供的分年級補充清單；非翰林官方逐課教材",
+      "words": [
+        {
+          "id": "supplement:g3:t4:dog",
+          "en": "dog",
+          "zh": "狗",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t4:cat",
+          "en": "cat",
+          "zh": "貓",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t4:bird",
+          "en": "bird",
+          "zh": "鳥",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t4:fish",
+          "en": "fish",
+          "zh": "魚",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t4:rabbit",
+          "en": "rabbit",
+          "zh": "兔子",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t4:monkey",
+          "en": "monkey",
+          "zh": "猴子",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 3,
+      "semester": 0,
+      "unit": "T5",
+      "title": "動作 Actions",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者提供的分年級補充清單；非翰林官方逐課教材",
+      "words": [
+        {
+          "id": "supplement:g3:t5:dance",
+          "en": "dance",
+          "zh": "跳舞",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t5:draw",
+          "en": "draw",
+          "zh": "畫畫",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t5:jump",
+          "en": "jump",
+          "zh": "跳",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t5:read",
+          "en": "read",
+          "zh": "閱讀",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g3:t5:sing",
+          "en": "sing",
+          "zh": "唱歌",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 4,
+      "semester": 0,
+      "unit": "T1",
+      "title": "天氣 Weather",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者提供的分年級補充清單；非翰林官方逐課教材",
+      "words": [
+        {
+          "id": "supplement:g4:t1:sunny",
+          "en": "sunny",
+          "zh": "晴朗的",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t1:rainy",
+          "en": "rainy",
+          "zh": "下雨的",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t1:cloudy",
+          "en": "cloudy",
+          "zh": "多雲的",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t1:windy",
+          "en": "windy",
+          "zh": "有風的",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t1:snowy",
+          "en": "snowy",
+          "zh": "下雪的",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 4,
+      "semester": 0,
+      "unit": "T2",
+      "title": "食物飲品 Food & Drinks",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者提供的分年級補充清單；非翰林官方逐課教材",
+      "words": [
+        {
+          "id": "supplement:g4:t2:apple",
+          "en": "apple",
+          "zh": "蘋果",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t2:banana",
+          "en": "banana",
+          "zh": "香蕉",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t2:milk",
+          "en": "milk",
+          "zh": "牛奶",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t2:tea",
+          "en": "tea",
+          "zh": "茶",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t2:juice",
+          "en": "juice",
+          "zh": "果汁",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t2:water",
+          "en": "water",
+          "zh": "水",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t2:ice-cream",
+          "en": "ice cream",
+          "zh": "冰淇淋",
+          "emoji": "📘",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t2:cake",
+          "en": "cake",
+          "zh": "蛋糕",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 4,
+      "semester": 0,
+      "unit": "T3",
+      "title": "情緒感覺 Feelings",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者提供的分年級補充清單；非翰林官方逐課教材",
+      "words": [
+        {
+          "id": "supplement:g4:t3:happy",
+          "en": "happy",
+          "zh": "開心的",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t3:sad",
+          "en": "sad",
+          "zh": "難過的",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t3:angry",
+          "en": "angry",
+          "zh": "生氣的",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t3:tired",
+          "en": "tired",
+          "zh": "疲倦的",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t3:hungry",
+          "en": "hungry",
+          "zh": "肚子餓的",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t3:thirsty",
+          "en": "thirsty",
+          "zh": "口渴的",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 4,
+      "semester": 0,
+      "unit": "T4",
+      "title": "場所 Places",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者提供的分年級補充清單；非翰林官方逐課教材",
+      "words": [
+        {
+          "id": "supplement:g4:t4:school",
+          "en": "school",
+          "zh": "學校",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t4:park",
+          "en": "park",
+          "zh": "公園",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t4:home",
+          "en": "home",
+          "zh": "家",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t4:zoo",
+          "en": "zoo",
+          "zh": "動物園",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 4,
+      "semester": 0,
+      "unit": "T5",
+      "title": "形容詞 Adjectives",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者提供的分年級補充清單；非翰林官方逐課教材",
+      "words": [
+        {
+          "id": "supplement:g4:t5:big",
+          "en": "big",
+          "zh": "大的",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t5:small",
+          "en": "small",
+          "zh": "小的",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t5:tall",
+          "en": "tall",
+          "zh": "高的",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g4:t5:short",
+          "en": "short",
+          "zh": "矮的／短的",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 5,
+      "semester": 0,
+      "unit": "T1",
+      "title": "星期 Days of the Week",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者提供的分年級補充清單；非翰林官方逐課教材",
+      "words": [
+        {
+          "id": "supplement:g5:t1:monday",
+          "en": "Monday",
+          "zh": "星期一",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t1:tuesday",
+          "en": "Tuesday",
+          "zh": "星期二",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t1:wednesday",
+          "en": "Wednesday",
+          "zh": "星期三",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t1:thursday",
+          "en": "Thursday",
+          "zh": "星期四",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t1:friday",
+          "en": "Friday",
+          "zh": "星期五",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t1:saturday",
+          "en": "Saturday",
+          "zh": "星期六",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t1:sunday",
+          "en": "Sunday",
+          "zh": "星期日",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 5,
+      "semester": 0,
+      "unit": "T2",
+      "title": "作息 Routine",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者提供的分年級補充清單；非翰林官方逐課教材",
+      "words": [
+        {
+          "id": "supplement:g5:t2:o'clock",
+          "en": "o'clock",
+          "zh": "整點",
+          "emoji": "📘",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t2:get-up",
+          "en": "get up",
+          "zh": "起床",
+          "emoji": "📘",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t2:go-to-school",
+          "en": "go to school",
+          "zh": "去學校",
+          "emoji": "📘",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t2:go-to-bed",
+          "en": "go to bed",
+          "zh": "上床睡覺",
+          "emoji": "📘",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t2:do-homework",
+          "en": "do homework",
+          "zh": "寫功課",
+          "emoji": "📘",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 5,
+      "semester": 0,
+      "unit": "T3",
+      "title": "身體 Body Parts",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者提供的分年級補充清單；非翰林官方逐課教材",
+      "words": [
+        {
+          "id": "supplement:g5:t3:head",
+          "en": "head",
+          "zh": "頭",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t3:hair",
+          "en": "hair",
+          "zh": "頭髮",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t3:eyes",
+          "en": "eyes",
+          "zh": "眼睛（複數）",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t3:ears",
+          "en": "ears",
+          "zh": "耳朵（複數）",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t3:nose",
+          "en": "nose",
+          "zh": "鼻子",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t3:mouth",
+          "en": "mouth",
+          "zh": "嘴巴",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t3:hands",
+          "en": "hands",
+          "zh": "手（複數）",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t3:arms",
+          "en": "arms",
+          "zh": "手臂（複數）",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t3:legs",
+          "en": "legs",
+          "zh": "腿（複數）",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t3:feet",
+          "en": "feet",
+          "zh": "腳（複數）",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 5,
+      "semester": 0,
+      "unit": "T4",
+      "title": "運動休閒 Sports & Hobbies",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者提供的分年級補充清單；非翰林官方逐課教材",
+      "words": [
+        {
+          "id": "supplement:g5:t4:play-basketball",
+          "en": "play basketball",
+          "zh": "打籃球",
+          "emoji": "📘",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t4:play-soccer",
+          "en": "play soccer",
+          "zh": "踢足球",
+          "emoji": "📘",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t4:swim",
+          "en": "swim",
+          "zh": "游泳",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t4:ride-a-bike",
+          "en": "ride a bike",
+          "zh": "騎腳踏車",
+          "emoji": "📘",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t4:watch-tv",
+          "en": "watch TV",
+          "zh": "看電視",
+          "emoji": "📘",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 5,
+      "semester": 0,
+      "unit": "T5",
+      "title": "交通 Transportation",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者提供的分年級補充清單；非翰林官方逐課教材",
+      "words": [
+        {
+          "id": "supplement:g5:t5:bus",
+          "en": "bus",
+          "zh": "公車",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t5:train",
+          "en": "train",
+          "zh": "火車",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t5:car",
+          "en": "car",
+          "zh": "汽車",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t5:taxi",
+          "en": "taxi",
+          "zh": "計程車",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g5:t5:mrt",
+          "en": "MRT",
+          "zh": "捷運",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 6,
+      "semester": 0,
+      "unit": "T1",
+      "title": "職業 Occupations",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者提供的分年級補充清單；非翰林官方逐課教材",
+      "words": [
+        {
+          "id": "supplement:g6:t1:doctor",
+          "en": "doctor",
+          "zh": "醫師",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:t1:nurse",
+          "en": "nurse",
+          "zh": "護理師",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:t1:teacher",
+          "en": "teacher",
+          "zh": "老師",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:t1:student",
+          "en": "student",
+          "zh": "學生",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:t1:cook",
+          "en": "cook",
+          "zh": "廚師",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:t1:singer",
+          "en": "singer",
+          "zh": "歌手",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 6,
+      "semester": 0,
+      "unit": "T2",
+      "title": "商店場所 Stores",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者提供的分年級補充清單；非翰林官方逐課教材",
+      "words": [
+        {
+          "id": "supplement:g6:t2:supermarket",
+          "en": "supermarket",
+          "zh": "超級市場",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:t2:bookstore",
+          "en": "bookstore",
+          "zh": "書店",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:t2:bakery",
+          "en": "bakery",
+          "zh": "麵包店",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:t2:toy-store",
+          "en": "toy store",
+          "zh": "玩具店",
+          "emoji": "📘",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:t2:hospital",
+          "en": "hospital",
+          "zh": "醫院",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 6,
+      "semester": 0,
+      "unit": "T3",
+      "title": "家事 Household Chores",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者提供的分年級補充清單；非翰林官方逐課教材",
+      "words": [
+        {
+          "id": "supplement:g6:t3:clean-the-room",
+          "en": "clean the room",
+          "zh": "打掃房間",
+          "emoji": "📘",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:t3:wash-the-dishes",
+          "en": "wash the dishes",
+          "zh": "洗碗",
+          "emoji": "📘",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:t3:cook-dinner",
+          "en": "cook dinner",
+          "zh": "煮晚餐",
+          "emoji": "📘",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 6,
+      "semester": 0,
+      "unit": "T4",
+      "title": "季節 Seasons",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者提供的分年級補充清單；非翰林官方逐課教材",
+      "words": [
+        {
+          "id": "supplement:g6:t4:spring",
+          "en": "spring",
+          "zh": "春天",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:t4:summer",
+          "en": "summer",
+          "zh": "夏天",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:t4:autumn/fall",
+          "en": "autumn/fall",
+          "zh": "秋天",
+          "emoji": "📘",
+          "kind": "phrase",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:t4:winter",
+          "en": "winter",
+          "zh": "冬天",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "grade": 6,
+      "semester": 0,
+      "unit": "T5",
+      "title": "日常詢問用語 Everyday Expressions",
+      "track": "supplement",
+      "sourceType": "user_provided",
+      "verified": false,
+      "sourceNote": "使用者提供的分年級補充清單；非翰林官方逐課教材",
+      "words": [
+        {
+          "id": "supplement:g6:t5:hurt",
+          "en": "hurt",
+          "zh": "受傷／痛",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:t5:wrong",
+          "en": "wrong",
+          "zh": "不對／有問題",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        },
+        {
+          "id": "supplement:g6:t5:careful",
+          "en": "careful",
+          "zh": "小心的",
+          "emoji": "📘",
+          "kind": "word",
+          "sourceType": "user_provided",
+          "verified": false
+        }
+      ]
+    }
+  ]
+}
