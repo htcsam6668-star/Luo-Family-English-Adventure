@@ -1,5 +1,5 @@
 const PREFIX='luo-english-v14:'+encodeURIComponent(new URL('./',self.location.href).pathname)+':';
-const CACHE=PREFIX+'phase2-v22-story-images-9';
+const CACHE=PREFIX+'phase2-v22-release-8';
 const ASSETS=['./','./index.html','./legacy-v11.html','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png','./apple-touch-icon.png','./family-adventure.png','./supplement-grades-3-6.json','./sample-import.json','./practice-expansion.json','./adventure-content.json'];
 ASSETS.push(...Array.from({length:45},(_,i)=>'./stories/panel_'+String(i+1).padStart(2,'0')+'.png'));
 ASSETS.push(...Array.from({length:5},(_,i)=>'./stories/episode_'+(i+46)+'.png'));

@@ -1,0 +1,34 @@
+{
+  "release": "V2.2 formal cloud-enabled",
+  "production_ready": false,
+  "cloud_enabled": true,
+  "backend_installed": true,
+  "legacy_import_enabled": false,
+  "source_commit": "0ddf9d9b7500fe757839709f66c1d255d3cea75d",
+  "pending": [
+    {
+      "id": "isolated-supabase-jwt",
+      "status": "未執行",
+      "requirement": "真實Supabase測試家庭A/B JWT、Auth與PostgREST/RLS驗收",
+      "current": "C23/C51本機合成身分與資料庫權限測試通過；已準備唯讀真JWT驗收腳本，但未提供獨立專案與測試帳號，不能宣稱真實JWT通過。"
+    },
+    {
+      "id": "real-cloud-write-e2e",
+      "status": "待獨立測試專案",
+      "requirement": "真實Supabase兩裝置作答/核准/離線補送/更新",
+      "current": "正式結構及633筆教材已安裝且唯讀驗證；未使用正式家庭執行作答、核准或跨裝置寫入測試。本機真PostgreSQL及Chrome合成服務測試與真實Supabase驗收分列。"
+    },
+    {
+      "id": "legacy-existing-cloud",
+      "status": "需人工對帳",
+      "requirement": "既有雲端活動與舊點數差異比對後承接",
+      "current": "空雲端一次性承接/防重匯/受控回復已測；有雲端交易會阻擋自動承接，避免重算。真實舊資料未匯入，UI匯入開關關閉。"
+    },
+    {
+      "id": "physical-devices",
+      "status": "待實機驗收",
+      "requirement": "Android/iOS/PWA安裝、音訊、觸控與背景恢復",
+      "current": "Chrome 390/768/1440尺寸無溢出，手機版按鈕至少46px；本機停止伺服器後離線重開及恢復補送成功。尚未用實體Android/iPhone/iPad安裝。"
+    }
+  ]
+}

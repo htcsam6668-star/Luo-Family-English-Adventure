@@ -1,0 +1,1 @@
+window.LuoCloudConfig = {"url":"https://jlpxiviwmpxrqjgnakka.supabase.co","key":"sb_publishable_1_m0DKCcv4GVrdVaFyFunQ_CwiN6oWn","phase2":{"enabled":true,"productionProjectRef":"jlpxiviwmpxrqjgnakka","allowLegacyImport":false}};
