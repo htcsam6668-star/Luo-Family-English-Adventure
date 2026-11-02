@@ -1,0 +1,7 @@
+新增50話故事正文｜每話4節，共200節。
+將此包解壓後4個檔案上傳到羅家GitHub儲存庫根目錄，覆蓋同名檔案。
+保留原stories與cloud資料夾，不用移動，不用修改Supabase。
+index.html與sw.js覆蓋；chapters.json與story-reader.js為新增。
+先備份網站與本機JSON，更新後等待Pages部署完成，關閉PWA再重開，不清除網站資料。
+故事圖片、點數、獎勵及解鎖規則保留；99項自動測試+Smoke通過，Chrome已驗證正文及圖片離線閱讀。未推送部署。
+提交5a23c16e312191180515d4d875d90be36fb23201。
