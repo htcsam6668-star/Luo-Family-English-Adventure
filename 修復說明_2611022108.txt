@@ -1,0 +1,5 @@
+修復包來源提交 fb774dbe37d4e847f2ad4ff0d1975d529c9f9b30。
+只含修正版index.html、sw.js與完整50張stories圖片；不含cloud-config.js，不會覆蓋既有雲端設定。
+先備份網站檔案及JSON紀錄。解壓後維持stories資料夾結構，先在測試站檢查。正式部署由使用者自行決定，本次未推送或部署。
+部署後可直接檢查 /stories/panel_01.png 與 /stories/episode_46.png；需保留GitHub Pages儲存庫子路徑。關閉舊PWA視窗再開啟以套用新SW，不要清除localStorage。
+本機50圖可解碼、100個HTTP URL全200，94項回歸加Smoke通過；不等於正式站已部署修復。
